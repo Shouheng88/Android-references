@@ -4,4 +4,4 @@
 
 ## UI设计
 
-1. [设计师资源](https://github.com/jobbole/awesome-design-cn)
+1. 伯乐在线整理的设计师资源：[Github地址](https://github.com/jobbole/awesome-design-cn)
