@@ -1,0 +1,3 @@
+include ':app', ':commons', ':umeng'
+project(':commons').projectDir = new File('../commons')
+project(':umeng').projectDir = new File('../umeng')
