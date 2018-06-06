@@ -1,4 +1,4 @@
-package me.shouheng.commons.utils;
+package me.shouheng.commons.util;
 
 /**
  * @author shouh

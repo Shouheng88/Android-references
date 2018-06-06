@@ -1,4 +1,4 @@
-package me.shouheng.commons.utils;
+package me.shouheng.commons.util;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
