@@ -42,4 +42,6 @@ dependencies {
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     // multidex
     implementation 'com.android.support:multidex:1.0.3'
+    // joda-time
+    implementation 'joda-time:joda-time:2.9.9'
 }
