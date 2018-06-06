@@ -44,4 +44,6 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
     // joda-time
     implementation 'joda-time:joda-time:2.9.9'
+    // apache-io
+    implementation 'commons-io:commons-io:2.5'
 }
