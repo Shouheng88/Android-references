@@ -40,4 +40,6 @@ dependencies {
     // leakcanary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    // multidex
+    implementation 'com.android.support:multidex:1.0.3'
 }
