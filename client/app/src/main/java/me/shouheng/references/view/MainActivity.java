@@ -1,9 +1,11 @@
-package me.shouheng.references;
+package me.shouheng.references.view;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import me.shouheng.references.R;
+import me.shouheng.references.base.CommonDaggerActivity;
+
+public class MainActivity extends CommonDaggerActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
