@@ -41,9 +41,11 @@ dependencies {
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     // multidex
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.android.support:multidex:1.0.2'
     // joda-time
     implementation 'joda-time:joda-time:2.9.9'
     // apache-io
     implementation 'commons-io:commons-io:2.5'
+    // image compress
+    implementation 'top.zibin:Luban:1.1.3'
 }
