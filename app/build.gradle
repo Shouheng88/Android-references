@@ -1,19 +1,60 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "me.shouheng.references"
-        minSdkVersion 17
-        targetSdkVersion 27
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        // enable multi dex
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        release { }
     }
     buildTypes {
         release {
-            minifyEnabled false
+            signingConfig signingConfigs.release
+            minifyEnabled true // minify
+            shrinkResources true // enable shrink resources
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        // config released apk name
+        applicationVariants.all { variant ->
+            variant.outputs.all { output ->
+                outputFileName = defaultConfig.applicationId + "-" + variant.baseName + "-" + defaultConfig.versionName + "-" + defaultConfig.versionCode + ".apk";
+            }
+        }
+    }
+    // config release types
+    flavorDimensions "default"
+    productFlavors {
+        dev {
+            dimension "default"
+        }
+        stage {
+            dimension "default"
+        }
+        prod {
+            dimension "default"
+        }
+    }
+    // use data binding
+    dataBinding {
+        enabled = true
+    }
+    // use java 8 language
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    // use external libs folder
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
         }
     }
 }
@@ -25,4 +66,33 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // support package
+    implementation "com.android.support:support-annotations:$supportLibVersion"
+    implementation "com.android.support:appcompat-v7:$supportLibVersion"
+    implementation "com.android.support:support-v4:$supportLibVersion"
+    implementation "com.android.support:recyclerview-v7:$supportLibVersion"
+    // architecture components
+    implementation "android.arch.lifecycle:runtime:$archVersion"
+    implementation "android.arch.lifecycle:extensions:$archVersion"
+    annotationProcessor "android.arch.lifecycle:compiler:$archVersion"
+    // recycler
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    implementation 'com.yanzhenjie:recyclerview-swipe:1.1.4'
+    // glide
+    implementation 'com.github.bumptech.glide:glide:4.3.1'
+    // app debug tools
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+    // use fabric
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.2@aar') {
+        transitive = true
+    }
+    // leakcanary
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    // dagger
+    implementation "com.google.dagger:dagger:$dagger"
+    implementation "com.google.dagger:dagger-android:$dagger"
+    implementation "com.google.dagger:dagger-android-support:$dagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger"
 }

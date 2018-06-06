@@ -16,6 +16,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--region fabric-->
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="aa14224ea2102fef301d211dac552635f37b1f9e" />
+        <!--endregion-->
+
+        <!--region file provider-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="me.shouheng.references.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+        <!--endregion-->
+
     </application>
 
 </manifest>
