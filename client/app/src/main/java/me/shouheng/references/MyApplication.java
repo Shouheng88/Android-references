@@ -43,7 +43,7 @@ public class MyApplication extends BaseApplication implements HasActivityInjecto
 
         if (BuildConfig.DEBUG) Stetho.initializeWithDefaults(this);
 
-        DaggerAppComponent.builder().application(this).build().inject(this);
+        DaggerAppComponent.builder().application(this).stringValues("").build().inject(this);
     }
 
     @Override

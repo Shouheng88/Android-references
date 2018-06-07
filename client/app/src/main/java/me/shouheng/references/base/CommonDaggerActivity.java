@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import javax.inject.Inject;
+
 import dagger.android.AndroidInjection;
+import me.shouheng.references.di.base.ViewModelFactory;
 
 /**
  * @author shouh
