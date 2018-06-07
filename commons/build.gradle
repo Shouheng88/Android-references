@@ -45,8 +45,8 @@ dependencies {
     implementation "android.arch.lifecycle:runtime:$archVersion"
     implementation "android.arch.lifecycle:extensions:$archVersion"
     annotationProcessor "android.arch.lifecycle:compiler:$archVersion"
-    implementation "android.arch.persistence.room:compiler:$archVersion"
-    implementation "android.arch.persistence.room:runtime:$archVersion"
+//    implementation "android.arch.persistence.room:runtime:$archVersion"
+//    annotationProcessor "android.arch.persistence.room:compiler:$archVersion"
     // leakcanary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
