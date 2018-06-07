@@ -11,7 +11,7 @@ import android.support.v4.app.Fragment;
 
 /**
  * Created by WngShhng on 2018/5/18.*/
-public abstract class CommonActivity<T extends ViewDataBinding> extends BaseActivity {
+public abstract class CommonActivity<T extends ViewDataBinding> extends ThemedActivity {
 
     private T binding;
 
