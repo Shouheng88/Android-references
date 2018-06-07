@@ -24,7 +24,6 @@
             android:value="aa14224ea2102fef301d211dac552635f37b1f9e" />
         <!-- endregion -->
 
-
         <!-- region file provider -->
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -36,8 +35,6 @@
                 android:resource="@xml/provider_paths" />
         </provider>
         <!-- endregion -->
-
-        <activity android:name=".view.SecondActivity"></activity>
     </application>
 
 </manifest>

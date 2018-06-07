@@ -16,20 +16,11 @@ import me.shouheng.references.di.DaggerAppComponent;
  * @author shouh
  * @version $Id: MyApplication, v 0.1 2018/6/6 22:30 shouh Exp$
  */
-public class MyApplication extends BaseApplication implements HasActivityInjector
-//        , HasBroadcastReceiverInjector,
-//        HasServiceInjector, HasFragmentInjector
-{
+public class MyApplication extends BaseApplication implements HasActivityInjector {
 
     private static MyApplication application;
 
     @Inject DispatchingAndroidInjector<Activity> activityInjector;
-
-//    @Inject DispatchingAndroidInjector<BroadcastReceiver> broadcastReceiverInjector;
-
-//    @Inject DispatchingAndroidInjector<Service> serviceInjector;
-
-//    @Inject DispatchingAndroidInjector<Fragment> fragmentInjector;
 
     public static MyApplication getContext() {
         return application;
@@ -43,26 +34,11 @@ public class MyApplication extends BaseApplication implements HasActivityInjecto
 
         if (BuildConfig.DEBUG) Stetho.initializeWithDefaults(this);
 
-        DaggerAppComponent.builder().application(this).stringValues("").build().inject(this);
+        DaggerAppComponent.builder().application(this).build().inject(this);
     }
 
     @Override
     public AndroidInjector<Activity> activityInjector() {
         return activityInjector;
     }
-
-//    @Override
-//    public AndroidInjector<BroadcastReceiver> broadcastReceiverInjector() {
-//        return broadcastReceiverInjector;
-//    }
-//
-//    @Override
-//    public AndroidInjector<Service> serviceInjector() {
-//        return serviceInjector;
-//    }
-//
-//    @Override
-//    public AndroidInjector<android.app.Fragment> fragmentInjector() {
-//        return fragmentInjector;
-//    }
 }

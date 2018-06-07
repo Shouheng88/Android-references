@@ -26,8 +26,6 @@ public interface AppComponent extends AndroidInjector<MyApplication> {
 
         @BindsInstance Builder application(Application application);
 
-        @BindsInstance Builder stringValues(String stringValue);
-
         AppComponent build();
     }
 }

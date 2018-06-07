@@ -1,4 +1,4 @@
-package me.shouheng.references.di.base;
+package me.shouheng.references.util.enums;
 
 import android.arch.lifecycle.ViewModel;
 
