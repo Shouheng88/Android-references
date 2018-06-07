@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import me.shouheng.commons.BuildConfig;
-import me.shouheng.commons.config.BaseConstant;
+import me.shouheng.commons.config.BaseConstants;
 
 public class LogUtils {
 
@@ -70,7 +70,7 @@ public class LogUtils {
         String methodName = stackTrace[index].getMethodName();
         int lineNumber = stackTrace[index].getLineNumber();
 
-        String tag = (tagStr == null ? BaseConstant.DEFAULT_LOG_TAG : tagStr);
+        String tag = (tagStr == null ? BaseConstants.DEFAULT_LOG_TAG : tagStr);
         methodName = methodName.substring(0, 1).toUpperCase() + methodName.substring(1);
 
         StringBuilder stringBuilder = new StringBuilder();
