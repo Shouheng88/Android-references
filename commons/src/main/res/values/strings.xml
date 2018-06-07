@@ -1,4 +1,23 @@
 <resources>
     <string name="failed_to_create_file">Failed to create file</string>
     <string name="storage_not_available">Storage unavailable</string>
+
+    <string name="permission_setting_permission">Permission settings</string>
+    <string name="permission_storage_permission">Storage</string>
+    <string name="permission_location_permission">Location</string>
+    <string name="permission_microphone_permission">Microphone</string>
+    <string name="permission_phone_permission">Phone</string>
+    <string name="permission_sms_permission">Sms</string>
+    <string name="permission_sensor_permission">Sensor</string>
+    <string name="permission_contacts_permission">Contacts</string>
+    <string name="permission_camera_permission">Camera</string>
+    <string name="permission_calendar_permission">Calendar</string>
+    <string name="permission_default_permission_name">permission</string>
+    <string name="setting_permission">Setting permission</string>
+    <string name="set_permission_in_setting">Permission is required.\n\nGrant the permission to this application and try again:\n\n Open app info page in settings, tap \"Permissions\", enable \"%s\".</string>
+    <string name="permission_denied_try_again_after_set">Permission denied. Please try again after grant the permission.</string>
+    <string name="permission_denied_try_again_after_set_given_permission">Permission denied. Please try again after grant the %s permission.</string>
+
+    <string name="to_set">to set</string>
+    <string name="cancel">Cancel</string>
 </resources>
