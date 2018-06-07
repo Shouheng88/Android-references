@@ -18,6 +18,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".view.intro.AppIntroActivity"/>
+
         <!-- region fabric -->
         <meta-data
             android:name="io.fabric.ApiKey"
