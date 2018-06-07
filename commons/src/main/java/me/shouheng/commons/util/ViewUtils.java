@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.os.Build;
+import android.support.annotation.FloatRange;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -66,7 +67,7 @@ public class ViewUtils {
         return ((ViewGroup) context.findViewById(android.R.id.content)).getChildAt(0);
     }
 
-    public static void setAlpha(View v, float alpha) {
+    public static void setAlpha(View v, @FloatRange(from = 0, to = 1) float alpha) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
             final AlphaAnimation animation = new AlphaAnimation(1F, alpha);
             animation.setFillAfter(true);
