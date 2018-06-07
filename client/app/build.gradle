@@ -92,7 +92,9 @@ dependencies {
     implementation "com.google.dagger:dagger-android-support:$dagger"
     annotationProcessor "com.google.dagger:dagger-compiler:$dagger"
     annotationProcessor "com.google.dagger:dagger-android-processor:$dagger"
-    //
+    // app intro
+    implementation 'com.github.apl-devs:appintro:v4.2.3'
+    // projects
     implementation project(':umeng')
     implementation project(':commons')
 }
