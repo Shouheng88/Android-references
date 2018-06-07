@@ -1,6 +1,7 @@
 package me.shouheng.commons.util;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.StringRes;
 import android.text.TextUtils;
 
 import java.util.HashMap;
@@ -9,6 +10,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import me.shouheng.commons.BaseApplication;
 
 /**
  * @author shouh
@@ -25,6 +28,7 @@ public class StringUtils {
             "(^(00){0,1}(13\\\\d|15[^4,\\\\D]|17[13678]|18\\\\d)\\\\d{8}|170[^346,\\\\D]\\\\d{7}$)",
             Pattern.CASE_INSENSITIVE);
 
+    // region transfer string
     public static String ListToString(List<?> list) {
         StringBuilder sb = new StringBuilder();
         if (list != null && list.size() > 0) {
@@ -118,7 +122,9 @@ public class StringUtils {
         }
         return list;
     }
+    // endregion
 
+    // region contnt checker
     public static boolean isChinese(char c) {
         Character.UnicodeBlock ub = Character.UnicodeBlock.of(c);
         return ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS
@@ -166,7 +172,9 @@ public class StringUtils {
         Matcher matcher = VALID_PHONE_REGEX .matcher(phone);
         return matcher.find();
     }
+    // endregion
 
+    // region safe parse
     public static int parseInteger(String intString, int defaultValue) {
         int number;
         try {
@@ -186,4 +194,21 @@ public class StringUtils {
         }
         return number;
     }
+    // endregion
+
+    // region format string
+    public static String formatString(@StringRes int stringRes, Object ...args) {
+        return String.format(getStringCompact(stringRes), args);
+    }
+
+    public static String formatString(@StringRes int stringRes, @StringRes int argRes) {
+        return String.format(getStringCompact(stringRes), getStringCompact(argRes));
+    }
+    // endregion
+
+    // region resources utils
+    public static String getStringCompact(@StringRes int stringRes) {
+        return BaseApplication.getContext().getResources().getString(stringRes);
+    }
+    // endregion
 }
