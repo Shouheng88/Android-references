@@ -1,7 +1,9 @@
 package me.shouheng.commons.activity;
 
+import android.app.Activity;
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
@@ -48,6 +50,14 @@ public abstract class CommonActivity<T extends ViewDataBinding> extends ThemedAc
 
     protected Fragment getCurrentFragment(@IdRes int resId) {
         return getSupportFragmentManager().findFragmentById(resId);
+    }
+
+    public void startActivity(Class<? extends Activity> activity) {
+        startActivity(new Intent(this, activity));
+    }
+
+    public void startActivityForResult(Class<? extends Activity> activity, int requestCode) {
+        startActivityForResult(new Intent(this, activity), requestCode);
     }
 
     /**
