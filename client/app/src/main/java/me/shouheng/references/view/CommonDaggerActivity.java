@@ -1,4 +1,4 @@
-package me.shouheng.references.base;
+package me.shouheng.references.view;
 
 import android.databinding.ViewDataBinding;
 

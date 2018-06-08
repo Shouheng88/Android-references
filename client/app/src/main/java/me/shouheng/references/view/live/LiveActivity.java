@@ -6,9 +6,10 @@ import android.support.v7.widget.Toolbar;
 
 import javax.inject.Inject;
 
+import me.shouheng.commons.util.LogUtils;
 import me.shouheng.references.R;
-import me.shouheng.references.base.CommonDaggerActivity;
 import me.shouheng.references.databinding.ActivityLiveBinding;
+import me.shouheng.references.view.CommonDaggerActivity;
 import me.shouheng.references.viewmodel.LiveViewModel;
 
 public class LiveActivity extends CommonDaggerActivity<ActivityLiveBinding> {
@@ -23,6 +24,11 @@ public class LiveActivity extends CommonDaggerActivity<ActivityLiveBinding> {
     @Override
     protected void doCreateView(Bundle savedInstanceState) {
         configToolbar();
+
+        liveViewModel.getRecommend().observe(this, recommendResource -> {
+            LogUtils.d(recommendResource);
+            LogUtils.d(recommendResource.data);
+        });
     }
 
     private void configToolbar() {

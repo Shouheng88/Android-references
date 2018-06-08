@@ -15,7 +15,6 @@ import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 import me.shouheng.references.R;
-import me.shouheng.references.base.CommonDaggerActivity;
 import me.shouheng.references.databinding.ActivityMainBinding;
 import me.shouheng.references.view.intro.AppIntroActivity;
 import me.shouheng.references.view.live.LiveActivity;

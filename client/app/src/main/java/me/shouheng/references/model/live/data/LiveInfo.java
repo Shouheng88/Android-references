@@ -1,6 +1,6 @@
 package me.shouheng.references.model.live.data;
 
-import me.shouheng.references.util.DecimalFormatUtil;
+import me.shouheng.references.common.DecimalFormatUtil;
 
 public class LiveInfo {
 

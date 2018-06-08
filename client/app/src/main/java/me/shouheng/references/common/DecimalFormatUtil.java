@@ -1,4 +1,4 @@
-package me.shouheng.references.util;
+package me.shouheng.references.common;
 
 import java.text.DecimalFormat;
 
