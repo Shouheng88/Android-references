@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">References</string>
+    <string name="app_name">安卓开发参考</string>
+
+    <string name="menu_item_title_1">视频直播</string>
+    <string name="menu_item_desc_1">使用《全民直播》的API</string>
+
+    <string name="developer_name">WngShhng</string>
+    <string name="developer_email">shouheng2015@gmail.com</string>
+
+    <string name="live_title">视频直播</string>
+    <string name="live_sub_title">使用《全民直播》的API</string>
 </resources>

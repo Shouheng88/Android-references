@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.live.LiveActivity">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include android:id="@+id/bar_layout" layout="@layout/layout_toolbar"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_below="@id/bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <View android:layout_below="@id/bar_layout"
+            android:background="@drawable/bg_toolbar_shade"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+
+    </RelativeLayout>
+
+</layout>

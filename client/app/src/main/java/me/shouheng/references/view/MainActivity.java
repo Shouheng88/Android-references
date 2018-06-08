@@ -8,7 +8,6 @@ import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
-import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
@@ -19,6 +18,7 @@ import me.shouheng.references.R;
 import me.shouheng.references.base.CommonDaggerActivity;
 import me.shouheng.references.databinding.ActivityMainBinding;
 import me.shouheng.references.view.intro.AppIntroActivity;
+import me.shouheng.references.view.live.LiveActivity;
 
 public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
 
@@ -36,8 +36,8 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
 
     private void setupDrawer(Bundle savedInstanceState) {
         IProfile profile = new ProfileDrawerItem()
-                .withName("WngShhng")
-                .withEmail("shouheng2015@gmail.com")
+                .withName(R.string.developer_name)
+                .withEmail(R.string.developer_email)
                 .withIcon(R.drawable.ic_account)
                 .withIdentifier(100);
         ProfileSettingDrawerItem item1 = new ProfileSettingDrawerItem()
@@ -57,15 +57,15 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
                 .build();
 
         PrimaryDrawerItem drawerItem0 = new PrimaryDrawerItem()
-                .withName("Drawer item 0")
-                .withDescription("Drawer description 0")
-                .withIcon(GoogleMaterial.Icon.gmd_brightness_5)
-                .withIdentifier(0)
-                .withSelectable(true);
-        PrimaryDrawerItem drawerItem1 = new PrimaryDrawerItem()
                 .withName("Drawer item 1")
                 .withDescription("Drawer description 1")
                 .withIcon(FontAwesome.Icon.faw_home)
+                .withIdentifier(0)
+                .withSelectable(true);
+        PrimaryDrawerItem drawerItem1 = new PrimaryDrawerItem()
+                .withName(R.string.menu_item_title_1)
+                .withDescription(R.string.menu_item_desc_1)
+                .withIcon(GoogleMaterial.Icon.gmd_featured_video)
                 .withIdentifier(1)
                 .withSelectable(true);
         PrimaryDrawerItem drawerItem2 = new PrimaryDrawerItem()
@@ -75,19 +75,16 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
                 .withIdentifier(2)
                 .withSelectable(true);
 
-        Drawer drawer = new DrawerBuilder()
+        new DrawerBuilder()
                 .withActivity(this)
                 .withHasStableIds(true)
                 .addDrawerItems(drawerItem0, drawerItem1, drawerItem2)
                 .withOnDrawerItemClickListener((view, position, drawerItem) -> {
                     if (drawerItem == null) return false;
                     switch ((int) drawerItem.getIdentifier()) {
-                        case 0:
-                            break;
-                        case 1:
-                            break;
-                        case 2:
-                            break;
+                        case 0: break;
+                        case 1: startActivity(LiveActivity.class);break;
+                        case 2: break;
                     }
                     return false;
                 })

@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="me.shouheng.references">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -17,14 +24,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".view.intro.AppIntroActivity"/>
+        <activity android:name=".view.intro.AppIntroActivity" />
 
         <!-- region fabric -->
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="aa14224ea2102fef301d211dac552635f37b1f9e" />
         <!-- endregion -->
+
 
         <!-- region file provider -->
         <provider
@@ -37,6 +44,7 @@
                 android:resource="@xml/provider_paths" />
         </provider>
         <!-- endregion -->
+        <activity android:name=".view.live.LiveActivity"></activity>
     </application>
 
 </manifest>
