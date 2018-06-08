@@ -9,6 +9,7 @@ import dagger.Component;
 import dagger.android.AndroidInjector;
 import me.shouheng.references.MyApplication;
 import me.shouheng.references.di.module.ActivityModule;
+import me.shouheng.references.di.module.AppModule;
 import me.shouheng.references.di.module.ViewModelModule;
 
 /**
@@ -18,7 +19,7 @@ import me.shouheng.references.di.module.ViewModelModule;
  * @version $Id: AppComponent, v 0.1 2018/6/6 22:34 shouh Exp$
  */
 @Singleton
-@Component(modules = {ActivityModule.class, ViewModelModule.class})
+@Component(modules = {ActivityModule.class, ViewModelModule.class, AppModule.class})
 public interface AppComponent extends AndroidInjector<MyApplication> {
 
     @Component.Builder

@@ -6,6 +6,7 @@ import dagger.Binds;
 import dagger.Module;
 import dagger.multibindings.IntoMap;
 import me.shouheng.references.util.enums.ViewModelKey;
+import me.shouheng.references.viewmodel.LiveViewModel;
 import me.shouheng.references.viewmodel.MainViewModel;
 
 /**
@@ -17,4 +18,9 @@ public abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(MainViewModel.class)
     abstract ViewModel bindMainViewModel(MainViewModel mainViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(LiveViewModel.class)
+    abstract ViewModel bindLiveViewModel(LiveViewModel liveViewModel);
 }

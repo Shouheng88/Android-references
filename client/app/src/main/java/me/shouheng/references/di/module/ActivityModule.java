@@ -4,6 +4,7 @@ import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 import me.shouheng.references.util.enums.ActivityScoped;
 import me.shouheng.references.view.MainActivity;
+import me.shouheng.references.view.live.LiveActivity;
 
 /**
  * @author shouh
@@ -15,4 +16,8 @@ public abstract class ActivityModule {
     @ActivityScoped
     @ContributesAndroidInjector
     abstract MainActivity mainActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract LiveActivity liveActivity();
 }

@@ -4,11 +4,16 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 
-import me.shouheng.commons.activity.CommonActivity;
-import me.shouheng.references.R;
-import me.shouheng.references.databinding.ActivityLiveBinding;
+import javax.inject.Inject;
 
-public class LiveActivity extends CommonActivity<ActivityLiveBinding> {
+import me.shouheng.references.R;
+import me.shouheng.references.base.CommonDaggerActivity;
+import me.shouheng.references.databinding.ActivityLiveBinding;
+import me.shouheng.references.viewmodel.LiveViewModel;
+
+public class LiveActivity extends CommonDaggerActivity<ActivityLiveBinding> {
+
+    @Inject LiveViewModel liveViewModel;
 
     @Override
     protected int getLayoutResId() {

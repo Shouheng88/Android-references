@@ -1,7 +1,6 @@
 package me.shouheng.references.base;
 
 import android.databinding.ViewDataBinding;
-import android.os.Bundle;
 
 import dagger.android.AndroidInjection;
 import me.shouheng.commons.activity.CommonActivity;
@@ -13,7 +12,8 @@ import me.shouheng.commons.activity.CommonActivity;
 public abstract class CommonDaggerActivity<T extends ViewDataBinding> extends CommonActivity<T> {
 
     @Override
-    protected void doCreateView(Bundle savedInstanceState) {
+    protected void beforeCreate() {
+        super.beforeCreate();
         AndroidInjection.inject(this);
     }
 }
