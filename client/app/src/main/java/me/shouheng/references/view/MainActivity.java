@@ -59,20 +59,20 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
                 .withName("Drawer item 1")
                 .withDescription("Drawer description 1")
                 .withIcon(FontAwesome.Icon.faw_home)
-                .withIdentifier(0)
-                .withSelectable(true);
+                .withIdentifier(0) // the id of menu item, used when setting click event
+                .withSelectable(true); // it the item has selected state
         PrimaryDrawerItem drawerItem1 = new PrimaryDrawerItem()
                 .withName(R.string.menu_item_title_1)
                 .withDescription(R.string.menu_item_desc_1)
                 .withIcon(GoogleMaterial.Icon.gmd_featured_video)
                 .withIdentifier(1)
-                .withSelectable(true);
+                .withSelectable(false);
         PrimaryDrawerItem drawerItem2 = new PrimaryDrawerItem()
                 .withName("Drawer item 2")
                 .withDescription("Drawer description 2")
                 .withIcon(FontAwesome.Icon.faw_gamepad)
                 .withIdentifier(2)
-                .withSelectable(true);
+                .withSelectable(false);
 
         new DrawerBuilder()
                 .withActivity(this)
