@@ -93,4 +93,11 @@ dependencies {
     // projects
     implementation project(':umeng')
     implementation project(':commons')
+    // material drawer
+    implementation("com.mikepenz:materialdrawer:6.0.7@aar") {
+        transitive = true
+    }
+    // awesome fonts and icons
+    implementation 'com.mikepenz:google-material-typeface:3.0.1.2.original@aar'
+    implementation 'com.mikepenz:fontawesome-typeface:5.0.13.0@aar'
 }
