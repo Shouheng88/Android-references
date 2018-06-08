@@ -16,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * @version $Id: AppModule, v 0.1 2018/6/8 22:04 shouh Exp$
  */
 @Module
-public class AppModule {
+public abstract class AppModule {
 
     @Provides
     @Singleton
