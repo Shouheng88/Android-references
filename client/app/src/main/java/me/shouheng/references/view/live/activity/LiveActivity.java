@@ -1,4 +1,4 @@
-package me.shouheng.references.view.live;
+package me.shouheng.references.view.live.activity;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -23,7 +23,9 @@ import me.shouheng.commons.util.ToastUtils;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.ActivityLiveBinding;
 import me.shouheng.references.model.live.data.Banner;
+import me.shouheng.references.model.live.data.Recommend;
 import me.shouheng.references.view.CommonDaggerActivity;
+import me.shouheng.references.view.live.Constant;
 import me.shouheng.references.view.live.adapter.RecommendAdapter;
 import me.shouheng.references.viewmodel.LiveViewModel;
 
@@ -36,6 +38,8 @@ public class LiveActivity extends CommonDaggerActivity<ActivityLiveBinding> {
     private ConvenientBanner<Banner> convenientBanner;
 
     private List<Banner> banners = new LinkedList<>();
+
+    private List<Recommend.RoomBean> roomBeans = new LinkedList<>();
 
     @Override
     protected int getLayoutResId() {
@@ -68,9 +72,26 @@ public class LiveActivity extends CommonDaggerActivity<ActivityLiveBinding> {
 
     private void configList() {
         recommendAdapter = new RecommendAdapter(this);
+        recommendAdapter.setOnRoomClickListener(this::startRoom);
+        recommendAdapter.setOnItemChildClickListener(((adapter, view, position) -> {
+           switch (view.getId()) {
+               case R.id.tv_more:
+                   // todo when click more
+                   ToastUtils.makeToast("More");
+                   break;
+           }
+        }));
 
         getBinding().rv.setLayoutManager(new LinearLayoutManager(this));
         getBinding().rv.setAdapter(recommendAdapter);
+    }
+
+    private void startRoom(Recommend.RoomBean.ListBean listBean) {
+        LiveRoomActivity.startRoom(this,
+                Constant.SHOWING.equalsIgnoreCase(listBean.getCategory_slug()) ?
+                        LiveRoomActivity.RoomType.FULL_SCREEN : LiveRoomActivity.RoomType.SUB_SCREEN,
+                String.valueOf(listBean.getUid()),
+                listBean.getThumb());
     }
 
     private void configBanner() {
@@ -121,7 +142,7 @@ public class LiveActivity extends CommonDaggerActivity<ActivityLiveBinding> {
             }
             switch (recommendResource.status) {
                 case SUCCESS:
-                    recommendAdapter.setNewData(recommendResource.data.getRoom());
+                    recommendAdapter.setNewData(roomBeans = recommendResource.data.getRoom());
                     break;
                 case FAILED:
                     ToastUtils.makeToast(recommendResource.message);
