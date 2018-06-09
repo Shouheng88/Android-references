@@ -90,6 +90,8 @@ public class LiveRoomActivity extends CommonDaggerActivity<ActivityLiveRoomBindi
         Fragment fragment = getCurrentFragment();
         if (fragment instanceof CommonFragment) {
             ((CommonFragment) fragment).onBackPressed();
+        } else {
+            super.onBackPressed();
         }
     }
 }
