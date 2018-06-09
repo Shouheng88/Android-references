@@ -6,10 +6,13 @@ import android.content.res.Resources;
 import android.graphics.Point;
 import android.os.Build;
 import android.support.annotation.FloatRange;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
+
+import me.shouheng.commons.BaseApplication;
 
 /**
  * Created by Wang Shouheng on 2017/12/5. */
@@ -21,14 +24,18 @@ public class ViewUtils {
         return resId > 0 ? context.getResources().getDimensionPixelOffset(resId) : result;
     }
 
-    public static int dp2Px(Context context, float dpValues){
-        final float scale = context.getResources().getDisplayMetrics().density;
+    public static int dp2Px(float dpValues){
+        final float scale = getDisplayMetrics().density;
         return (int)(dpValues * scale + 0.5f);
     }
 
-    public static int sp2Px(Context context, float spValues){
-        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+    public static int sp2Px(float spValues){
+        final float fontScale = getDisplayMetrics().scaledDensity;
         return (int)(spValues * fontScale + 0.5f);
+    }
+
+    private static DisplayMetrics getDisplayMetrics() {
+        return BaseApplication.getContext().getResources().getDisplayMetrics();
     }
 
     public static int getWindowWidth(Context context){
