@@ -34,7 +34,7 @@ public class ViewUtils {
         return (int)(spValues * fontScale + 0.5f);
     }
 
-    private static DisplayMetrics getDisplayMetrics() {
+    public static DisplayMetrics getDisplayMetrics() {
         return BaseApplication.getContext().getResources().getDisplayMetrics();
     }
 
