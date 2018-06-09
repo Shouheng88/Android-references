@@ -98,7 +98,8 @@ public class LiveActivity extends CommonDaggerActivity<ActivityLiveBinding> {
         View view = getLayoutInflater().inflate(R.layout.layout_banner, null, false);
         convenientBanner = view.findViewById(R.id.cb);
         convenientBanner.setOnItemClickListener(position -> {
-            ToastUtils.makeToast(banners.get(position).toString());
+            // todo banner event
+            ToastUtils.makeToast("Banner");
         });
         convenientBanner.setPages(ImageHolder::new, banners)
                 .setPageIndicator(new int[]{R.drawable.ic_dot_normal, R.drawable.ic_dot_pressed})
