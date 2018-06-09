@@ -9,4 +9,6 @@
 
     <string name="live_title">视频直播</string>
     <string name="live_sub_title">使用《全民直播》的API</string>
+    <string name="live_recommend_more">更多</string>
+    <string name="live_living">直播</string>
 </resources>
