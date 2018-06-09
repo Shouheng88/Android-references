@@ -10,6 +10,7 @@ import javax.inject.Inject;
 
 import me.shouheng.references.model.data.Resource;
 import me.shouheng.references.model.live.LiveService;
+import me.shouheng.references.model.live.data.AppStart;
 import me.shouheng.references.model.live.data.Recommend;
 import retrofit2.Retrofit;
 import rx.Subscriber;
@@ -48,6 +49,29 @@ public class LiveViewModel extends AndroidViewModel {
                     @Override
                     public void onNext(Recommend recommend) {
                         result.setValue(Resource.success(recommend));
+                    }
+                });
+        return result;
+    }
+
+    public LiveData<Resource<AppStart>> getAppStart() {
+        MutableLiveData<Resource<AppStart>> result = new MutableLiveData<>();
+        liveRetrofit.create(LiveService.class)
+                .getAppStartInfo().
+                subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<AppStart>() {
+                    @Override
+                    public void onCompleted() { }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        result.setValue(Resource.error(e.getMessage(), null));
+                    }
+
+                    @Override
+                    public void onNext(AppStart appStart) {
+                        result.setValue(Resource.success(appStart));
                     }
                 });
         return result;
