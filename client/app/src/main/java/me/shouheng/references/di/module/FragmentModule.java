@@ -2,6 +2,7 @@ package me.shouheng.references.di.module;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
+import me.shouheng.references.view.live.fragment.FullscreenFragment;
 import me.shouheng.references.view.live.fragment.RoomFragment;
 import me.shouheng.references.view.live.fragment.VideoFragment;
 
@@ -17,4 +18,7 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract VideoFragment contributeVideoFragment();
+
+    @ContributesAndroidInjector
+    abstract FullscreenFragment contributeFullscreenFragment();
 }

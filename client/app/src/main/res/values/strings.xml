@@ -14,4 +14,5 @@
     <string name="live_views_number">%d 观看</string>
     <string name="live_follows_number">%d 人关注</string>
     <string name="live_subscribe">关注</string>
+    <string name="live_qm_account">全民号: %s</string>
 </resources>

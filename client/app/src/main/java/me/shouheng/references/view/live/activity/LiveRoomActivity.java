@@ -12,6 +12,7 @@ import me.shouheng.commons.util.ThemeUtils;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.ActivityLiveRoomBinding;
 import me.shouheng.references.view.CommonDaggerActivity;
+import me.shouheng.references.view.live.fragment.FullscreenFragment;
 import me.shouheng.references.view.live.fragment.RoomFragment;
 
 /**
@@ -65,11 +66,8 @@ public class LiveRoomActivity extends CommonDaggerActivity<ActivityLiveRoomBindi
         String uid = intent.getStringExtra(EXTRA_UID);
         String thumb = intent.getStringExtra(EXTRA_THUMB);
         switch (roomType) {
-            case SUB_SCREEN:
-                toFragment(RoomFragment.newInstance(uid, thumb));
-                break;
-            case FULL_SCREEN:
-                break;
+            case SUB_SCREEN: toFragment(RoomFragment.newInstance(uid, thumb));break;
+            case FULL_SCREEN: toFragment(FullscreenFragment.newInstance(uid, thumb));break;
         }
 
         if (getRequestedOrientation() == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
