@@ -71,11 +71,13 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$supportLibVersion"
     implementation "com.android.support:support-v4:$supportLibVersion"
     implementation "com.android.support:recyclerview-v7:$supportLibVersion"
+    implementation "com.android.support:palette-v7:$supportLibVersion"
+    implementation "com.android.support:cardview-v7:$supportLibVersion"
     // recycler
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
     implementation 'com.yanzhenjie:recyclerview-swipe:1.1.4'
     // glide
-    implementation 'com.github.bumptech.glide:glide:4.3.1'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
     // app debug tools
     implementation 'com.facebook.stetho:stetho:1.5.0'
     // use fabric
@@ -106,4 +108,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
     // rx-android
     implementation 'io.reactivex:rxandroid:1.2.1'
+    // banner
+    implementation 'com.bigkoo:convenientbanner:2.0.5'
 }
