@@ -3,7 +3,7 @@ package me.shouheng.references.di.module;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 import me.shouheng.references.di.enums.ActivityScoped;
-import me.shouheng.references.view.MainActivity;
+import me.shouheng.references.view.main.MainActivity;
 import me.shouheng.references.view.live.activity.LiveActivity;
 import me.shouheng.references.view.live.activity.LiveRoomActivity;
 

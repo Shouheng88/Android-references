@@ -1,4 +1,4 @@
-package me.shouheng.references.view;
+package me.shouheng.references.view.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.ActivityMainBinding;
+import me.shouheng.references.view.CommonDaggerActivity;
 import me.shouheng.references.view.intro.AppIntroActivity;
 import me.shouheng.references.view.live.activity.LiveActivity;
 
