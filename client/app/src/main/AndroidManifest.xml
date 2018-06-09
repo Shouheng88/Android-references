@@ -25,13 +25,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.intro.AppIntroActivity" />
+        <activity android:name=".view.live.activity.LiveActivity" />
+        <activity android:name=".view.live.activity.LiveRoomActivity" />
 
         <!-- region fabric -->
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="aa14224ea2102fef301d211dac552635f37b1f9e" />
         <!-- endregion -->
-
 
         <!-- region file provider -->
         <provider
@@ -44,7 +45,6 @@
                 android:resource="@xml/provider_paths" />
         </provider>
         <!-- endregion -->
-        <activity android:name=".view.live.LiveActivity"></activity>
     </application>
 
 </manifest>
