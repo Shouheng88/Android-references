@@ -178,6 +178,13 @@
 
         </RelativeLayout>
 
+        <me.shouheng.references.common.widget.FlutteringLayout
+            android:id="@+id/ftl"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_width="150dp"
+            android:layout_height="250dp"/>
+
     </RelativeLayout>
 
 </layout>

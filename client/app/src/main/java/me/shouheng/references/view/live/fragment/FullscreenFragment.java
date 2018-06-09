@@ -129,6 +129,7 @@ public class FullscreenFragment extends CommonDaggerFragment<FragmentFullscreenB
 
     private void configViews() {
         getBinding().ivBack.setOnClickListener(v -> onBack());
+        getBinding().ivGift.setOnClickListener(v -> getBinding().ftl.addHeart());
     }
 
     private void onBack() {

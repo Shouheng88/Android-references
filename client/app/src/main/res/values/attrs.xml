@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FlutteringLayout">
+        <attr format="integer" name="enter_duration"/>
+        <attr format="integer" name="duration"/>
+        <attr format="float" name="scale"/>
+        <attr format="boolean" name="same_size"/>
+    </declare-styleable>
+</resources>
