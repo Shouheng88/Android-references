@@ -61,11 +61,12 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
     // support package
     implementation "com.android.support:support-annotations:$supportLibVersion"
     implementation "com.android.support:appcompat-v7:$supportLibVersion"
@@ -73,41 +74,54 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:$supportLibVersion"
     implementation "com.android.support:palette-v7:$supportLibVersion"
     implementation "com.android.support:cardview-v7:$supportLibVersion"
+
     // recycler
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
     implementation 'com.yanzhenjie:recyclerview-swipe:1.1.4'
+
     // glide
     implementation 'com.github.bumptech.glide:glide:3.7.0'
+
     // app debug tools
     implementation 'com.facebook.stetho:stetho:1.5.0'
+
     // use fabric
     implementation('com.crashlytics.sdk.android:crashlytics:2.9.2@aar') {
         transitive = true
     }
+
     // dagger
     implementation "com.google.dagger:dagger:$dagger"
     implementation "com.google.dagger:dagger-android:$dagger"
     implementation "com.google.dagger:dagger-android-support:$dagger"
     annotationProcessor "com.google.dagger:dagger-compiler:$dagger"
     annotationProcessor "com.google.dagger:dagger-android-processor:$dagger"
+
     // app intro
     implementation 'com.github.paolorotolo:appintro:1.3.0'
+
     // projects
     implementation project(':umeng')
     implementation project(':commons')
+
     // material drawer
-    implementation("com.mikepenz:materialdrawer:6.0.7@aar") {
+    implementation('com.mikepenz:materialdrawer:6.0.7@aar') {
         transitive = true
     }
+
     // awesome fonts and icons
     implementation 'com.mikepenz:google-material-typeface:3.0.1.2.original@aar'
     implementation 'com.mikepenz:fontawesome-typeface:5.0.13.0@aar'
+
     // retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+
     // rx-android
     implementation 'io.reactivex:rxandroid:1.2.1'
+
     // banner
     implementation 'com.bigkoo:convenientbanner:2.0.5'
+    implementation files('libs/pldroid-player-1.5.0.jar')
 }
