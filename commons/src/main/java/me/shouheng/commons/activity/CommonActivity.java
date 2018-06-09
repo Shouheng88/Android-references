@@ -21,13 +21,13 @@ public abstract class CommonActivity<T extends ViewDataBinding> extends ThemedAc
 
     protected abstract void doCreateView(Bundle savedInstanceState);
 
-    protected void beforeCreate() { }
+    protected void beforeCreate(Bundle savedInstanceState) { }
 
     @Override
     protected final void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        beforeCreate();
+        beforeCreate(savedInstanceState);
 
         if (getLayoutResId() <= 0 ) {
             throw new AssertionError("Subclass must provide a valid layout resource id");
