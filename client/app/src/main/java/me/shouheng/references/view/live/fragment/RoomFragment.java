@@ -3,6 +3,7 @@ package me.shouheng.references.view.live.fragment;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -10,10 +11,14 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 
+import com.bumptech.glide.Glide;
+
 import java.util.Objects;
 
 import javax.inject.Inject;
 
+import me.shouheng.commons.util.LogUtils;
+import me.shouheng.commons.util.StringUtils;
 import me.shouheng.commons.util.ToastUtils;
 import me.shouheng.commons.util.ViewUtils;
 import me.shouheng.references.MyApplication;
@@ -77,6 +82,8 @@ public class RoomFragment extends CommonDaggerFragment<FragmentRoomBinding> {
             switch (roomResource.status) {
                 case SUCCESS:
                     Room room = roomResource.data;
+                    LogUtils.d(room);
+                    showRoomInfo(room);
                     if(room != null){
                         String url;
                         RoomLine roomLine = room.getLive().getWs();
@@ -117,6 +124,19 @@ public class RoomFragment extends CommonDaggerFragment<FragmentRoomBinding> {
             videoFragment = VideoFragment.newInstance(url,false);
         }
         showVideoFragment(videoFragment);
+    }
+
+    private void showRoomInfo(@Nullable Room room) {
+        if (room == null) return;
+
+        getBinding().tvTitle.setText(room.getTitle());
+        getBinding().tvViews.setText(StringUtils.formatString(R.string.live_views_number, room.getView()));
+        getBinding().tvAnno.setText(room.getAnnouncement());
+
+        Glide.with(getContext()).load(room.getAvatar()).asBitmap().into(getBinding().ivAvatar);
+        getBinding().tvUserName.setText(room.getNick());
+        getBinding().tvFollow.setText(StringUtils.formatString(R.string.live_follows_number, room.getFollow()));
+        getBinding().tvUserIntro.setText(room.getIntro());
     }
 
     private void showVideoFragment(Fragment videoFragment) {
