@@ -59,9 +59,11 @@ public class LiveRoomActivity extends CommonDaggerActivity<ActivityLiveRoomBindi
         Intent intent = getIntent();
         int roomTypeId = intent.getIntExtra(EXTRA_ROOM_TYPE, 0);
         RoomType roomType = RoomType.getTypeById(roomTypeId);
+        String uid = intent.getStringExtra(EXTRA_UID);
+        String thumb = intent.getStringExtra(EXTRA_THUMB);
         switch (roomType) {
             case SUB_SCREEN:
-                toFragment(new RoomFragment());
+                toFragment(RoomFragment.newInstance(uid, thumb));
                 break;
             case FULL_SCREEN:
                 break;

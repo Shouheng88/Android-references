@@ -8,13 +8,13 @@
         android:layout_height="match_parent">
 
         <RelativeLayout
-            android:id="@+id/videoContent"
+            android:id="@+id/rl_container"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@android:color/black">
 
             <FrameLayout
-                android:id="@+id/frameVideo"
+                android:id="@+id/rl_video"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center">
@@ -53,12 +53,12 @@
                 android:layout_height="wrap_content" />
 
             <RelativeLayout
-                android:id="@+id/rlRoomInfo"
+                android:id="@+id/rl_room_info"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/tvRoomTitle"
+                    android:id="@+id/tv_room_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:maxLines="1"

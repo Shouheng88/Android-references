@@ -42,7 +42,7 @@ public class RecommendAdapter extends BaseQuickAdapter<Recommend.RoomBean, BaseV
         RecommendChildAdapter adapter = new RecommendChildAdapter(context, item.getList());
         adapter.setOnItemClickListener(((adapter1, view, position) -> {
             if (onRoomClickListener != null) {
-                Recommend.RoomBean.ListBean listBean = getData().get(position).getList().get(position);
+                Recommend.RoomBean.ListBean listBean = item.getList().get(position);
                 onRoomClickListener.onRoomClick(listBean);
             }
         }));
