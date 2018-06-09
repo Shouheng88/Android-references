@@ -22,6 +22,8 @@ public class RecommendAdapter extends BaseQuickAdapter<Recommend.RoomBean, BaseV
 
     private Context context;
 
+    private OnRoomClickListener onRoomClickListener;
+
     public RecommendAdapter(Context context) {
         super(R.layout.item_remmend, Collections.emptyList());
         this.context = context;
@@ -37,9 +39,24 @@ public class RecommendAdapter extends BaseQuickAdapter<Recommend.RoomBean, BaseV
 
         helper.addOnClickListener(R.id.tv_more);
 
+        RecommendChildAdapter adapter = new RecommendChildAdapter(context, item.getList());
+        adapter.setOnItemClickListener(((adapter1, view, position) -> {
+            if (onRoomClickListener != null) {
+                Recommend.RoomBean.ListBean listBean = getData().get(position).getList().get(position);
+                onRoomClickListener.onRoomClick(listBean);
+            }
+        }));
+
         RecyclerView rv = helper.getView(R.id.rv);
         rv.setLayoutManager(new GridLayoutManager(context, 2));
-        RecommendChildAdapter adapter = new RecommendChildAdapter(context, item.getList());
         rv.setAdapter(adapter);
+    }
+
+    public void setOnRoomClickListener(OnRoomClickListener onRoomClickListener) {
+        this.onRoomClickListener = onRoomClickListener;
+    }
+
+    public interface OnRoomClickListener {
+        void onRoomClick(Recommend.RoomBean.ListBean listBean);
     }
 }
