@@ -200,10 +200,6 @@ public class StringUtils {
     public static String formatString(@StringRes int stringRes, Object ...args) {
         return String.format(getStringCompact(stringRes), args);
     }
-
-    public static String formatString(@StringRes int stringRes, @StringRes int argRes) {
-        return String.format(getStringCompact(stringRes), getStringCompact(argRes));
-    }
     // endregion
 
     // region resources utils
