@@ -3,6 +3,7 @@ package me.shouheng.references.di.module;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 import me.shouheng.references.view.live.fragment.RoomFragment;
+import me.shouheng.references.view.live.fragment.VideoFragment;
 
 /**
  * @author shouh
@@ -13,4 +14,7 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract RoomFragment contributeRoomFragment();
+
+    @ContributesAndroidInjector
+    abstract VideoFragment contributeVideoFragment();
 }
