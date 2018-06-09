@@ -7,8 +7,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 
 import java.util.Objects;
 
@@ -16,6 +16,7 @@ import javax.inject.Inject;
 
 import me.shouheng.commons.util.ToastUtils;
 import me.shouheng.commons.util.ViewUtils;
+import me.shouheng.references.MyApplication;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.FragmentRoomBinding;
 import me.shouheng.references.model.live.data.Room;
@@ -96,9 +97,11 @@ public class RoomFragment extends CommonDaggerFragment<FragmentRoomBinding> {
     }
 
     private void configLayout() {
-        ViewGroup.LayoutParams lp = getBinding().rlContainer.getLayoutParams();
-        lp.height = landscape() ? ViewUtils.getDisplayMetrics().heightPixels :
+        boolean landscape = landscape();
+        LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) getBinding().rlContainer.getLayoutParams();
+        lp.height = landscape ? ViewUtils.getDisplayMetrics().heightPixels :
                 (int) (ViewUtils.getDisplayMetrics().widthPixels * 9.0f / 16.0f);
+        lp.topMargin = landscape ? 0 : ViewUtils.getStatusBarHeight(MyApplication.getContext());
         getBinding().rlContainer.setLayoutParams(lp);
     }
 
@@ -106,14 +109,7 @@ public class RoomFragment extends CommonDaggerFragment<FragmentRoomBinding> {
         getBinding().ivFullScreen.setOnClickListener(v ->
                 Objects.requireNonNull(getActivity()).setRequestedOrientation(landscape() ?
                         ActivityInfo.SCREEN_ORIENTATION_PORTRAIT : ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE));
-        getBinding().ivBack.setOnClickListener(v -> {
-            if(landscape()) {
-                Objects.requireNonNull(getActivity()).setRequestedOrientation(
-                        ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-            }else{
-                Objects.requireNonNull(getActivity()).finish();
-            }
-        });
+        getBinding().ivBack.setOnClickListener(v -> onBack());
     }
 
     private void playUrl(String url) {
@@ -134,11 +130,24 @@ public class RoomFragment extends CommonDaggerFragment<FragmentRoomBinding> {
         return Objects.requireNonNull(getActivity()).getRequestedOrientation() == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
     }
 
+    private void onBack() {
+        if (landscape()) {
+            Objects.requireNonNull(getActivity()).setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        } else {
+            Objects.requireNonNull(getActivity()).finish();
+        }
+    }
+
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         boolean landscape = landscape();
         getBinding().ivFullScreen.setVisibility(landscape ? View.GONE : View.VISIBLE);
         configLayout();
+    }
+
+    @Override
+    public void onBackPressed() {
+        onBack();
     }
 }

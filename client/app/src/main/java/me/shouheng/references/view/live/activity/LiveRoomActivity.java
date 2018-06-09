@@ -2,10 +2,13 @@ package me.shouheng.references.view.live.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
+import me.shouheng.commons.fragment.CommonFragment;
 import me.shouheng.commons.helper.FragmentHelper;
+import me.shouheng.commons.util.ThemeUtils;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.ActivityLiveRoomBinding;
 import me.shouheng.references.view.CommonDaggerActivity;
@@ -68,9 +71,25 @@ public class LiveRoomActivity extends CommonDaggerActivity<ActivityLiveRoomBindi
             case FULL_SCREEN:
                 break;
         }
+
+        if (getRequestedOrientation() == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
+            ThemeUtils.hideSystemUI(this);
+        }
     }
 
     private void toFragment(Fragment fragment) {
         FragmentHelper.replace(this, fragment, R.id.fragment_container);
+    }
+
+    private Fragment getCurrentFragment() {
+        return getCurrentFragment(R.id.fragment_container);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Fragment fragment = getCurrentFragment();
+        if (fragment instanceof CommonFragment) {
+            ((CommonFragment) fragment).onBackPressed();
+        }
     }
 }
