@@ -3,6 +3,8 @@
 
     <string name="menu_item_title_1">视频直播</string>
     <string name="menu_item_desc_1">使用《全民直播》的API</string>
+    <string name="menu_item_title_2">果壳新闻</string>
+    <string name="menu_item_desc_2">使用果壳网的API</string>
 
     <string name="developer_name">WngShhng</string>
     <string name="developer_email">shouheng2015@gmail.com</string>

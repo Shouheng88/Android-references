@@ -17,6 +17,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.ActivityMainBinding;
 import me.shouheng.references.view.CommonDaggerActivity;
+import me.shouheng.references.view.guokr.GuokrNewsActivity;
 import me.shouheng.references.view.intro.AppIntroActivity;
 import me.shouheng.references.view.live.activity.LiveActivity;
 
@@ -69,8 +70,8 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
                 .withIdentifier(1)
                 .withSelectable(false);
         PrimaryDrawerItem drawerItem2 = new PrimaryDrawerItem()
-                .withName("Drawer item 2")
-                .withDescription("Drawer description 2")
+                .withName(R.string.menu_item_title_2)
+                .withDescription(R.string.menu_item_desc_2)
                 .withIcon(FontAwesome.Icon.faw_gamepad)
                 .withIdentifier(2)
                 .withSelectable(false);
@@ -84,7 +85,7 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
                     switch ((int) drawerItem.getIdentifier()) {
                         case 0: break;
                         case 1: startActivity(LiveActivity.class);break;
-                        case 2: break;
+                        case 2: startActivity(GuokrNewsActivity.class);break;
                     }
                     return false;
                 })
