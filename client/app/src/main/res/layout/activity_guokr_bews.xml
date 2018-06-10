@@ -3,9 +3,24 @@
     tools:context=".view.guokr.GuokrNewsActivity"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
+    <RelativeLayout
+        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+
+        <include android:id="@+id/bar_layout" layout="@layout/layout_toolbar"/>
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_below="@id/bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <View android:layout_below="@id/bar_layout"
+            android:background="@drawable/bg_toolbar_shade"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+
+    </RelativeLayout>
 
 </layout>
