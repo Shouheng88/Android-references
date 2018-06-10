@@ -13,7 +13,6 @@ import me.shouheng.references.model.live.LiveService;
 import me.shouheng.references.model.live.data.AppStart;
 import me.shouheng.references.model.live.data.Recommend;
 import me.shouheng.references.model.live.data.Room;
-import retrofit2.Retrofit;
 import rx.Observer;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -25,18 +24,17 @@ import rx.schedulers.Schedulers;
  */
 public class LiveViewModel extends AndroidViewModel {
 
-    private Retrofit liveRetrofit;
+    private LiveService liveService;
 
     @Inject
-    public LiveViewModel(@NonNull Application application, Retrofit liveRetrofit) {
+    public LiveViewModel(@NonNull Application application, LiveService liveService) {
         super(application);
-        this.liveRetrofit = liveRetrofit;
+        this.liveService = liveService;
     }
 
     public LiveData<Resource<Recommend>> getRecommend() {
         MutableLiveData<Resource<Recommend>> result = new MutableLiveData<>();
-        liveRetrofit.create(LiveService.class)
-                .getRecommend()
+        liveService.getRecommend()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<Recommend>() {
@@ -58,8 +56,7 @@ public class LiveViewModel extends AndroidViewModel {
 
     public LiveData<Resource<AppStart>> getAppStart() {
         MutableLiveData<Resource<AppStart>> result = new MutableLiveData<>();
-        liveRetrofit.create(LiveService.class)
-                .getAppStartInfo()
+        liveService.getAppStartInfo()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<AppStart>() {
@@ -81,8 +78,7 @@ public class LiveViewModel extends AndroidViewModel {
 
     public LiveData<Resource<Room>> enterRoom(String uid) {
         MutableLiveData<Resource<Room>> result = new MutableLiveData<>();
-        liveRetrofit.create(LiveService.class)
-                .enterRoom(uid)
+        liveService.enterRoom(uid)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Room>() {
