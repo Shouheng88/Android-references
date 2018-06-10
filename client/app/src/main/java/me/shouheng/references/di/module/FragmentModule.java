@@ -2,6 +2,7 @@ package me.shouheng.references.di.module;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
+import me.shouheng.references.view.guokr.fragment.NewsDetailFragment;
 import me.shouheng.references.view.guokr.fragment.NewsListFragment;
 import me.shouheng.references.view.live.fragment.FullscreenFragment;
 import me.shouheng.references.view.live.fragment.RoomFragment;
@@ -25,4 +26,7 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract NewsListFragment contributeNewsListFragment();
+
+    @ContributesAndroidInjector
+    abstract NewsDetailFragment contributeNewsDetailFragment();
 }
