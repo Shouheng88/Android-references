@@ -8,4 +8,22 @@
     <color name="dark_theme_foreground">#3F3F3F</color>
 
     <color name="light_theme_background">#FAFAFA</color>
+
+    <color name="black20">#33000000</color>
+    <color name="black38">#61000000</color>
+    <color name="black54">#8A000000</color>
+    <color name="black87">#D8000000</color>
+
+    <color name="white20">#33ffffff</color>
+    <color name="white38">#61ffffff</color>
+    <color name="white54">#8Affffff</color>
+    <color name="white87">#D8ffffff</color>
+
+    <color name="light_theme_empty_text_color">@color/black54</color>
+    <color name="light_theme_empty_sub_text_color">@color/black38</color>
+    <color name="light_theme_empty_icon_tint_color">@color/black38</color>
+    <color name="dark_theme_empty_text_color">@color/white54</color>
+    <color name="dark_theme_empty_sub_text_color">@color/white38</color>
+    <color name="dark_theme_empty_icon_tint_color">@color/white38</color>
+
 </resources>
