@@ -1,6 +1,9 @@
 package me.shouheng.references.view.guokr.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 
 import javax.inject.Inject;
@@ -9,6 +12,7 @@ import me.shouheng.commons.util.ToastUtils;
 import me.shouheng.commons.widget.DividerItemDecoration;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.FragmentNewsListBinding;
+import me.shouheng.references.model.guokr.data.GuokrNews;
 import me.shouheng.references.view.CommonDaggerFragment;
 import me.shouheng.references.view.guokr.adapter.GuokrNewsAdapter;
 import me.shouheng.references.viewmodel.GuokrViewModel;
@@ -41,14 +45,36 @@ public class NewsListFragment extends CommonDaggerFragment<FragmentNewsListBindi
 
     @Override
     protected void doCreateView(Bundle savedInstanceState) {
+        Activity activity = getActivity();
+        if (!(activity instanceof FragmentInteraction)) {
+            throw new IllegalArgumentException("The associated activity must implement FragmentInteraction");
+        }
+
         configViews();
 
         fetchNews();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        Activity activity = getActivity();
+        if (activity != null) {
+            ActionBar actionBar = ((AppCompatActivity) activity).getSupportActionBar();
+            if (actionBar != null) {
+                actionBar.setTitle(R.string.menu_item_title_2);
+                actionBar.setSubtitle(R.string.menu_item_desc_2);
+            }
+        }
+    }
+
     private void configViews() {
         adapter = new GuokrNewsAdapter(getContext());
-        adapter.setOnItemClickListener(((adapter1, view, position) -> {}));
+        adapter.setOnItemClickListener(((adapter1, view, position) -> {
+            GuokrNews.Result result = adapter.getData().get(position);
+            Activity activity = getActivity();
+            if (activity != null) ((FragmentInteraction) activity).onArticleClicked(result);
+        }));
         adapter.setEnableLoadMore(true);
         adapter.setOnLoadMoreListener(() -> {
             offset += limit;
@@ -76,5 +102,9 @@ public class NewsListFragment extends CommonDaggerFragment<FragmentNewsListBindi
                     break;
             }
         });
+    }
+
+    public interface FragmentInteraction {
+        void onArticleClicked(GuokrNews.Result result);
     }
 }
