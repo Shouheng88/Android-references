@@ -53,7 +53,8 @@ dependencies {
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     // multidex
     implementation 'com.android.support:multidex:1.0.2'
-    // joda-time
+    // time
+    implementation 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
     implementation 'joda-time:joda-time:2.9.9'
     // apache-io
     implementation 'commons-io:commons-io:2.5'
