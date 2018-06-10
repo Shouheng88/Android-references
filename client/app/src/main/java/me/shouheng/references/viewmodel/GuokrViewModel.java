@@ -11,6 +11,7 @@ import javax.inject.Inject;
 import me.shouheng.references.model.data.Resource;
 import me.shouheng.references.model.guokr.GuokrService;
 import me.shouheng.references.model.guokr.data.GuokrNews;
+import me.shouheng.references.model.guokr.data.GuokrNewsContent;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -46,6 +47,28 @@ public class GuokrViewModel extends AndroidViewModel {
                     @Override
                     public void onNext(GuokrNews guokrNews) {
                         result.setValue(Resource.success(guokrNews));
+                    }
+                });
+        return result;
+    }
+
+    public LiveData<Resource<GuokrNewsContent>> getGuokrNewsContent(int id) {
+        MutableLiveData<Resource<GuokrNewsContent>> result = new MutableLiveData<>();
+        guokrService.getGuokrContent(id)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<GuokrNewsContent>() {
+                    @Override
+                    public void onCompleted() { }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        result.setValue(Resource.error(e.getMessage(), null));
+                    }
+
+                    @Override
+                    public void onNext(GuokrNewsContent guokrNewsContent) {
+                        result.setValue(Resource.success(guokrNewsContent));
                     }
                 });
         return result;
