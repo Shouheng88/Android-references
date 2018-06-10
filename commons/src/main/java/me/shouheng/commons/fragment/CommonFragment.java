@@ -25,8 +25,14 @@ public abstract class CommonFragment<T extends ViewDataBinding> extends Fragment
 
     protected abstract void doCreateView(Bundle savedInstanceState);
 
+    private View rootView;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        if (rootView != null) {
+            return rootView;
+        }
 
         if (getLayoutResId() <= 0 ) {
             throw new AssertionError("Subclass must provide a valid layout resource id");
@@ -36,7 +42,7 @@ public abstract class CommonFragment<T extends ViewDataBinding> extends Fragment
 
         doCreateView(savedInstanceState);
 
-        return binding.getRoot();
+        return rootView = binding.getRoot();
     }
 
     protected View getRoot() {
