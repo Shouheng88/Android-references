@@ -1,10 +1,16 @@
 <resources>
     <string name="app_name">安卓开发参考</string>
 
+    <string name="menu_item_title_0">主界面</string>
+    <string name="menu_item_desc_0">应用简介</string>
     <string name="menu_item_title_1">视频直播</string>
     <string name="menu_item_desc_1">使用《全民直播》的API</string>
     <string name="menu_item_title_2">果壳新闻</string>
     <string name="menu_item_desc_2">使用果壳网的API</string>
+    <string name="menu_item_title_3">布局</string>
+    <string name="menu_item_desc_3">经典的Material布局</string>
+    <string name="menu_item_sub_title_1">Navigation</string>
+    <string name="menu_item_sub_desc_1">Navigation经典布局</string>
 
     <string name="developer_name">WngShhng</string>
     <string name="developer_email">shouheng2015@gmail.com</string>
@@ -17,4 +23,8 @@
     <string name="live_follows_number">%d 人关注</string>
     <string name="live_subscribe">关注</string>
     <string name="live_qm_account">全民号: %s</string>
+
+    <string name="nav_bottom_item_1">主界面</string>
+    <string name="nav_bottom_item_2">收藏</string>
+    <string name="nav_bottom_item_3">我</string>
 </resources>

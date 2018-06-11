@@ -9,9 +9,11 @@ import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.DrawerBuilder;
+import com.mikepenz.materialdrawer.model.ExpandableBadgeDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem;
+import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 import me.shouheng.references.R;
@@ -19,6 +21,7 @@ import me.shouheng.references.databinding.ActivityMainBinding;
 import me.shouheng.references.view.CommonDaggerActivity;
 import me.shouheng.references.view.guokr.GuokrNewsActivity;
 import me.shouheng.references.view.intro.AppIntroActivity;
+import me.shouheng.references.view.layout.NavigationActivity;
 import me.shouheng.references.view.live.activity.LiveActivity;
 
 public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
@@ -58,8 +61,8 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
                 .build();
 
         PrimaryDrawerItem drawerItem0 = new PrimaryDrawerItem()
-                .withName("Drawer item 1")
-                .withDescription("Drawer description 1")
+                .withName(R.string.menu_item_title_0)
+                .withDescription(R.string.menu_item_desc_0)
                 .withIcon(FontAwesome.Icon.faw_home)
                 .withIdentifier(0) // the id of menu item, used when setting click event
                 .withSelectable(true); // it the item has selected state
@@ -75,17 +78,34 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
                 .withIcon(FontAwesome.Icon.faw_gamepad)
                 .withIdentifier(2)
                 .withSelectable(false);
+        ExpandableBadgeDrawerItem drawerItem3 = new ExpandableBadgeDrawerItem()
+                .withName(R.string.menu_item_title_3)
+                .withDescription(R.string.menu_item_desc_3)
+                .withIcon(FontAwesome.Icon.faw_paper_plane)
+                .withSelectable(false)
+                .withSubItems(
+                        new SecondaryDrawerItem().withName(R.string.menu_item_sub_title_1)
+                                .withDescription(R.string.menu_item_sub_desc_1)
+                                .withLevel(2)
+                                .withIcon(GoogleMaterial.Icon.gmd_navigation)
+                                .withIdentifier(2000),
+                        new SecondaryDrawerItem().withName("CollapsableItem")
+                                .withLevel(2)
+                                .withIcon(GoogleMaterial.Icon.gmd_format_bold)
+                                .withIdentifier(2001)
+                );
 
         new DrawerBuilder()
                 .withActivity(this)
                 .withHasStableIds(true)
-                .addDrawerItems(drawerItem0, drawerItem1, drawerItem2)
+                .addDrawerItems(drawerItem0, drawerItem1, drawerItem2, drawerItem3)
                 .withOnDrawerItemClickListener((view, position, drawerItem) -> {
                     if (drawerItem == null) return false;
                     switch ((int) drawerItem.getIdentifier()) {
                         case 0: break;
                         case 1: startActivity(LiveActivity.class);break;
                         case 2: startActivity(GuokrNewsActivity.class);break;
+                        case 2000: startActivity(NavigationActivity.class);break;
                     }
                     return false;
                 })
