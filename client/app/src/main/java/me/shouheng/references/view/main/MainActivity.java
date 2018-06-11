@@ -21,7 +21,7 @@ import me.shouheng.references.databinding.ActivityMainBinding;
 import me.shouheng.references.view.CommonDaggerActivity;
 import me.shouheng.references.view.guokr.GuokrNewsActivity;
 import me.shouheng.references.view.intro.AppIntroActivity;
-import me.shouheng.references.view.layout.NavigationActivity;
+import me.shouheng.references.view.layout.navigation.NavigationActivity;
 import me.shouheng.references.view.live.activity.LiveActivity;
 
 public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
