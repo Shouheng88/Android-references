@@ -28,6 +28,7 @@
         <activity android:name=".view.intro.AppIntroActivity" />
         <activity android:name=".view.live.activity.LiveActivity" />
         <activity android:name=".view.live.activity.LiveRoomActivity" />
+        <activity android:name=".view.layout.navigation.NavigationActivity"/>
 
         <!-- region fabric -->
         <meta-data
@@ -48,7 +49,6 @@
         </provider>
         <!-- endregion -->
         <activity android:name=".view.guokr.GuokrNewsActivity" />
-        <activity android:name=".view.layout.NavigationActivity"></activity>
     </application>
 
 </manifest>

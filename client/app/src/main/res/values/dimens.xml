@@ -3,4 +3,8 @@
     <dimen name="intro_top_padding">32dp</dimen>
     <dimen name="intro_bottom_padding">24dp</dimen>
     <dimen name="intro_side_padding">64dp</dimen>
+
+    <dimen name="bottom_nav_height">56dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

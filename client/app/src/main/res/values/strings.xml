@@ -26,5 +26,7 @@
 
     <string name="nav_bottom_item_1">主界面</string>
     <string name="nav_bottom_item_2">收藏</string>
+    <string name="nav_bottom_desc_2">这里是Navigation布局页面中的收藏页面的实例</string>
     <string name="nav_bottom_item_3">我</string>
+    <string name="nav_bottom_desc_3">这里是Navigation布局页面中的个人信息页面的实例</string>
 </resources>

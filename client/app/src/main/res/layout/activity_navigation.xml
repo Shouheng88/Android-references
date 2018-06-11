@@ -13,12 +13,12 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:id="@+id/container" />
+            android:id="@+id/fragment_container" />
 
         <android.support.design.widget.BottomNavigationView
+            android:id="@+id/nav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/bottom_nav"
             android:background="@color/colorPrimaryDark"
             app:itemIconTint="@drawable/nav_item_color"
             app:itemTextColor="@drawable/nav_item_color"
