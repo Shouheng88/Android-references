@@ -4,7 +4,7 @@ import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 import me.shouheng.references.di.enums.ActivityScoped;
 import me.shouheng.references.view.guokr.GuokrNewsActivity;
-import me.shouheng.references.view.layout.NavigationActivity;
+import me.shouheng.references.view.layout.navigation.NavigationActivity;
 import me.shouheng.references.view.live.activity.LiveActivity;
 import me.shouheng.references.view.live.activity.LiveRoomActivity;
 import me.shouheng.references.view.main.MainActivity;
