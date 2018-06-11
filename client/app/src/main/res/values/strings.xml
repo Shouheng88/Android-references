@@ -11,6 +11,8 @@
     <string name="menu_item_desc_3">经典的Material布局</string>
     <string name="menu_item_sub_title_1">Navigation</string>
     <string name="menu_item_sub_desc_1">Navigation经典布局</string>
+    <string name="menu_item_sub_title_2">Tabbed</string>
+    <string name="menu_item_sub_desc_2">Tabbed经典布局</string>
     <string name="add_account">添加账号</string>
     <string name="manage_account">管理账号</string>
 

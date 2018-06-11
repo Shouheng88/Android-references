@@ -23,6 +23,7 @@ import me.shouheng.references.view.CommonDaggerActivity;
 import me.shouheng.references.view.guokr.GuokrNewsActivity;
 import me.shouheng.references.view.intro.AppIntroActivity;
 import me.shouheng.references.view.layout.navigation.NavigationActivity;
+import me.shouheng.references.view.layout.tabbed.TabbedActivity;
 import me.shouheng.references.view.live.activity.LiveActivity;
 
 public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
@@ -93,8 +94,9 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
                                 .withLevel(2)
                                 .withIcon(GoogleMaterial.Icon.gmd_navigation)
                                 .withIdentifier(2000),
-                        new SecondaryDrawerItem().withName("CollapsableItem")
+                        new SecondaryDrawerItem().withName(R.string.menu_item_sub_title_2)
                                 .withSelectable(false)
+                                .withDescription(R.string.menu_item_sub_desc_2)
                                 .withLevel(2)
                                 .withIcon(GoogleMaterial.Icon.gmd_format_bold)
                                 .withIdentifier(2001)
@@ -111,6 +113,7 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
                         case 1: startActivity(LiveActivity.class);break;
                         case 2: startActivity(GuokrNewsActivity.class);break;
                         case 2000: startActivity(NavigationActivity.class);break;
+                        case 2001: startActivity(TabbedActivity.class);break;
                     }
                     return false;
                 })
