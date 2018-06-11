@@ -30,7 +30,7 @@
         <activity android:name=".view.live.activity.LiveRoomActivity" />
         <activity android:name=".view.layout.navigation.NavigationActivity" />
         <activity android:name=".view.guokr.GuokrNewsActivity" />
-        <activity android:name=".view.layout.tabbed.TabbedActivity"/>
+        <activity android:name=".view.layout.tabbed.TabbedActivity" />
 
         <!-- region fabric -->
         <meta-data
@@ -50,6 +50,7 @@
                 android:resource="@xml/provider_paths" />
         </provider>
         <!-- endregion -->
+        <activity android:name=".view.layout.bottomsheet.BottomSheetActivity"></activity>
     </application>
 
 </manifest>

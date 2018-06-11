@@ -22,6 +22,7 @@ import me.shouheng.references.databinding.ActivityMainBinding;
 import me.shouheng.references.view.CommonDaggerActivity;
 import me.shouheng.references.view.guokr.GuokrNewsActivity;
 import me.shouheng.references.view.intro.AppIntroActivity;
+import me.shouheng.references.view.layout.bottomsheet.BottomSheetActivity;
 import me.shouheng.references.view.layout.navigation.NavigationActivity;
 import me.shouheng.references.view.layout.tabbed.TabbedActivity;
 import me.shouheng.references.view.live.activity.LiveActivity;
@@ -99,7 +100,13 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
                                 .withDescription(R.string.menu_item_sub_desc_2)
                                 .withLevel(2)
                                 .withIcon(GoogleMaterial.Icon.gmd_format_bold)
-                                .withIdentifier(2001)
+                                .withIdentifier(2001),
+                        new SecondaryDrawerItem().withName(R.string.menu_item_sub_title_3)
+                                .withSelectable(false)
+                                .withDescription(R.string.menu_item_sub_desc_3)
+                                .withLevel(2)
+                                .withIcon(GoogleMaterial.Icon.gmd_format_bold)
+                                .withIdentifier(2002)
                 );
 
         new DrawerBuilder()
@@ -114,6 +121,7 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
                         case 2: startActivity(GuokrNewsActivity.class);break;
                         case 2000: startActivity(NavigationActivity.class);break;
                         case 2001: startActivity(TabbedActivity.class);break;
+                        case 2002: startActivity(BottomSheetActivity.class);break;
                     }
                     return false;
                 })

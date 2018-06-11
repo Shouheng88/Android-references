@@ -4,6 +4,7 @@ import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 import me.shouheng.references.di.enums.ActivityScoped;
 import me.shouheng.references.view.guokr.GuokrNewsActivity;
+import me.shouheng.references.view.layout.bottomsheet.BottomSheetActivity;
 import me.shouheng.references.view.layout.navigation.NavigationActivity;
 import me.shouheng.references.view.layout.tabbed.TabbedActivity;
 import me.shouheng.references.view.live.activity.LiveActivity;
@@ -40,4 +41,8 @@ public abstract class ActivityModule {
     @ActivityScoped
     @ContributesAndroidInjector
     abstract TabbedActivity tabbedActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    abstract BottomSheetActivity bottomSheetActivity();
 }

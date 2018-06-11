@@ -13,6 +13,8 @@
     <string name="menu_item_sub_desc_1">Navigation经典布局</string>
     <string name="menu_item_sub_title_2">Tabbed</string>
     <string name="menu_item_sub_desc_2">Tabbed经典布局</string>
+    <string name="menu_item_sub_title_3">Bottom sheet</string>
+    <string name="menu_item_sub_desc_3">Bottom sheet 经典布局</string>
     <string name="add_account">添加账号</string>
     <string name="manage_account">管理账号</string>
 
@@ -37,4 +39,6 @@
     <string name="what_for">项目目的</string>
     <string name="what_is">包含内容</string>
     <string name="about_author">关于作者</string>
+
+    <string name="bottom_sheet_default_content">Bottom Sheet的内部布局</string>
 </resources>
