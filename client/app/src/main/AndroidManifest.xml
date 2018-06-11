@@ -47,7 +47,8 @@
                 android:resource="@xml/provider_paths" />
         </provider>
         <!-- endregion -->
-        <activity android:name=".view.guokr.GuokrNewsActivity"></activity>
+        <activity android:name=".view.guokr.GuokrNewsActivity" />
+        <activity android:name=".view.layout.NavigationActivity"></activity>
     </application>
 
 </manifest>

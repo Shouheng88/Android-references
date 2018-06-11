@@ -14,4 +14,7 @@
     <color name="intro_color_3">#f77910</color>
     <color name="intro_color_4">#21dba4</color>
     <color name="intro_color_5">#9C27B0</color>
+
+    <color name="colorNavItemUnselected">#757575</color>
+    <color name="colorNavItemSelected">@color/colorAccent</color>
 </resources>
