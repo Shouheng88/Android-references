@@ -2,8 +2,10 @@ package me.shouheng.references.di.module;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
+import me.shouheng.references.common.fragment.NormalTipsFragment;
 import me.shouheng.references.view.guokr.fragment.NewsDetailFragment;
 import me.shouheng.references.view.guokr.fragment.NewsListFragment;
+import me.shouheng.references.view.layout.navigation.fragment.PagerFragment;
 import me.shouheng.references.view.live.fragment.FullscreenFragment;
 import me.shouheng.references.view.live.fragment.RoomFragment;
 import me.shouheng.references.view.live.fragment.VideoFragment;
@@ -29,4 +31,10 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract NewsDetailFragment contributeNewsDetailFragment();
+
+    @ContributesAndroidInjector
+    abstract NormalTipsFragment contributeNormalTipsFragment();
+
+    @ContributesAndroidInjector
+    abstract PagerFragment contributePagerFragment();
 }
