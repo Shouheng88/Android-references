@@ -11,6 +11,8 @@
     <string name="menu_item_desc_3">经典的Material布局</string>
     <string name="menu_item_sub_title_1">Navigation</string>
     <string name="menu_item_sub_desc_1">Navigation经典布局</string>
+    <string name="add_account">添加账号</string>
+    <string name="manage_account">管理账号</string>
 
     <string name="developer_name">WngShhng</string>
     <string name="developer_email">shouheng2015@gmail.com</string>
@@ -29,4 +31,8 @@
     <string name="nav_bottom_desc_2">这里是Navigation布局页面中的收藏页面的实例</string>
     <string name="nav_bottom_item_3">我</string>
     <string name="nav_bottom_desc_3">这里是Navigation布局页面中的个人信息页面的实例</string>
+
+    <string name="what_for">项目目的</string>
+    <string name="what_is">包含内容</string>
+    <string name="about_author">关于作者</string>
 </resources>

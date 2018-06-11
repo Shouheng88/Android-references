@@ -1,6 +1,7 @@
 package me.shouheng.references.view.main;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
@@ -35,6 +36,9 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
     protected void doCreateView(Bundle savedInstanceState) {
         startActivity(new Intent(this, AppIntroActivity.class));
 
+        getBinding().barLayout.toolbar.setTitle(R.string.menu_item_desc_0);
+        getBinding().barLayout.toolbar.setTitleTextColor(Color.BLACK);
+
         setupDrawer(savedInstanceState);
     }
 
@@ -45,12 +49,11 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
                 .withIcon(R.drawable.ic_account)
                 .withIdentifier(100);
         ProfileSettingDrawerItem item1 = new ProfileSettingDrawerItem()
-                .withName("Add Account")
-                .withDescription("Add new GitHub Account")
+                .withName(R.string.add_account)
                 .withIcon(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_add).actionBar().paddingDp(5).colorRes(R.color.material_drawer_primary_text))
                 .withIdentifier(100000);
         ProfileSettingDrawerItem item2 = new ProfileSettingDrawerItem()
-                .withName("Manage Account")
+                .withName(R.string.manage_account)
                 .withIcon(GoogleMaterial.Icon.gmd_settings)
                 .withIdentifier(100001);
 
@@ -85,11 +88,13 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
                 .withSelectable(false)
                 .withSubItems(
                         new SecondaryDrawerItem().withName(R.string.menu_item_sub_title_1)
+                                .withSelectable(false)
                                 .withDescription(R.string.menu_item_sub_desc_1)
                                 .withLevel(2)
                                 .withIcon(GoogleMaterial.Icon.gmd_navigation)
                                 .withIdentifier(2000),
                         new SecondaryDrawerItem().withName("CollapsableItem")
+                                .withSelectable(false)
                                 .withLevel(2)
                                 .withIcon(GoogleMaterial.Icon.gmd_format_bold)
                                 .withIdentifier(2001)
