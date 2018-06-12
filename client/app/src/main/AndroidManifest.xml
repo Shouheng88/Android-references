@@ -31,6 +31,8 @@
         <activity android:name=".view.layout.navigation.NavigationActivity" />
         <activity android:name=".view.guokr.GuokrNewsActivity" />
         <activity android:name=".view.layout.tabbed.TabbedActivity" />
+        <activity android:name=".view.layout.scrolling.ScrollingActivity" />
+        <activity android:name=".view.layout.collapse.CollapseBarStructure" />
 
         <!-- region fabric -->
         <meta-data

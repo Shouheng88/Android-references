@@ -23,7 +23,9 @@ import me.shouheng.references.view.CommonDaggerActivity;
 import me.shouheng.references.view.guokr.GuokrNewsActivity;
 import me.shouheng.references.view.intro.AppIntroActivity;
 import me.shouheng.references.view.layout.bottomsheet.BottomSheetActivity;
+import me.shouheng.references.view.layout.collapse.CollapseBarStructure;
 import me.shouheng.references.view.layout.navigation.NavigationActivity;
+import me.shouheng.references.view.layout.scrolling.ScrollingActivity;
 import me.shouheng.references.view.layout.tabbed.TabbedActivity;
 import me.shouheng.references.view.live.activity.LiveActivity;
 
@@ -106,7 +108,19 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
                                 .withDescription(R.string.menu_item_sub_desc_3)
                                 .withLevel(2)
                                 .withIcon(GoogleMaterial.Icon.gmd_format_bold)
-                                .withIdentifier(2002)
+                                .withIdentifier(2002),
+                        new SecondaryDrawerItem().withName(R.string.menu_item_sub_title_4)
+                                .withSelectable(false)
+                                .withDescription(R.string.menu_item_sub_desc_4)
+                                .withLevel(2)
+                                .withIcon(GoogleMaterial.Icon.gmd_format_bold)
+                                .withIdentifier(2003),
+                        new SecondaryDrawerItem().withName(R.string.menu_item_sub_title_5)
+                                .withSelectable(false)
+                                .withDescription(R.string.menu_item_sub_desc_5)
+                                .withLevel(2)
+                                .withIcon(GoogleMaterial.Icon.gmd_format_bold)
+                                .withIdentifier(2004)
                 );
 
         new DrawerBuilder()
@@ -122,6 +136,8 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
                         case 2000: startActivity(NavigationActivity.class);break;
                         case 2001: startActivity(TabbedActivity.class);break;
                         case 2002: startActivity(BottomSheetActivity.class);break;
+                        case 2003: startActivity(ScrollingActivity.class);break;
+                        case 2004: startActivity(CollapseBarStructure.class);break;
                     }
                     return false;
                 })
