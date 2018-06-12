@@ -31,45 +31,8 @@
                 <TextView
                     android:id="@+id/tv_what_for"
                     android:padding="8dp"
-                    tools:text="This is the what for details for the demo test"
+                    android:text="@string/what_for_detail"
                     android:layout_margin="8dp"
-                    android:background="#ddd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:text="@string/what_is"
-                    android:textSize="18sp"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:padding="8dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/tv_what_is"
-                    android:padding="8dp"
-                    tools:text="This is the what for details for the demo test"
-                    android:layout_margin="8dp"
-                    android:background="#ddd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:text="@string/about_author"
-                    android:textSize="18sp"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:padding="8dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/tv_author"
-                    android:padding="8dp"
-                    tools:text="This is the what for details for the demo test"
-                    android:layout_margin="8dp"
-                    android:background="#ddd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
