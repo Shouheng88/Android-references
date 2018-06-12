@@ -1,27 +1,22 @@
 package me.shouheng.references.view.layout.collapse;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 
 import me.shouheng.references.R;
+import me.shouheng.references.databinding.ActivityCollapseBarStructureBinding;
+import me.shouheng.references.view.CommonDaggerActivity;
 
-public class CollapseBarStructure extends AppCompatActivity {
+public class CollapseBarStructure extends CommonDaggerActivity<ActivityCollapseBarStructureBinding> {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_collapse_bar_structure);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("CollapseBarStructure");
+    protected int getLayoutResId() {
+        return R.layout.activity_collapse_bar_structure;
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_web, menu);
-        return super.onCreateOptionsMenu(menu);
+    protected void doCreateView(Bundle savedInstanceState) {
+        getBinding().toolbar.setTitle("");
+        getBinding().toolbar.setTitleTextColor(Color.BLACK);
     }
 }
