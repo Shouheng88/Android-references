@@ -28,14 +28,6 @@
 
 ## 3、Material Design布局的整理
 
-<div style="display:flex;" >
-<img  src="images/3_1.png" width="19%" >
-<img style="margin-left:10px;" src="images/3_2.png" width="19%" >
-<img style="margin-left:10px;" src="images/3_3.png" width="19%" >
-<img style="margin-left:10px;" src="images/3_4.png" width="19%" >
-<img style="margin-left:10px;" src="images/3_5.png" width="19%" >
-</div>
-
 主要包括：
 
 1. Navigation 布局
@@ -43,4 +35,13 @@
 3. Bottom sheet 布局
 4. Scrolling 布局
 5. Collapse 布局
+
+<div style="display:flex;" >
+<img src="images/3_1.png" width="19%" >
+<img style="margin-left:10px;" src="images/3_2.png" width="19%" >
+<img style="margin-left:10px;" src="images/3_3.png" width="19%" >
+<img style="margin-left:10px;" src="images/3_4.png" width="19%" >
+<img style="margin-left:10px;" src="images/3_5.png" width="19%" >
+</div>
+
 
