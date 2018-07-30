@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
@@ -20,7 +21,6 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.ActivityMainBinding;
 import me.shouheng.references.view.CommonDaggerActivity;
-import me.shouheng.references.view.guokr.GuokrNewsActivity;
 import me.shouheng.references.view.intro.AppIntroActivity;
 import me.shouheng.references.view.layout.bottomsheet.BottomSheetActivity;
 import me.shouheng.references.view.layout.collapse.CollapseBarStructure;
@@ -132,7 +132,10 @@ public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
                     switch ((int) drawerItem.getIdentifier()) {
                         case 0: break;
                         case 1: startActivity(LiveActivity.class);break;
-                        case 2: startActivity(GuokrNewsActivity.class);break;
+                        case 2: {
+                            ARouter.getInstance().build("/guokr/news").navigation();
+                            break;
+                        }
                         case 2000: startActivity(NavigationActivity.class);break;
                         case 2001: startActivity(TabbedActivity.class);break;
                         case 2002: startActivity(BottomSheetActivity.class);break;

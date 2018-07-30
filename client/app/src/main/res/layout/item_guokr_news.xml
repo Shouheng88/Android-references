@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <me.shouheng.commons.widget.CircleImageView
+            <me.shouheng.commons.view.widget.CircleImageView
                 android:id="@+id/civ_author"
                 tools:src="@color/accent"
                 android:layout_width="16dp"
@@ -81,7 +81,7 @@
 
     </RelativeLayout>
 
-    <me.shouheng.commons.widget.SquareImageView
+    <me.shouheng.commons.view.widget.SquareImageView
         android:id="@+id/iv_cover"
         tools:src="@color/accent"
         android:layout_gravity="center_vertical"

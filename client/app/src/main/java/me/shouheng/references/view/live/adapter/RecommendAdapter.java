@@ -5,12 +5,12 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.util.Collections;
 
+import me.shouheng.commons.tools.glide.GlideApp;
 import me.shouheng.references.R;
 import me.shouheng.references.model.live.data.Recommend;
 
@@ -33,7 +33,8 @@ public class RecommendAdapter extends BaseQuickAdapter<Recommend.RoomBean, BaseV
     protected void convert(BaseViewHolder helper, Recommend.RoomBean item) {
         helper.setText(R.id.tv_category, item.getName());
 
-        Glide.with(context).load(item.getIcon())
+        GlideApp.with(context)
+                .load(item.getIcon())
                 .placeholder(R.drawable.live_default_recommend_icon)
                 .into((ImageView) helper.getView(R.id.iv_category));
 

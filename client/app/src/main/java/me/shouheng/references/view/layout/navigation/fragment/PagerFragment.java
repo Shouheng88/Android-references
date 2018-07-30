@@ -12,7 +12,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import java.util.Arrays;
 import java.util.List;
 
-import me.shouheng.commons.util.ToastUtils;
+import me.shouheng.commons.tools.ToastUtils;
 import me.shouheng.references.R;
 import me.shouheng.references.common.fragment.NormalTipsFragment;
 import me.shouheng.references.databinding.FragmentPagerBinding;

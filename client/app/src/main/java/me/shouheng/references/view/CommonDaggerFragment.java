@@ -8,7 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import dagger.android.support.AndroidSupportInjection;
-import me.shouheng.commons.fragment.CommonFragment;
+import me.shouheng.commons.view.fragment.CommonFragment;
 
 /**
  * @author shouh

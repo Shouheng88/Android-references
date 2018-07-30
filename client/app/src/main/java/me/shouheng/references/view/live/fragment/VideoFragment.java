@@ -6,7 +6,7 @@ import android.view.View;
 import com.pili.pldroid.player.widget.PLVideoTextureView;
 import com.pili.pldroid.player.widget.PLVideoView;
 
-import me.shouheng.commons.util.LogUtils;
+import me.shouheng.commons.tools.LogUtils;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.FragmentVideoBinding;
 import me.shouheng.references.view.CommonDaggerFragment;

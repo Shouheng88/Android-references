@@ -3,7 +3,7 @@ package me.shouheng.references.view.layout.navigation;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 
-import me.shouheng.commons.util.PalmUtils;
+import me.shouheng.commons.tools.PalmUtils;
 import me.shouheng.references.R;
 import me.shouheng.references.common.fragment.NormalTipsFragment;
 import me.shouheng.references.databinding.ActivityNavigationBinding;

@@ -17,10 +17,10 @@ import java.util.Objects;
 
 import javax.inject.Inject;
 
-import me.shouheng.commons.util.LogUtils;
-import me.shouheng.commons.util.StringUtils;
-import me.shouheng.commons.util.ToastUtils;
-import me.shouheng.commons.util.ViewUtils;
+import me.shouheng.commons.tools.LogUtils;
+import me.shouheng.commons.tools.StringUtils;
+import me.shouheng.commons.tools.ToastUtils;
+import me.shouheng.commons.tools.ViewUtils;
 import me.shouheng.references.MyApplication;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.FragmentRoomBinding;
@@ -133,7 +133,7 @@ public class RoomFragment extends CommonDaggerFragment<FragmentRoomBinding> {
         getBinding().tvViews.setText(StringUtils.formatString(R.string.live_views_number, room.getView()));
         getBinding().tvAnno.setText(room.getAnnouncement());
 
-        Glide.with(getContext()).load(room.getAvatar()).asBitmap().into(getBinding().ivAvatar);
+        Glide.with(getContext()).asBitmap().load(room.getAvatar()).into(getBinding().ivAvatar);
         getBinding().tvUserName.setText(room.getNick());
         getBinding().tvFollow.setText(StringUtils.formatString(R.string.live_follows_number, room.getFollow()));
         getBinding().tvUserIntro.setText(room.getIntro());

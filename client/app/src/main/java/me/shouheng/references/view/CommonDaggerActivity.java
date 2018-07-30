@@ -4,7 +4,7 @@ import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 
 import dagger.android.AndroidInjection;
-import me.shouheng.commons.activity.CommonActivity;
+import me.shouheng.commons.view.activity.CommonActivity;
 
 /**
  * @author shouh

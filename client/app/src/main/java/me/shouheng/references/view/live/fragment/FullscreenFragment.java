@@ -14,9 +14,10 @@ import java.util.Objects;
 
 import javax.inject.Inject;
 
-import me.shouheng.commons.util.LogUtils;
-import me.shouheng.commons.util.StringUtils;
-import me.shouheng.commons.util.ToastUtils;
+import me.shouheng.commons.tools.LogUtils;
+import me.shouheng.commons.tools.StringUtils;
+import me.shouheng.commons.tools.ToastUtils;
+import me.shouheng.commons.tools.glide.GlideApp;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.FragmentFullscreenBinding;
 import me.shouheng.references.model.live.data.Room;
@@ -62,7 +63,10 @@ public class FullscreenFragment extends CommonDaggerFragment<FragmentFullscreenB
 
         Objects.requireNonNull(getActivity()).getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        Glide.with(getActivity()).load(thumb).asBitmap().into(getBinding().ivCover);
+        Glide.with(getActivity())
+                .asBitmap()
+                .load(thumb)
+                .into(getBinding().ivCover);
 
         enterRoom();
 
@@ -115,11 +119,10 @@ public class FullscreenFragment extends CommonDaggerFragment<FragmentFullscreenB
     private void showRoomInfo(@Nullable Room room) {
         if (room == null) return;
 
-        Glide.with(this).load(room.getAvatar())
+        GlideApp.with(this).load(room.getAvatar())
                 .placeholder(R.drawable.mine_default_avatar)
                 .error(R.drawable.mine_default_avatar).centerCrop()
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
                 .into(getBinding().ivAvatar);
         getBinding().tvName.setText(room.getNick());
         getBinding().tvFollow.setText(StringUtils.formatString(R.string.live_follows_number, room.getFollow()));

@@ -8,6 +8,11 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
     }
     buildTypes {
         release {
@@ -33,31 +38,59 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    // support package
-    implementation "com.android.support:support-annotations:$supportLibVersion"
-    implementation "com.android.support:appcompat-v7:$supportLibVersion"
-    implementation "com.android.support:support-v4:$supportLibVersion"
-    implementation "com.android.support:recyclerview-v7:$supportLibVersion"
-    // architecture components
-    implementation "android.arch.lifecycle:runtime:$archVersion"
-    implementation "android.arch.lifecycle:extensions:$archVersion"
+    // support
+    api "com.android.support:support-annotations:$supportLibVersion"
+    api "com.android.support:appcompat-v7:$supportLibVersion"
+    api "com.android.support:support-v4:$supportLibVersion"
+    api "com.android.support:recyclerview-v7:$supportLibVersion"
+    api "com.android.support:palette-v7:$supportLibVersion"
+    api "com.android.support:cardview-v7:$supportLibVersion"
+    api "com.android.support:design:$supportLibVersion"
+    // architecture
+    api "android.arch.lifecycle:runtime:$archVersion"
+    api "android.arch.lifecycle:extensions:$archVersion"
     annotationProcessor "android.arch.lifecycle:compiler:$archVersion"
-//    implementation "android.arch.persistence.room:runtime:$archVersion"
-//    annotationProcessor "android.arch.persistence.room:compiler:$archVersion"
     // leakcanary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     // multidex
-    implementation 'com.android.support:multidex:1.0.2'
+    api 'com.android.support:multidex:1.0.2'
     // time
-    implementation 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
-    implementation 'joda-time:joda-time:2.9.9'
-    // apache-io
-    implementation 'commons-io:commons-io:2.5'
+    api 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
+    api 'joda-time:joda-time:2.9.9'
+    // io
+    api 'commons-io:commons-io:2.5'
     // image compress
-    implementation 'top.zibin:Luban:1.1.3'
+    api 'top.zibin:Luban:1.1.3'
+    // recycler
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    api 'com.yanzhenjie:recyclerview-swipe:1.1.4'
+    // glide
+    api 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    // debug tools
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+    // fabric
+    api('com.crashlytics.sdk.android:crashlytics:2.9.2@aar') {
+        transitive = true
+    }
+    // dagger
+    api "com.google.dagger:dagger:$dagger"
+    api "com.google.dagger:dagger-android:$dagger"
+    api "com.google.dagger:dagger-android-support:$dagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger"
+    // retrofit
+    api 'com.squareup.retrofit2:retrofit:2.3.0'
+    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+    api 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    // rx-android
+    api 'io.reactivex:rxandroid:1.2.1'
+    // router
+    api 'com.alibaba:arouter-api:1.3.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
 }

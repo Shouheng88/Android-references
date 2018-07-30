@@ -5,8 +5,8 @@ import android.arch.lifecycle.ViewModel;
 import dagger.Binds;
 import dagger.Module;
 import dagger.multibindings.IntoMap;
-import me.shouheng.references.di.enums.ViewModelKey;
-import me.shouheng.references.viewmodel.GuokrViewModel;
+import me.shouheng.commons.di.enums.ViewModelKey;
+import me.shouheng.guokr.viewmodel.GuokrViewModel;
 import me.shouheng.references.viewmodel.LiveViewModel;
 import me.shouheng.references.viewmodel.MainViewModel;
 

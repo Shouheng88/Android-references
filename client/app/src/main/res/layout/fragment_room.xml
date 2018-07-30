@@ -127,7 +127,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <me.shouheng.commons.widget.CircleImageView
+                <me.shouheng.commons.view.widget.CircleImageView
                     android:id="@+id/iv_avatar"
                     tools:src="@color/accent"
                     android:layout_marginTop="10dp"

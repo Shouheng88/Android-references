@@ -6,9 +6,9 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
-import me.shouheng.commons.fragment.CommonFragment;
-import me.shouheng.commons.helper.FragmentHelper;
-import me.shouheng.commons.util.ThemeUtils;
+import me.shouheng.commons.view.fragment.CommonFragment;
+import me.shouheng.commons.tools.FragmentHelper;
+import me.shouheng.commons.tools.theme.ThemeUtils;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.ActivityLiveRoomBinding;
 import me.shouheng.references.view.CommonDaggerActivity;

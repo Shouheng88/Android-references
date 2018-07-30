@@ -11,7 +11,6 @@ import android.widget.ImageView;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.Holder;
-import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.LinkedList;
@@ -19,7 +18,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import me.shouheng.commons.util.ToastUtils;
+import me.shouheng.commons.tools.ToastUtils;
+import me.shouheng.commons.tools.glide.GlideApp;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.ActivityLiveBinding;
 import me.shouheng.references.model.live.data.Banner;
@@ -126,12 +126,12 @@ public class LiveActivity extends CommonDaggerActivity<ActivityLiveBinding> {
 
         @Override
         public void UpdateUI(Context context, int position, Banner data) {
-            Glide.with(context)
+            GlideApp.with(context)
                     .load(data.getThumb())
                     .placeholder(R.drawable.live_default)
                     .error(R.drawable.live_default)
                     .centerCrop()
-                    .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                    .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
                     .into(iv);
         }
     }

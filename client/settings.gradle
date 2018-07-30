@@ -1,3 +1,4 @@
-include ':app', ':commons', ':umeng'
+include ':app', ':commons', ':umeng', ':guokr'
 project(':commons').projectDir = new File('../commons')
 project(':umeng').projectDir = new File('../umeng')
+project(':guokr').projectDir = new File('../guokr')

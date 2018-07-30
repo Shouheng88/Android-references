@@ -6,15 +6,13 @@ import android.support.v7.graphics.Palette;
 import android.util.SparseIntArray;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.util.List;
 
-import me.shouheng.commons.util.ColorUtils;
+import me.shouheng.commons.tools.ColorUtils;
 import me.shouheng.references.R;
 import me.shouheng.references.model.live.data.Recommend;
 
@@ -40,16 +38,14 @@ public class RecommendChildAdapter extends BaseQuickAdapter<Recommend.RoomBean.L
         helper.setText(R.id.tv_name, item.getNick());
         helper.setText(R.id.tv_viewer, item.getViews());
 
-        Glide.with(context).load(item.getThumb())
+        Glide.with(context)
                 .asBitmap()
-                .placeholder(R.drawable.live_default)
-                .error(R.drawable.live_default)
-                .centerCrop()
-                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                .load(item.getThumb())
+                .error(Glide.with(context).asBitmap().load(R.drawable.live_default))
                 .into(new BitmapImageViewTarget(helper.getView(R.id.iv)) {
                     @Override
-                    public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
-                        super.onResourceReady(resource, glideAnimation);
+                    protected void setResource(Bitmap resource) {
+                        super.setResource(resource);
                         setColorPlatte(resource, helper, item);
                     }
                 });

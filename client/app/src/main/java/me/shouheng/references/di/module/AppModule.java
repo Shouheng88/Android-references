@@ -6,7 +6,6 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import me.shouheng.references.model.guokr.GuokrService;
 import me.shouheng.references.model.live.LiveService;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -39,16 +38,5 @@ public class AppModule {
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .client(okHttpClient)
                 .build().create(LiveService.class);
-    }
-
-    @Provides
-    @Singleton
-    GuokrService provideGuokrService(OkHttpClient okHttpClient) {
-        return new Retrofit.Builder()
-                .baseUrl("http://apis.guokr.com/minisite/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .client(okHttpClient)
-                .build().create(GuokrService.class);
     }
 }

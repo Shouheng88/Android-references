@@ -1,4 +1,65 @@
 <resources>
+
+    <string name="app_name">安卓开发参考</string>
+
+    <string name="menu_item_title_0">主界面</string>
+    <string name="menu_item_desc_0">应用简介</string>
+    <string name="menu_item_title_1">视频直播</string>
+    <string name="menu_item_desc_1">使用《全民直播》的API</string>
+    <string name="menu_item_title_2">果壳新闻</string>
+    <string name="menu_item_desc_2">使用果壳网的API</string>
+    <string name="menu_item_title_3">布局</string>
+    <string name="menu_item_desc_3">经典的Material布局</string>
+    <string name="menu_item_sub_title_1">Navigation</string>
+    <string name="menu_item_sub_desc_1">Navigation经典布局</string>
+    <string name="menu_item_sub_title_2">Tabbed</string>
+    <string name="menu_item_sub_desc_2">Tabbed经典布局</string>
+    <string name="menu_item_sub_title_3">Bottom sheet</string>
+    <string name="menu_item_sub_desc_3">Bottom sheet 经典布局</string>
+    <string name="menu_item_sub_title_4">Scrolling</string>
+    <string name="menu_item_sub_desc_4">Scrolling 经典布局</string>
+    <string name="menu_item_sub_title_5">Collapse</string>
+    <string name="menu_item_sub_desc_5">Collapse 经典布局</string>
+    <string name="add_account">添加账号</string>
+    <string name="manage_account">管理账号</string>
+
+    <string name="developer_name">WngShhng</string>
+    <string name="developer_email">shouheng2015@gmail.com</string>
+
+    <string name="live_title">视频直播</string>
+    <string name="live_sub_title">使用《全民直播》的API</string>
+    <string name="live_recommend_more">更多</string>
+    <string name="live_living">直播</string>
+    <string name="live_views_number">%d 观看</string>
+    <string name="live_follows_number">%d 人关注</string>
+    <string name="live_subscribe">关注</string>
+    <string name="live_qm_account">全民号: %s</string>
+
+    <string name="nav_bottom_item_1">主界面</string>
+    <string name="nav_bottom_item_2">收藏</string>
+    <string name="nav_bottom_desc_2">这里是Navigation布局页面中的收藏页面的实例</string>
+    <string name="nav_bottom_item_3">我</string>
+    <string name="nav_bottom_desc_3">这里是Navigation布局页面中的个人信息页面的实例</string>
+
+    <string name="what_for">项目简介</string>
+    <string name="what_for_detail">1.对于视频直播和果壳网的新闻的部分主要使用了MVVM+Dagger+Retrofit的架构设计；\n\n
+    2.此外，该项目中还包含了一些Material Design设计风格的常用的布局；</string>
+    <string name="what_is">包含内容</string>
+    <string name="about_author">关于作者</string>
+
+    <string name="bottom_sheet_default_content">Bottom Sheet的内部布局</string>
+
+    <string name="lan_ting_xu">\t永和九年，岁在癸（guǐ）丑，暮春之初，会于会稽（kuài jī）山阴之兰亭，修禊（xì）事也。
+        群贤毕至，少长咸集。此地有崇山峻岭，茂林修竹， 又有清流激湍（tuān），映带左右。
+        引以为流觞（shāng）曲（ qū）水，列坐其次，虽无丝竹管弦之盛，一觞（shang)一咏，亦足以畅叙幽情。\n\n
+        \t是日也，天朗气清，惠风和畅。仰观宇宙之大，俯察品类之盛，所以游目骋（chěng）怀，足以极视听之娱，信可乐也。\n\n
+        夫人之相与，俯仰一世。或取诸怀抱，悟言一室之内；或因寄所托，放浪形骸（hái）之外。
+        虽趣（qǔ）舍万殊，静躁不同，当其欣于所遇，暂得于己，怏（同“快”）然自足，不知老之将至。
+        及其所之既倦，情随事迁，感慨系（xì）之矣。向之所欣，俯仰之间，已为陈迹，犹不能不以之兴怀。
+        况修短随化，终期于尽。古人云：“死生亦大矣。”岂不痛哉！\n\n
+        \t每览昔人兴感之由，若合一契，未尝不临文嗟（jiē）悼，不能喻之于怀。固知一死生为虚诞，齐彭殇(shāng)为妄作。
+        后之视今，亦犹今之视昔，悲夫！故列叙时人，录其所述。虽世殊事异，所以兴怀，其致一也。后之览者，亦将有感于斯文。</string>
+
     <string name="failed_to_create_file">Failed to create file</string>
     <string name="storage_not_available">Storage unavailable</string>
 
