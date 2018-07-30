@@ -1,5 +1,6 @@
 package me.shouheng.references.view.live.activity;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.Holder;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -16,8 +18,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.inject.Inject;
-
+import me.shouheng.commons.config.BaseConstants;
 import me.shouheng.commons.tools.ToastUtils;
 import me.shouheng.commons.tools.glide.GlideApp;
 import me.shouheng.commons.view.activity.CommonActivity;
@@ -29,9 +30,10 @@ import me.shouheng.references.view.live.Constant;
 import me.shouheng.references.view.live.adapter.RecommendAdapter;
 import me.shouheng.references.viewmodel.LiveViewModel;
 
+@Route(path = BaseConstants.LIVE_HOME)
 public class LiveActivity extends CommonActivity<ActivityLiveBinding> {
 
-    @Inject LiveViewModel liveViewModel;
+    private LiveViewModel liveViewModel;
 
     private RecommendAdapter recommendAdapter;
 
@@ -48,6 +50,8 @@ public class LiveActivity extends CommonActivity<ActivityLiveBinding> {
 
     @Override
     protected void doCreateView(Bundle savedInstanceState) {
+        liveViewModel = ViewModelProviders.of(this).get(LiveViewModel.class);
+
         configToolbar();
 
         configList();

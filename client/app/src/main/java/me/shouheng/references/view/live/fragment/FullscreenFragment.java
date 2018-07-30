@@ -1,5 +1,6 @@
 package me.shouheng.references.view.live.fragment;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -39,7 +40,7 @@ public class FullscreenFragment extends CommonFragment<FragmentFullscreenBinding
 
     private String uid, thumb;
 
-    @Inject LiveViewModel liveViewModel;
+    private LiveViewModel liveViewModel;
 
     private VideoFragment videoFragment;
 
@@ -62,6 +63,8 @@ public class FullscreenFragment extends CommonFragment<FragmentFullscreenBinding
         assert getArguments() != null;
         uid = getArguments().getString(EXTRA_UID);
         thumb = getArguments().getString(EXTRA_THUMB);
+
+        liveViewModel = ViewModelProviders.of(this).get(LiveViewModel.class);
 
         Objects.requireNonNull(getActivity()).getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 

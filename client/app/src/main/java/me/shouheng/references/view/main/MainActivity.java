@@ -1,6 +1,5 @@
 package me.shouheng.references.view.main;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -18,16 +17,15 @@ import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
+import me.shouheng.commons.config.BaseConstants;
 import me.shouheng.commons.view.activity.CommonActivity;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.ActivityMainBinding;
-import me.shouheng.references.view.intro.AppIntroActivity;
 import me.shouheng.references.view.layout.bottomsheet.BottomSheetActivity;
 import me.shouheng.references.view.layout.collapse.CollapseBarStructure;
 import me.shouheng.references.view.layout.navigation.NavigationActivity;
 import me.shouheng.references.view.layout.scrolling.ScrollingActivity;
 import me.shouheng.references.view.layout.tabbed.TabbedActivity;
-import me.shouheng.references.view.live.activity.LiveActivity;
 
 public class MainActivity extends CommonActivity<ActivityMainBinding> {
 
@@ -38,7 +36,7 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
 
     @Override
     protected void doCreateView(Bundle savedInstanceState) {
-        startActivity(new Intent(this, AppIntroActivity.class));
+        ARouter.getInstance().build("/app/intro").navigation();
 
         getBinding().barLayout.toolbar.setTitle(R.string.menu_item_desc_0);
         getBinding().barLayout.toolbar.setTitleTextColor(Color.BLACK);
@@ -131,9 +129,13 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
                     if (drawerItem == null) return false;
                     switch ((int) drawerItem.getIdentifier()) {
                         case 0: break;
-                        case 1: startActivity(LiveActivity.class);break;
+                        case 1: {
+                            ARouter.getInstance().build(BaseConstants.LIVE_HOME).navigation();
+                            break;
+                        }
                         case 2: {
-                            ARouter.getInstance().build("/guokr/news").navigation();
+//                            startActivity(GuokrNewsActivity.class);
+                            ARouter.getInstance().build(BaseConstants.GUOKR_NEWS).navigation();
                             break;
                         }
                         case 2000: startActivity(NavigationActivity.class);break;

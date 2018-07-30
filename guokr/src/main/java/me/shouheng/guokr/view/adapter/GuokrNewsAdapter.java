@@ -11,7 +11,7 @@ import java.util.LinkedList;
 import me.shouheng.commons.tools.TimeUtils;
 import me.shouheng.commons.tools.glide.GlideApp;
 import me.shouheng.guokr.R;
-import me.shouheng.guokr.model.GuokrNews;
+import me.shouheng.guokr.model.data.GuokrNews;
 
 /**
  * @author shouh

@@ -2,6 +2,7 @@ package me.shouheng.guokr.view.fragment;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -10,20 +11,18 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import javax.inject.Inject;
-
-import me.shouheng.commons.view.fragment.CommonDaggerFragment;
 import me.shouheng.commons.tools.ToastUtils;
+import me.shouheng.commons.view.fragment.CommonFragment;
 import me.shouheng.guokr.R;
 import me.shouheng.guokr.databinding.FragmentNewsDetailBinding;
-import me.shouheng.guokr.model.GuokrNewsContent;
+import me.shouheng.guokr.model.data.GuokrNewsContent;
 import me.shouheng.guokr.viewmodel.GuokrViewModel;
 
 /**
  * @author shouh
  * @version $Id: NewsDetailFragment, v 0.1 2018/6/10 19:02 shouh Exp$
  */
-public class NewsDetailFragment extends CommonDaggerFragment<FragmentNewsDetailBinding> {
+public class NewsDetailFragment extends CommonFragment<FragmentNewsDetailBinding> {
 
     private final static String EXTRA_ARTICLE_ID = "__extra_article_id";
 
@@ -33,8 +32,7 @@ public class NewsDetailFragment extends CommonDaggerFragment<FragmentNewsDetailB
 
     private String articleTitle;
 
-    @Inject
-    GuokrViewModel guokrViewModel;
+    private GuokrViewModel guokrViewModel;
 
     public static NewsDetailFragment newInstance(int articleId, String articleTitle) {
         Bundle args = new Bundle();
@@ -57,6 +55,8 @@ public class NewsDetailFragment extends CommonDaggerFragment<FragmentNewsDetailB
         configToolbar();
 
         configViews();
+
+        guokrViewModel = ViewModelProviders.of(this).get(GuokrViewModel.class);
 
         fetchContent();
     }

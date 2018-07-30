@@ -1,12 +1,11 @@
 package me.shouheng.references.viewmodel;
 
-import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
-import android.support.annotation.NonNull;
 
 import me.shouheng.commons.model.Resource;
+import me.shouheng.references.model.live.repository.LiveRetrofit;
 import me.shouheng.references.model.live.data.AppStart;
 import me.shouheng.references.model.live.data.Recommend;
 import me.shouheng.references.model.live.data.Room;
@@ -21,11 +20,9 @@ import rx.schedulers.Schedulers;
  */
 public class LiveViewModel extends ViewModel {
 
-
-
     public LiveData<Resource<Recommend>> getRecommend() {
         MutableLiveData<Resource<Recommend>> result = new MutableLiveData<>();
-        liveService.getRecommend()
+        LiveRetrofit.getLiveService().getRecommend()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<Recommend>() {
@@ -47,7 +44,7 @@ public class LiveViewModel extends ViewModel {
 
     public LiveData<Resource<AppStart>> getAppStart() {
         MutableLiveData<Resource<AppStart>> result = new MutableLiveData<>();
-        liveService.getAppStartInfo()
+        LiveRetrofit.getLiveService().getAppStartInfo()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<AppStart>() {
@@ -69,7 +66,7 @@ public class LiveViewModel extends ViewModel {
 
     public LiveData<Resource<Room>> enterRoom(String uid) {
         MutableLiveData<Resource<Room>> result = new MutableLiveData<>();
-        liveService.enterRoom(uid)
+        LiveRetrofit.getLiveService().enterRoom(uid)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Room>() {

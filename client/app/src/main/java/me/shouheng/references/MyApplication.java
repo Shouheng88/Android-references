@@ -1,5 +1,7 @@
 package me.shouheng.references;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+
 import me.shouheng.commons.BaseApplication;
 
 /**
@@ -18,5 +20,7 @@ public class MyApplication extends BaseApplication {
     public void onCreate() {
         super.onCreate();
         application = this;
+
+        ARouter.init(this);
     }
 }

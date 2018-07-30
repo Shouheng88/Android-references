@@ -8,22 +8,17 @@ import android.view.MenuItem;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 
-import javax.inject.Inject;
-
-import me.shouheng.commons.view.activity.CommonDaggerActivity;
+import me.shouheng.commons.config.BaseConstants;
 import me.shouheng.commons.tools.FragmentHelper;
+import me.shouheng.commons.view.activity.CommonActivity;
 import me.shouheng.guokr.R;
 import me.shouheng.guokr.databinding.ActivityGuokrBewsBinding;
-import me.shouheng.guokr.model.GuokrNews;
+import me.shouheng.guokr.model.data.GuokrNews;
 import me.shouheng.guokr.view.fragment.NewsDetailFragment;
 import me.shouheng.guokr.view.fragment.NewsListFragment;
-import me.shouheng.guokr.viewmodel.GuokrViewModel;
 
-@Route(path = "/guokr/news")
-public class GuokrNewsActivity extends CommonDaggerActivity<ActivityGuokrBewsBinding> implements NewsListFragment.FragmentInteraction {
-
-    @Inject
-    GuokrViewModel guokrViewModel;
+@Route(path = BaseConstants.GUOKR_NEWS)
+public class GuokrNewsActivity extends CommonActivity<ActivityGuokrBewsBinding> implements NewsListFragment.FragmentInteraction {
 
     @Override
     protected int getLayoutResId() {

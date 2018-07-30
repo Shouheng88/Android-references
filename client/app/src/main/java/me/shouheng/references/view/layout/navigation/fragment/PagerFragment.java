@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import me.shouheng.commons.tools.ToastUtils;
+import me.shouheng.commons.view.fragment.CommonFragment;
 import me.shouheng.references.R;
 import me.shouheng.references.common.fragment.NormalTipsFragment;
 import me.shouheng.references.databinding.FragmentPagerBinding;
@@ -20,7 +21,7 @@ import me.shouheng.references.databinding.FragmentPagerBinding;
 /**
  * Created by WngShhng on 2018/6/11.
  */
-public class PagerFragment extends CommonDaggerFragment<FragmentPagerBinding> {
+public class PagerFragment extends CommonFragment<FragmentPagerBinding> {
 
     private NormalTipsFragment tabFragment1;
     private NormalTipsFragment tabFragment2;

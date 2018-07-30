@@ -32,8 +32,6 @@ public abstract class BaseApplication extends Application {
 
         LeakCanary.install(this);
 
-        ARouter.init(this);
-
         Fabric.with(this, new Crashlytics());
 
         if (BuildConfig.DEBUG) {

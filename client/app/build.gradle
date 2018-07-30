@@ -86,8 +86,9 @@ dependencies {
     // banner
     implementation 'com.bigkoo:convenientbanner:2.0.5'
     implementation files('libs/pldroid-player-1.5.0.jar')
+    // router
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     // projects
-    implementation project(':umeng')
     implementation project(':commons')
     implementation project(':guokr')
 }

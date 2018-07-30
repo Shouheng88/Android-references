@@ -1,19 +1,18 @@
 package me.shouheng.guokr.view.fragment;
 
 import android.app.Activity;
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 
-import javax.inject.Inject;
-
-import me.shouheng.commons.view.fragment.CommonDaggerFragment;
 import me.shouheng.commons.tools.ToastUtils;
+import me.shouheng.commons.view.fragment.CommonFragment;
 import me.shouheng.commons.view.widget.DividerItemDecoration;
 import me.shouheng.guokr.R;
 import me.shouheng.guokr.databinding.FragmentNewsListBinding;
-import me.shouheng.guokr.model.GuokrNews;
+import me.shouheng.guokr.model.data.GuokrNews;
 import me.shouheng.guokr.view.adapter.GuokrNewsAdapter;
 import me.shouheng.guokr.viewmodel.GuokrViewModel;
 
@@ -21,10 +20,9 @@ import me.shouheng.guokr.viewmodel.GuokrViewModel;
  * @author shouh
  * @version $Id: NewsListFragment, v 0.1 2018/6/10 12:08 shouh Exp$
  */
-public class NewsListFragment extends CommonDaggerFragment<FragmentNewsListBinding> {
+public class NewsListFragment extends CommonFragment<FragmentNewsListBinding> {
 
-    @Inject
-    GuokrViewModel guokrViewModel;
+    private GuokrViewModel guokrViewModel;
 
     private int offset = 0;
 
@@ -50,6 +48,8 @@ public class NewsListFragment extends CommonDaggerFragment<FragmentNewsListBindi
         if (!(activity instanceof FragmentInteraction)) {
             throw new IllegalArgumentException("The associated activity must implement FragmentInteraction");
         }
+
+        guokrViewModel = ViewModelProviders.of(this).get(GuokrViewModel.class);
 
         configViews();
 

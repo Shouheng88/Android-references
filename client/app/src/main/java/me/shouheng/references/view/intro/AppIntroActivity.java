@@ -1,16 +1,12 @@
 package me.shouheng.references.view.intro;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.github.paolorotolo.appintro.AppIntro;
 
+@Route(path = "/app/intro")
 public class AppIntroActivity extends AppIntro {
-
-    public static void launch(Context context) {
-        context.startActivity(new Intent(context.getApplicationContext(), AppIntroActivity.class));
-    }
 
     @Override
     public void init(Bundle savedInstanceState) {

@@ -1,5 +1,7 @@
-package me.shouheng.guokr.model;
+package me.shouheng.guokr.model.repository;
 
+import me.shouheng.guokr.model.data.GuokrNews;
+import me.shouheng.guokr.model.data.GuokrNewsContent;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;

@@ -1,5 +1,6 @@
 package me.shouheng.references.view.live.fragment;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -43,7 +44,7 @@ public class RoomFragment extends CommonFragment<FragmentRoomBinding> {
 
     private String uid, thumb;
 
-    @Inject LiveViewModel liveViewModel;
+    private LiveViewModel liveViewModel;
 
     private VideoFragment videoFragment;
 
@@ -66,6 +67,8 @@ public class RoomFragment extends CommonFragment<FragmentRoomBinding> {
         assert getArguments() != null;
         uid = getArguments().getString(EXTRA_UID);
         thumb = getArguments().getString(EXTRA_THUMB);
+
+        liveViewModel = ViewModelProviders.of(this).get(LiveViewModel.class);
 
         Objects.requireNonNull(getActivity()).getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 

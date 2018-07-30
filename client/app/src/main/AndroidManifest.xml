@@ -21,7 +21,6 @@
         <activity android:name=".view.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -29,17 +28,16 @@
         <activity android:name=".view.live.activity.LiveActivity" />
         <activity android:name=".view.live.activity.LiveRoomActivity" />
         <activity android:name=".view.layout.navigation.NavigationActivity" />
-        <activity android:name=".view.guokr.GuokrNewsActivity" />
         <activity android:name=".view.layout.tabbed.TabbedActivity" />
         <activity android:name=".view.layout.scrolling.ScrollingActivity" />
         <activity android:name=".view.layout.collapse.CollapseBarStructure" />
+        <activity android:name=".view.layout.bottomsheet.BottomSheetActivity"/>
 
         <!-- region fabric -->
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="aa14224ea2102fef301d211dac552635f37b1f9e" />
         <!-- endregion -->
-
 
         <!-- region file provider -->
         <provider
@@ -52,7 +50,6 @@
                 android:resource="@xml/provider_paths" />
         </provider>
         <!-- endregion -->
-        <activity android:name=".view.layout.bottomsheet.BottomSheetActivity"></activity>
     </application>
 
 </manifest>

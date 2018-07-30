@@ -1,4 +1,4 @@
-package me.shouheng.guokr.model;
+package me.shouheng.guokr.model.data;
 
 import java.util.List;
 
