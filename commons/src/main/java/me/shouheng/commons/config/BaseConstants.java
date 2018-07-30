@@ -18,7 +18,17 @@ public interface BaseConstants {
 
     String INTRO = "/app/intro";
 
-    String LIVE_HOME = "/app/home";
+    String LIVE_HOME = "/live/home";
+    String LIVE_DETAIL = "/live/detail";
+    String LIVE_DETAIL_EXTRA_ROOM_TYPE = "__extra_room_type";
+    String LIVE_DETAIL_EXTRA_UID = "__extra_uid";
+    String LIVE_DETAIL_EXTRA_THUMB = "__extra_thumb";
+    String LIVE_DETAIL_FULL_SCREEN = "/live/detail/fullscreen";
+    String LIVE_DETAIL_FULL_SCREEN_EXTRA_KEY_UID = "__extra_uid";
+    String LIVE_DETAIL_FULL_SCREEN_EXTRA_KEY_THUMB = "__extra_thumb";
+    String LIVE_DETAIL_ROOM = "/live/detail/room";
+    String LIVE_DETAIL_ROOM_EXTRA_KEY_UID = "__extra_uid";
+    String LIVE_DETAIL_ROOM_EXTRA_KEY_THUMB = "__extra_thumb";
 
     String GUOKR_NEWS = "/guokr/news";
     String GUOKR_NEWS_LIST = "/guokr/news/list";

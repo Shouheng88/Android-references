@@ -1,6 +1,6 @@
-println isGuokrModuleApp.toBoolean()
+println isLiveModuleApp.toBoolean()
 
-if (isGuokrModuleApp.toBoolean()) {
+if (isLiveModuleApp.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
@@ -39,7 +39,7 @@ android {
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
-            if (isGuokrModuleApp.toBoolean()) {
+            if (isLiveModuleApp.toBoolean()) {
                 manifest.srcFile "src/main/debug/AndroidManifest.xml"
             } else {
                 manifest.srcFile "src/main/AndroidManifest.xml"
@@ -53,6 +53,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // banner
+    implementation 'com.bigkoo:convenientbanner:2.0.5'
+    api files('libs/pldroid-player-1.5.0.jar')
     // router
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     // projects

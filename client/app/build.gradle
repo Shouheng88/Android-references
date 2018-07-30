@@ -83,16 +83,14 @@ dependencies {
     // awesome fonts and icons
     implementation 'com.mikepenz:google-material-typeface:3.0.1.2.original@aar'
     implementation 'com.mikepenz:fontawesome-typeface:5.0.13.0@aar'
-    // banner
-    implementation 'com.bigkoo:convenientbanner:2.0.5'
-    implementation files('libs/pldroid-player-1.5.0.jar')
     // router
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     // projects
-    if (isGuokrModule.toBoolean()) {
-        implementation project(':commons')
-    } else {
+    if (!isGuokrModuleApp.toBoolean()) {
         implementation project(':guokr')
-        implementation project(':commons')
     }
+    if (!isLiveModuleApp.toBoolean()) {
+        implementation project(':live')
+    }
+    implementation project(':commons')
 }

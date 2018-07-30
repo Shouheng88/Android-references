@@ -129,15 +129,12 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
                     if (drawerItem == null) return false;
                     switch ((int) drawerItem.getIdentifier()) {
                         case 0: break;
-                        case 1: {
+                        case 1:
                             ARouter.getInstance().build(BaseConstants.LIVE_HOME).navigation();
                             break;
-                        }
-                        case 2: {
-//                            startActivity(GuokrNewsActivity.class);
+                        case 2:
                             ARouter.getInstance().build(BaseConstants.GUOKR_NEWS).navigation();
                             break;
-                        }
                         case 2000: startActivity(NavigationActivity.class);break;
                         case 2001: startActivity(TabbedActivity.class);break;
                         case 2002: startActivity(BottomSheetActivity.class);break;
