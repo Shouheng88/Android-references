@@ -18,18 +18,20 @@ import me.shouheng.commons.tools.LogUtils;
 import me.shouheng.commons.tools.StringUtils;
 import me.shouheng.commons.tools.ToastUtils;
 import me.shouheng.commons.tools.glide.GlideApp;
+import me.shouheng.commons.view.fragment.CommonFragment;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.FragmentFullscreenBinding;
 import me.shouheng.references.model.live.data.Room;
 import me.shouheng.references.model.live.data.RoomLine;
-import me.shouheng.references.view.CommonDaggerFragment;
 import me.shouheng.references.viewmodel.LiveViewModel;
+
+import static me.shouheng.commons.model.Status.*;
 
 /**
  * @author shouh
  * @version $Id: FullscreenFragment, v 0.1 2018/6/9 20:00 shouh Exp$
  */
-public class FullscreenFragment extends CommonDaggerFragment<FragmentFullscreenBinding> {
+public class FullscreenFragment extends CommonFragment<FragmentFullscreenBinding> {
 
     private final static String EXTRA_UID = "__extra_uid";
 

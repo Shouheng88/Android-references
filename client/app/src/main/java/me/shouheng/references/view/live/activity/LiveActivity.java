@@ -20,16 +20,16 @@ import javax.inject.Inject;
 
 import me.shouheng.commons.tools.ToastUtils;
 import me.shouheng.commons.tools.glide.GlideApp;
+import me.shouheng.commons.view.activity.CommonActivity;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.ActivityLiveBinding;
 import me.shouheng.references.model.live.data.Banner;
 import me.shouheng.references.model.live.data.Recommend;
-import me.shouheng.references.view.CommonDaggerActivity;
 import me.shouheng.references.view.live.Constant;
 import me.shouheng.references.view.live.adapter.RecommendAdapter;
 import me.shouheng.references.viewmodel.LiveViewModel;
 
-public class LiveActivity extends CommonDaggerActivity<ActivityLiveBinding> {
+public class LiveActivity extends CommonActivity<ActivityLiveBinding> {
 
     @Inject LiveViewModel liveViewModel;
 

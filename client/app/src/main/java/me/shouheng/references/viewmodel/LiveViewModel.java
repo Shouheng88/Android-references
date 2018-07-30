@@ -1,15 +1,12 @@
 package me.shouheng.references.viewmodel;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
+import android.arch.lifecycle.ViewModel;
 import android.support.annotation.NonNull;
 
-import javax.inject.Inject;
-
-import me.shouheng.references.model.data.Resource;
-import me.shouheng.references.model.live.LiveService;
+import me.shouheng.commons.model.Resource;
 import me.shouheng.references.model.live.data.AppStart;
 import me.shouheng.references.model.live.data.Recommend;
 import me.shouheng.references.model.live.data.Room;
@@ -22,15 +19,9 @@ import rx.schedulers.Schedulers;
  * @author shouh
  * @version $Id: LiveViewModel, v 0.1 2018/6/8 22:13 shouh Exp$
  */
-public class LiveViewModel extends AndroidViewModel {
+public class LiveViewModel extends ViewModel {
 
-    private LiveService liveService;
 
-    @Inject
-    public LiveViewModel(@NonNull Application application, LiveService liveService) {
-        super(application);
-        this.liveService = liveService;
-    }
 
     public LiveData<Resource<Recommend>> getRecommend() {
         MutableLiveData<Resource<Recommend>> result = new MutableLiveData<>();

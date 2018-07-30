@@ -7,12 +7,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import me.shouheng.commons.view.activity.CommonActivity;
 import me.shouheng.references.R;
 import me.shouheng.references.common.fragment.NormalTipsFragment;
 import me.shouheng.references.databinding.ActivityTabbedBinding;
-import me.shouheng.references.view.CommonDaggerActivity;
 
-public class TabbedActivity extends CommonDaggerActivity<ActivityTabbedBinding> {
+public class TabbedActivity extends CommonActivity<ActivityTabbedBinding> {
 
     @Override
     protected int getLayoutResId() {

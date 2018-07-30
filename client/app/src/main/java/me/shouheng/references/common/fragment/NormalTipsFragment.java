@@ -8,14 +8,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import me.shouheng.commons.view.fragment.CommonFragment;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.FragmentNormalTipsBinding;
-import me.shouheng.references.view.CommonDaggerFragment;
 
 /**
  * Created by WngShhng on 2018/6/11.
  */
-public class NormalTipsFragment extends CommonDaggerFragment<FragmentNormalTipsBinding> {
+public class NormalTipsFragment extends CommonFragment<FragmentNormalTipsBinding> {
 
     private final static String EXTRA_TITLE = "__extra_title";
     private final static String EXTRA_CONTENT = "__extra_content";

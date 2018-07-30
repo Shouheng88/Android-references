@@ -21,19 +21,21 @@ import me.shouheng.commons.tools.LogUtils;
 import me.shouheng.commons.tools.StringUtils;
 import me.shouheng.commons.tools.ToastUtils;
 import me.shouheng.commons.tools.ViewUtils;
+import me.shouheng.commons.view.fragment.CommonFragment;
 import me.shouheng.references.MyApplication;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.FragmentRoomBinding;
 import me.shouheng.references.model.live.data.Room;
 import me.shouheng.references.model.live.data.RoomLine;
-import me.shouheng.references.view.CommonDaggerFragment;
 import me.shouheng.references.viewmodel.LiveViewModel;
+
+import static me.shouheng.commons.model.Status.*;
 
 /**
  * @author shouh
  * @version $Id: RoomFragment, v 0.1 2018/6/9 10:59 shouh Exp$
  */
-public class RoomFragment extends CommonDaggerFragment<FragmentRoomBinding> {
+public class RoomFragment extends CommonFragment<FragmentRoomBinding> {
 
     private final static String EXTRA_UID = "__extra_uid";
 

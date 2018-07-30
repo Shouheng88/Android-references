@@ -4,13 +4,13 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 
 import me.shouheng.commons.tools.PalmUtils;
+import me.shouheng.commons.view.activity.CommonActivity;
 import me.shouheng.references.R;
 import me.shouheng.references.common.fragment.NormalTipsFragment;
 import me.shouheng.references.databinding.ActivityNavigationBinding;
-import me.shouheng.references.view.CommonDaggerActivity;
 import me.shouheng.references.view.layout.navigation.fragment.PagerFragment;
 
-public class NavigationActivity extends CommonDaggerActivity<ActivityNavigationBinding> {
+public class NavigationActivity extends CommonActivity<ActivityNavigationBinding> {
 
     private final String FRAGMENT_KEY_PAGER = "__key_fragment_pager";
     private final String FRAGMENT_KEY_FAVORITE = "__key_fragment_favorite";

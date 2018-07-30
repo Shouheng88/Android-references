@@ -3,11 +3,11 @@ package me.shouheng.references.view.layout.bottomsheet;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import me.shouheng.commons.view.activity.CommonActivity;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.ActivityBottomSheetBinding;
-import me.shouheng.references.view.CommonDaggerActivity;
 
-public class BottomSheetActivity extends CommonDaggerActivity<ActivityBottomSheetBinding> {
+public class BottomSheetActivity extends CommonActivity<ActivityBottomSheetBinding> {
 
     @Override
     protected int getLayoutResId() {

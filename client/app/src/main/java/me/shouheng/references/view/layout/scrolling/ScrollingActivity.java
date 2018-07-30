@@ -4,11 +4,11 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 
+import me.shouheng.commons.view.activity.CommonActivity;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.ActivityScrollingBinding;
-import me.shouheng.references.view.CommonDaggerActivity;
 
-public class ScrollingActivity extends CommonDaggerActivity<ActivityScrollingBinding> {
+public class ScrollingActivity extends CommonActivity<ActivityScrollingBinding> {
 
     @Override
     protected int getLayoutResId() {

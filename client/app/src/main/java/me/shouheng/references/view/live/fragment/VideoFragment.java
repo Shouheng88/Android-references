@@ -7,15 +7,15 @@ import com.pili.pldroid.player.widget.PLVideoTextureView;
 import com.pili.pldroid.player.widget.PLVideoView;
 
 import me.shouheng.commons.tools.LogUtils;
+import me.shouheng.commons.view.fragment.CommonFragment;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.FragmentVideoBinding;
-import me.shouheng.references.view.CommonDaggerFragment;
 
 /**
  * @author shouh
  * @version $Id: VideoFragment, v 0.1 2018/6/9 14:19 shouh Exp$
  */
-public class VideoFragment extends CommonDaggerFragment<FragmentVideoBinding> {
+public class VideoFragment extends CommonFragment<FragmentVideoBinding> {
 
     private final static String EXTRA_URL = "__extra_url";
 

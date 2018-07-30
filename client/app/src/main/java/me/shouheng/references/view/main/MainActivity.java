@@ -18,9 +18,9 @@ import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
+import me.shouheng.commons.view.activity.CommonActivity;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.ActivityMainBinding;
-import me.shouheng.references.view.CommonDaggerActivity;
 import me.shouheng.references.view.intro.AppIntroActivity;
 import me.shouheng.references.view.layout.bottomsheet.BottomSheetActivity;
 import me.shouheng.references.view.layout.collapse.CollapseBarStructure;
@@ -29,7 +29,7 @@ import me.shouheng.references.view.layout.scrolling.ScrollingActivity;
 import me.shouheng.references.view.layout.tabbed.TabbedActivity;
 import me.shouheng.references.view.live.activity.LiveActivity;
 
-public class MainActivity extends CommonDaggerActivity<ActivityMainBinding> {
+public class MainActivity extends CommonActivity<ActivityMainBinding> {
 
     @Override
     protected int getLayoutResId() {

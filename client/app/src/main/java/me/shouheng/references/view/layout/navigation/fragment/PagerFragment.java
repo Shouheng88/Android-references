@@ -16,7 +16,6 @@ import me.shouheng.commons.tools.ToastUtils;
 import me.shouheng.references.R;
 import me.shouheng.references.common.fragment.NormalTipsFragment;
 import me.shouheng.references.databinding.FragmentPagerBinding;
-import me.shouheng.references.view.CommonDaggerFragment;
 
 /**
  * Created by WngShhng on 2018/6/11.

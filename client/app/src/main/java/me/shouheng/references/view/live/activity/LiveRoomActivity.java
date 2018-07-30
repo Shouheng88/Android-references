@@ -6,12 +6,12 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
-import me.shouheng.commons.view.fragment.CommonFragment;
 import me.shouheng.commons.tools.FragmentHelper;
 import me.shouheng.commons.tools.theme.ThemeUtils;
+import me.shouheng.commons.view.activity.CommonActivity;
+import me.shouheng.commons.view.fragment.CommonFragment;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.ActivityLiveRoomBinding;
-import me.shouheng.references.view.CommonDaggerActivity;
 import me.shouheng.references.view.live.fragment.FullscreenFragment;
 import me.shouheng.references.view.live.fragment.RoomFragment;
 
@@ -19,7 +19,7 @@ import me.shouheng.references.view.live.fragment.RoomFragment;
  * @author shouh
  * @version $Id: LiveRoomActivity, v 0.1 2018/6/9 10:32 shouh Exp$
  */
-public class LiveRoomActivity extends CommonDaggerActivity<ActivityLiveRoomBinding> {
+public class LiveRoomActivity extends CommonActivity<ActivityLiveRoomBinding> {
 
     private final static String EXTRA_ROOM_TYPE = "__extra_room_type";
     private final static String EXTRA_UID = "__extra_uid";
