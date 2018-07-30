@@ -18,14 +18,15 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 import me.shouheng.commons.config.BaseConstants;
+import me.shouheng.commons.tools.PalmUtils;
 import me.shouheng.commons.view.activity.CommonActivity;
+import me.shouheng.layout.view.bottomsheet.BottomSheetActivity;
+import me.shouheng.layout.view.collapse.CollapseBarStructure;
+import me.shouheng.layout.view.navigation.NavigationActivity;
+import me.shouheng.layout.view.scrolling.ScrollingActivity;
+import me.shouheng.layout.view.tabbed.TabbedActivity;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.ActivityMainBinding;
-import me.shouheng.references.view.layout.bottomsheet.BottomSheetActivity;
-import me.shouheng.references.view.layout.collapse.CollapseBarStructure;
-import me.shouheng.references.view.layout.navigation.NavigationActivity;
-import me.shouheng.references.view.layout.scrolling.ScrollingActivity;
-import me.shouheng.references.view.layout.tabbed.TabbedActivity;
 
 public class MainActivity extends CommonActivity<ActivityMainBinding> {
 
@@ -70,56 +71,70 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
                 .withDescription(R.string.menu_item_desc_0)
                 .withIcon(FontAwesome.Icon.faw_home)
                 .withIdentifier(0) // the id of menu item, used when setting click event
+                .withSelectedTextColor(PalmUtils.getColorCompact(R.color.accent))
+                .withSelectedIconColor(PalmUtils.getColorCompact(R.color.accent))
                 .withSelectable(true); // it the item has selected state
         PrimaryDrawerItem drawerItem1 = new PrimaryDrawerItem()
                 .withName(R.string.menu_item_title_1)
                 .withDescription(R.string.menu_item_desc_1)
                 .withIcon(GoogleMaterial.Icon.gmd_featured_video)
                 .withIdentifier(1)
+                .withSelectedTextColor(PalmUtils.getColorCompact(R.color.accent))
+                .withSelectedIconColor(PalmUtils.getColorCompact(R.color.accent))
                 .withSelectable(false);
         PrimaryDrawerItem drawerItem2 = new PrimaryDrawerItem()
                 .withName(R.string.menu_item_title_2)
                 .withDescription(R.string.menu_item_desc_2)
                 .withIcon(FontAwesome.Icon.faw_gamepad)
                 .withIdentifier(2)
+                .withSelectedTextColor(PalmUtils.getColorCompact(R.color.accent))
+                .withSelectedIconColor(PalmUtils.getColorCompact(R.color.accent))
                 .withSelectable(false);
-        ExpandableBadgeDrawerItem drawerItem3 = new ExpandableBadgeDrawerItem()
+        PrimaryDrawerItem drawerItem3 = new PrimaryDrawerItem()
                 .withName(R.string.menu_item_title_3)
                 .withDescription(R.string.menu_item_desc_3)
                 .withIcon(FontAwesome.Icon.faw_paper_plane)
-                .withSelectable(false)
-                .withSubItems(
-                        new SecondaryDrawerItem().withName(R.string.menu_item_sub_title_1)
-                                .withSelectable(false)
-                                .withDescription(R.string.menu_item_sub_desc_1)
-                                .withLevel(2)
-                                .withIcon(GoogleMaterial.Icon.gmd_navigation)
-                                .withIdentifier(2000),
-                        new SecondaryDrawerItem().withName(R.string.menu_item_sub_title_2)
-                                .withSelectable(false)
-                                .withDescription(R.string.menu_item_sub_desc_2)
-                                .withLevel(2)
-                                .withIcon(GoogleMaterial.Icon.gmd_format_bold)
-                                .withIdentifier(2001),
-                        new SecondaryDrawerItem().withName(R.string.menu_item_sub_title_3)
-                                .withSelectable(false)
-                                .withDescription(R.string.menu_item_sub_desc_3)
-                                .withLevel(2)
-                                .withIcon(GoogleMaterial.Icon.gmd_format_bold)
-                                .withIdentifier(2002),
-                        new SecondaryDrawerItem().withName(R.string.menu_item_sub_title_4)
-                                .withSelectable(false)
-                                .withDescription(R.string.menu_item_sub_desc_4)
-                                .withLevel(2)
-                                .withIcon(GoogleMaterial.Icon.gmd_format_bold)
-                                .withIdentifier(2003),
-                        new SecondaryDrawerItem().withName(R.string.menu_item_sub_title_5)
-                                .withSelectable(false)
-                                .withDescription(R.string.menu_item_sub_desc_5)
-                                .withLevel(2)
-                                .withIcon(GoogleMaterial.Icon.gmd_format_bold)
-                                .withIdentifier(2004)
-                );
+                .withIdentifier(3)
+                .withSelectedTextColor(PalmUtils.getColorCompact(R.color.accent))
+                .withSelectedIconColor(PalmUtils.getColorCompact(R.color.accent))
+                .withSelectable(false);
+//        ExpandableBadgeDrawerItem drawerItem3 = new ExpandableBadgeDrawerItem()
+//                .withName(R.string.menu_item_title_3)
+//                .withDescription(R.string.menu_item_desc_3)
+//                .withIcon(FontAwesome.Icon.faw_paper_plane)
+//                .withSelectable(false)
+//                .withSubItems(
+//                        new SecondaryDrawerItem().withName(R.string.menu_item_sub_title_1)
+//                                .withSelectable(false)
+//                                .withDescription(R.string.menu_item_sub_desc_1)
+//                                .withLevel(2)
+//                                .withIcon(GoogleMaterial.Icon.gmd_navigation)
+//                                .withIdentifier(2000),
+//                        new SecondaryDrawerItem().withName(R.string.menu_item_sub_title_2)
+//                                .withSelectable(false)
+//                                .withDescription(R.string.menu_item_sub_desc_2)
+//                                .withLevel(2)
+//                                .withIcon(GoogleMaterial.Icon.gmd_format_bold)
+//                                .withIdentifier(2001),
+//                        new SecondaryDrawerItem().withName(R.string.menu_item_sub_title_3)
+//                                .withSelectable(false)
+//                                .withDescription(R.string.menu_item_sub_desc_3)
+//                                .withLevel(2)
+//                                .withIcon(GoogleMaterial.Icon.gmd_format_bold)
+//                                .withIdentifier(2002),
+//                        new SecondaryDrawerItem().withName(R.string.menu_item_sub_title_4)
+//                                .withSelectable(false)
+//                                .withDescription(R.string.menu_item_sub_desc_4)
+//                                .withLevel(2)
+//                                .withIcon(GoogleMaterial.Icon.gmd_format_bold)
+//                                .withIdentifier(2003),
+//                        new SecondaryDrawerItem().withName(R.string.menu_item_sub_title_5)
+//                                .withSelectable(false)
+//                                .withDescription(R.string.menu_item_sub_desc_5)
+//                                .withLevel(2)
+//                                .withIcon(GoogleMaterial.Icon.gmd_format_bold)
+//                                .withIdentifier(2004)
+//                );
 
         new DrawerBuilder()
                 .withActivity(this)
@@ -130,16 +145,20 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
                     switch ((int) drawerItem.getIdentifier()) {
                         case 0: break;
                         case 1:
-                            ARouter.getInstance().build(BaseConstants.LIVE_HOME).navigation();
+                            ARouter.getInstance()
+                                    .build(BaseConstants.LIVE_HOME)
+                                    .navigation();
                             break;
                         case 2:
-                            ARouter.getInstance().build(BaseConstants.GUOKR_NEWS).navigation();
+                            ARouter.getInstance()
+                                    .build(BaseConstants.GUOKR_NEWS)
+                                    .navigation();
                             break;
-                        case 2000: startActivity(NavigationActivity.class);break;
-                        case 2001: startActivity(TabbedActivity.class);break;
-                        case 2002: startActivity(BottomSheetActivity.class);break;
-                        case 2003: startActivity(ScrollingActivity.class);break;
-                        case 2004: startActivity(CollapseBarStructure.class);break;
+                        case 3:
+                            ARouter.getInstance()
+                                    .build(BaseConstants.LAYOUT_MENU)
+                                    .navigation();
+                            break;
                     }
                     return false;
                 })

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.LayoutMenuActivity">
+
+    <RelativeLayout
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include android:id="@+id/bar_layout" layout="@layout/layout_toolbar"/>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_below="@id/bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/bnt_nav"
+                    android:text="@string/menu_item_sub_title_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/bnt_tabbed"
+                    android:text="@string/menu_item_sub_title_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/bnt_bottom_sheet"
+                    android:text="@string/menu_item_sub_title_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/bnt_scrolling"
+                    android:text="@string/menu_item_sub_title_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/bnt_collapse"
+                    android:text="@string/menu_item_sub_title_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <View android:layout_below="@id/bar_layout"
+            android:background="@drawable/bg_toolbar_shade"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+
+    </RelativeLayout>
+
+</layout>

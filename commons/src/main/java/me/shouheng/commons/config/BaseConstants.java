@@ -35,4 +35,16 @@ public interface BaseConstants {
     String GUOKR_NEWS_DETAIL = "/guokr/news/detail";
     String GUOKR_NEWS_DETAIL_EXTRA_KEY_ARTICLE_ID = "__extra_article_id";
     String GUOKR_NEWS_DETAIL_EXTRA_KEY_ARTICLE_TITLE = "__extra_article_title";
+
+    String LAYOUT_NORMAL_FRAGMENT = "/layout/normal_fragment";
+    String LAYOUT_NORMAL_FRAGMENT_EXTRA_TITLE = "__extra_title";
+    String LAYOUT_NORMAL_FRAGMENT_EXTRA_CONTENT = "__extra_content";
+    String LAYOUT_NORMAL_FRAGMENT_EXTRA_SHOW_TOOLBAR = "__extra_show_toolbar";
+    String LAYOUT_NAVIGATION = "/layout/navigation";
+    String LAYOUT_BOTTOM_SHEET = "/layout/bottom_sheet";
+    String LAYOUT_COLLAPSE_BAR = "/layout/collapse_bar";
+    String LAYOUT_SCROLLING = "/layout/scrolling";
+    String LAYOUT_TABBED = "/layout/tabbed";
+    String LAYOUT_MENU = "/layout/menu";
+    String LAYOUT_PAGER_FRAGMENT = "/layout/pager";
 }

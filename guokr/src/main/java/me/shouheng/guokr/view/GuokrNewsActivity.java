@@ -15,7 +15,6 @@ import me.shouheng.commons.view.activity.CommonActivity;
 import me.shouheng.guokr.R;
 import me.shouheng.guokr.databinding.ActivityGuokrBewsBinding;
 import me.shouheng.guokr.model.data.GuokrNews;
-import me.shouheng.guokr.view.fragment.NewsDetailFragment;
 import me.shouheng.guokr.view.fragment.NewsListFragment;
 
 @Route(path = BaseConstants.GUOKR_NEWS)
