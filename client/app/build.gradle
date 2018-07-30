@@ -89,6 +89,10 @@ dependencies {
     // router
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     // projects
-    implementation project(':commons')
-    implementation project(':guokr')
+    if (isGuokrModule.toBoolean()) {
+        implementation project(':commons')
+    } else {
+        implementation project(':guokr')
+        implementation project(':commons')
+    }
 }

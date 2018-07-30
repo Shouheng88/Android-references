@@ -1,4 +1,10 @@
-apply plugin: 'com.android.library'
+println isGuokrModule.toBoolean()
+
+if (isGuokrModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -33,6 +39,11 @@ android {
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
+            if (isGuokrModule.toBoolean()) {
+                manifest.srcFile "src/main/debug/AndroidManifest.xml"
+            } else {
+                manifest.srcFile "src/main/AndroidManifest.xml"
+            }
         }
     }
 }

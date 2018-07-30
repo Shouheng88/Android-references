@@ -7,6 +7,9 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+
+import me.shouheng.commons.config.BaseConstants;
 import me.shouheng.commons.tools.ToastUtils;
 import me.shouheng.commons.view.fragment.CommonFragment;
 import me.shouheng.commons.view.widget.DividerItemDecoration;
@@ -20,6 +23,7 @@ import me.shouheng.guokr.viewmodel.GuokrViewModel;
  * @author shouh
  * @version $Id: NewsListFragment, v 0.1 2018/6/10 12:08 shouh Exp$
  */
+@Route(path = BaseConstants.GUOKR_NEWS_LIST)
 public class NewsListFragment extends CommonFragment<FragmentNewsListBinding> {
 
     private GuokrViewModel guokrViewModel;
@@ -29,13 +33,6 @@ public class NewsListFragment extends CommonFragment<FragmentNewsListBinding> {
     private final int limit = 20;
 
     private GuokrNewsAdapter adapter;
-
-    public static NewsListFragment newInstance() {
-        Bundle args = new Bundle();
-        NewsListFragment fragment = new NewsListFragment();
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     protected int getLayoutResId() {

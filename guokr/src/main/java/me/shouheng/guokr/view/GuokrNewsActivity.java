@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 
 import me.shouheng.commons.config.BaseConstants;
 import me.shouheng.commons.tools.FragmentHelper;
@@ -29,7 +30,7 @@ public class GuokrNewsActivity extends CommonActivity<ActivityGuokrBewsBinding> 
     protected void doCreateView(Bundle savedInstanceState) {
         configToolbar();
 
-        toFragment(NewsListFragment.newInstance());
+        toFragment((Fragment) ARouter.getInstance().build(BaseConstants.GUOKR_NEWS_LIST).navigation());
     }
 
     private void configToolbar() {
@@ -54,7 +55,12 @@ public class GuokrNewsActivity extends CommonActivity<ActivityGuokrBewsBinding> 
 
     @Override
     public void onArticleClicked(GuokrNews.Result result) {
-        toFragmentWithCallback(NewsDetailFragment.newInstance(result.getId(), result.getTitle()));
+        Fragment fragment = (Fragment) ARouter.getInstance()
+                .build(BaseConstants.GUOKR_NEWS_DETAIL)
+                .withInt(BaseConstants.GUOKR_NEWS_DETAIL_EXTRA_KEY_ARTICLE_ID, result.getId())
+                .withString(BaseConstants.GUOKR_NEWS_DETAIL_EXTRA_KEY_ARTICLE_TITLE, result.getTitle())
+                .navigation();
+        toFragmentWithCallback(fragment);
     }
 
     @Override

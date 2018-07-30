@@ -11,6 +11,9 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+
+import me.shouheng.commons.config.BaseConstants;
 import me.shouheng.commons.tools.ToastUtils;
 import me.shouheng.commons.view.fragment.CommonFragment;
 import me.shouheng.guokr.R;
@@ -22,26 +25,14 @@ import me.shouheng.guokr.viewmodel.GuokrViewModel;
  * @author shouh
  * @version $Id: NewsDetailFragment, v 0.1 2018/6/10 19:02 shouh Exp$
  */
+@Route(path = BaseConstants.GUOKR_NEWS_DETAIL)
 public class NewsDetailFragment extends CommonFragment<FragmentNewsDetailBinding> {
-
-    private final static String EXTRA_ARTICLE_ID = "__extra_article_id";
-
-    private final static String EXTRA_ARTICLE_TITLE = "__extra_article_title";
 
     private int articleId;
 
     private String articleTitle;
 
     private GuokrViewModel guokrViewModel;
-
-    public static NewsDetailFragment newInstance(int articleId, String articleTitle) {
-        Bundle args = new Bundle();
-        args.putInt(EXTRA_ARTICLE_ID, articleId);
-        args.putString(EXTRA_ARTICLE_TITLE, articleTitle);
-        NewsDetailFragment fragment = new NewsDetailFragment();
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     protected int getLayoutResId() {
@@ -64,8 +55,8 @@ public class NewsDetailFragment extends CommonFragment<FragmentNewsDetailBinding
     private void handleArguments() {
         Bundle args = getArguments();
         assert args != null;
-        articleId = args.getInt(EXTRA_ARTICLE_ID);
-        articleTitle = args.getString(EXTRA_ARTICLE_TITLE);
+        articleId = args.getInt(BaseConstants.GUOKR_NEWS_DETAIL_EXTRA_KEY_ARTICLE_ID);
+        articleTitle = args.getString(BaseConstants.GUOKR_NEWS_DETAIL_EXTRA_KEY_ARTICLE_TITLE);
     }
 
     private void configToolbar() {

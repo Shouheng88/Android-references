@@ -21,4 +21,8 @@ public interface BaseConstants {
     String LIVE_HOME = "/app/home";
 
     String GUOKR_NEWS = "/guokr/news";
+    String GUOKR_NEWS_LIST = "/guokr/news/list";
+    String GUOKR_NEWS_DETAIL = "/guokr/news/detail";
+    String GUOKR_NEWS_DETAIL_EXTRA_KEY_ARTICLE_ID = "__extra_article_id";
+    String GUOKR_NEWS_DETAIL_EXTRA_KEY_ARTICLE_TITLE = "__extra_article_title";
 }
