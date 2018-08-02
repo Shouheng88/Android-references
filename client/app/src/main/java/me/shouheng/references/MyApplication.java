@@ -1,8 +1,11 @@
 package me.shouheng.references;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.meituan.android.walle.WalleChannelReader;
+import com.umeng.commonsdk.UMConfigure;
 
 import me.shouheng.commons.BaseApplication;
+import me.shouheng.commons.config.Configs;
 
 /**
  * @author shouh
@@ -22,5 +25,8 @@ public class MyApplication extends BaseApplication {
         application = this;
 
         ARouter.init(this);
+
+        String channel = WalleChannelReader.getChannel(this);
+        UMConfigure.init(this, Configs.APP_KEY, channel, UMConfigure.DEVICE_TYPE_PHONE, "");
     }
 }
