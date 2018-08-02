@@ -80,8 +80,8 @@ android {
     }
     // walle
     walle {
-        apkOutputFolder = new File("${project.buildDir}/outputs/channels");
-        apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk';
+        apkOutputFolder = new File("${project.buildDir}/outputs/channels")
+        apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk'
         channelFile = new File("${project.getProjectDir()}/channel")
     }
 }

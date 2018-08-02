@@ -64,11 +64,11 @@ dependencies {
     api 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
     api 'joda-time:joda-time:2.9.9'
     // io
-    api 'commons-io:commons-io:2.5'
+    api 'commons-io:commons-io:2.6'
     // image compress
     api 'top.zibin:Luban:1.1.3'
     // recycler
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.33'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
     api 'com.yanzhenjie:recyclerview-swipe:1.1.4'
     // glide
     api 'com.github.bumptech.glide:glide:4.7.1'
