@@ -21,17 +21,12 @@ android {
     }
     signingConfigs {
         release {
-            v1SigningEnabled true
-            v2SigningEnabled true
             keyAlias 'key0'
             storeFile file('../palm.jks')
             storePassword '123456'
             keyPassword '123456'
         }
-        debug {
-            v1SigningEnabled true
-            v2SigningEnabled true
-        }
+        debug { }
     }
     buildTypes {
         release {

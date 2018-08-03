@@ -96,7 +96,7 @@ dependencies {
     // walle
     api 'com.meituan.android.walle:library:1.1.6'
     // umeng
-    api 'com.umeng.sdk:common:1.5.0'
-    api 'com.umeng.sdk:analytics:7.5.0'
+    api 'com.umeng.sdk:common:1.5.3'
+    api 'com.umeng.sdk:analytics:7.5.3'
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
 }
