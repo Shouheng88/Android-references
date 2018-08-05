@@ -3,7 +3,6 @@ package me.shouheng.libraries.eventbus;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.view.MenuItem;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -37,7 +36,7 @@ public class EventBusActivity2 extends CommonActivity<ActivityEventBus2Binding> 
             publishContent();
             finish();
         });
-        getBinding().btnPublishSticky.setOnClickListener(v -> publishCStickyontent());
+        getBinding().btnPublishSticky.setOnClickListener(v -> publishStickyontent());
     }
 
     private void publishContent() {
@@ -46,7 +45,7 @@ public class EventBusActivity2 extends CommonActivity<ActivityEventBus2Binding> 
         ToastUtils.makeToast("Published : " + msg);
     }
 
-    private void publishCStickyontent() {
+    private void publishStickyontent() {
         String msg = getBinding().etMessage.getText().toString();
         EventBus.getDefault().postSticky(MessageWrap.getInstance(msg));
         ToastUtils.makeToast("Published : " + msg);
