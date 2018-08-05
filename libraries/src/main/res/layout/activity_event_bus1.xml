@@ -32,6 +32,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn_stop"
+                    android:text="@string/event_bus_stop_delivery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/tv_message"
                     android:textStyle="bold"

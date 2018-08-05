@@ -20,6 +20,8 @@ import me.shouheng.libraries.databinding.ActivityEventBus1Binding;
 @Route(path = BaseConstants.LIBRARY_EVENT_BUS_ACTIVITY1)
 public class EventBusActivity1 extends CommonActivity<ActivityEventBus1Binding> {
 
+    private boolean stopDelivery = false;
+
     @Override
     protected int getLayoutResId() {
         return R.layout.activity_event_bus1;
@@ -35,6 +37,7 @@ public class EventBusActivity1 extends CommonActivity<ActivityEventBus1Binding> 
                 ARouter.getInstance()
                         .build(BaseConstants.LIBRARY_EVENT_BUS_ACTIVITY2)
                         .navigation());
+        getBinding().btnStop.setOnClickListener(v -> stopDelivery = true);
     }
 
     private void configToolbar() {
@@ -65,14 +68,17 @@ public class EventBusActivity1 extends CommonActivity<ActivityEventBus1Binding> 
         EventBus.getDefault().unregister(this);
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN)
+    @Subscribe(threadMode = ThreadMode.POSTING, priority = 0)
     public void onGetMessage(MessageWrap message) {
         getBinding().tvMessage.setText(message.message);
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    @Subscribe(threadMode = ThreadMode.POSTING, sticky = true, priority = 1)
     public void onGetStickyEvent(MessageWrap message) {
         String txt = "Sticky event: " + message.message;
         getBinding().tvStickyMessage.setText(txt);
+        if (stopDelivery) {
+            EventBus.getDefault().cancelEventDelivery(message);
+        }
     }
 }

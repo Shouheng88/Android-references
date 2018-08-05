@@ -94,6 +94,7 @@
     <string name="text_publish">Publish</string>
     <string name="text_publish_and_finish">Publish &amp; finish</string>
     <string name="text_publish_sticky_event">Publish sticky event</string>
+    <string name="event_bus_stop_delivery">Stop delivery</string>
     <!--endregion-->
 
 </resources>
