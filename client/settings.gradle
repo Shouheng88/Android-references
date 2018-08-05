@@ -1,5 +1,6 @@
-include ':app', ':commons', ':guokr', ':live', ':layout'
+include ':app', ':commons', ':guokr', ':live', ':layout', ':libraries'
 project(':commons').projectDir = new File('../commons')
 project(':guokr').projectDir = new File('../guokr')
 project(':live').projectDir = new File('../live')
 project(':layout').projectDir = new File('../layout')
+project(':libraries').projectDir = new File('../libraries')

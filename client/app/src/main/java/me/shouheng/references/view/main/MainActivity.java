@@ -10,21 +10,14 @@ import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.DrawerBuilder;
-import com.mikepenz.materialdrawer.model.ExpandableBadgeDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem;
-import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 import me.shouheng.commons.config.BaseConstants;
 import me.shouheng.commons.tools.PalmUtils;
 import me.shouheng.commons.view.activity.CommonActivity;
-import me.shouheng.layout.view.bottomsheet.BottomSheetActivity;
-import me.shouheng.layout.view.collapse.CollapseBarStructure;
-import me.shouheng.layout.view.navigation.NavigationActivity;
-import me.shouheng.layout.view.scrolling.ScrollingActivity;
-import me.shouheng.layout.view.tabbed.TabbedActivity;
 import me.shouheng.references.R;
 import me.shouheng.references.databinding.ActivityMainBinding;
 
@@ -98,6 +91,14 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
                 .withSelectedTextColor(PalmUtils.getColorCompact(R.color.accent))
                 .withSelectedIconColor(PalmUtils.getColorCompact(R.color.accent))
                 .withSelectable(false);
+        PrimaryDrawerItem drawerItem4 = new PrimaryDrawerItem()
+                .withName(R.string.menu_item_title_4)
+                .withDescription(R.string.menu_item_desc_4)
+                .withIcon(FontAwesome.Icon.faw_app_store_ios)
+                .withIdentifier(4)
+                .withSelectedTextColor(PalmUtils.getColorCompact(R.color.accent))
+                .withSelectedIconColor(PalmUtils.getColorCompact(R.color.accent))
+                .withSelectable(false);
 //        ExpandableBadgeDrawerItem drawerItem3 = new ExpandableBadgeDrawerItem()
 //                .withName(R.string.menu_item_title_3)
 //                .withDescription(R.string.menu_item_desc_3)
@@ -139,7 +140,7 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
         new DrawerBuilder()
                 .withActivity(this)
                 .withHasStableIds(true)
-                .addDrawerItems(drawerItem0, drawerItem1, drawerItem2, drawerItem3)
+                .addDrawerItems(drawerItem0, drawerItem1, drawerItem2, drawerItem3, drawerItem4)
                 .withOnDrawerItemClickListener((view, position, drawerItem) -> {
                     if (drawerItem == null) return false;
                     switch ((int) drawerItem.getIdentifier()) {
@@ -157,6 +158,11 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
                         case 3:
                             ARouter.getInstance()
                                     .build(BaseConstants.LAYOUT_MENU)
+                                    .navigation();
+                            break;
+                        case 4:
+                            ARouter.getInstance()
+                                    .build(BaseConstants.LIBRARY_MENU)
                                     .navigation();
                             break;
                     }

@@ -107,5 +107,8 @@ dependencies {
     if (!isLayoutModuleApp.toBoolean()) {
         implementation project(':layout')
     }
+    if (!isLibraryModuleApp.toBoolean()) {
+        implementation project(':libraries')
+    }
     implementation project(':commons')
 }
