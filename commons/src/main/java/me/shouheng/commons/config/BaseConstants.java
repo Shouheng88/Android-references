@@ -51,4 +51,5 @@ public interface BaseConstants {
     String LIBRARY_MENU = "/library/menu";
     String LIBRARY_EVENT_BUS_ACTIVITY1 = "/library/event_bus/activity1";
     String LIBRARY_EVENT_BUS_ACTIVITY2 = "/library/event_bus/activity2";
+    String LIBRARY_RX_JAVA = "/library/rxjava";
 }

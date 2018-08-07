@@ -28,6 +28,10 @@ public class MenuActivity extends CommonActivity<ActivityMenuBinding> {
                 ARouter.getInstance()
                         .build(BaseConstants.LIBRARY_EVENT_BUS_ACTIVITY1)
                         .navigation());
+        getBinding().btnRxjava.setOnClickListener(v ->
+                ARouter.getInstance()
+                        .build(BaseConstants.LIBRARY_RX_JAVA)
+                        .navigation());
     }
 
     private void configToolbar() {
