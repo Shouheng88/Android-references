@@ -50,7 +50,6 @@ dependencies {
     api "com.android.support:palette-v7:$supportLibVersion"
     api "com.android.support:cardview-v7:$supportLibVersion"
     api "com.android.support:design:$supportLibVersion"
-    api 'com.android.support.constraint:constraint-layout:1.1.2'
     // architecture
     api "android.arch.lifecycle:runtime:$archVersion"
     api "android.arch.lifecycle:extensions:$archVersion"
@@ -86,18 +85,18 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-compiler:$dagger"
     annotationProcessor "com.google.dagger:dagger-android-processor:$dagger"
     // retrofit
-    api 'com.squareup.retrofit2:retrofit:2.3.0'
-    api 'com.squareup.retrofit2:converter-gson:2.3.0'
-    api 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    api 'com.squareup.retrofit2:retrofit:2.4.0'
+    api 'com.squareup.retrofit2:converter-gson:2.4.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
     // rx-java
     api "io.reactivex.rxjava2:rxjava:$rxJava"
     api "io.reactivex.rxjava2:rxandroid:$rxAndroid"
     // router
     api 'com.alibaba:arouter-api:1.3.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     // walle
     api 'com.meituan.android.walle:library:1.1.6'
     // umeng
     api 'com.umeng.sdk:common:1.5.3'
     api 'com.umeng.sdk:analytics:7.5.3'
-    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
 }

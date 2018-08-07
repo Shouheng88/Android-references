@@ -1,11 +1,11 @@
 package me.shouheng.live.model;
 
+import io.reactivex.Observable;
 import me.shouheng.live.model.data.AppStart;
 import me.shouheng.live.model.data.Recommend;
 import me.shouheng.live.model.data.Room;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
-import rx.Observable;
 
 /**
  * @author shouh

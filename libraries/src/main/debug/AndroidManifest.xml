@@ -21,6 +21,8 @@
 
         <activity android:name=".eventbus.EventBusActivity2"/>
 
+        <activity android:name=".rxjava.RxJavaActivity"/>
+
     </application>
 
 </manifest>
