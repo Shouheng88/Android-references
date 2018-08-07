@@ -4,13 +4,14 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 import me.shouheng.commons.model.Resource;
-import me.shouheng.guokr.model.repository.GuokrRetrofit;
 import me.shouheng.guokr.model.data.GuokrNews;
 import me.shouheng.guokr.model.data.GuokrNewsContent;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
+import me.shouheng.guokr.model.repository.GuokrRetrofit;
 
 /**
  * @author shouh
@@ -23,14 +24,17 @@ public class GuokrViewModel extends ViewModel {
         GuokrRetrofit.getGuokrService().getNews(offset, limit)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<GuokrNews>() {
-                    @Override
-                    public void onCompleted() { }
-
+                .subscribe(new Observer<GuokrNews>() {
                     @Override
                     public void onError(Throwable e) {
                         result.setValue(Resource.error(e.getMessage(), null));
                     }
+
+                    @Override
+                    public void onComplete() { }
+
+                    @Override
+                    public void onSubscribe(Disposable d) { }
 
                     @Override
                     public void onNext(GuokrNews guokrNews) {
@@ -45,14 +49,17 @@ public class GuokrViewModel extends ViewModel {
         GuokrRetrofit.getGuokrService().getGuokrContent(id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<GuokrNewsContent>() {
-                    @Override
-                    public void onCompleted() { }
-
+                .subscribe(new Observer<GuokrNewsContent>() {
                     @Override
                     public void onError(Throwable e) {
                         result.setValue(Resource.error(e.getMessage(), null));
                     }
+
+                    @Override
+                    public void onComplete() { }
+
+                    @Override
+                    public void onSubscribe(Disposable d) { }
 
                     @Override
                     public void onNext(GuokrNewsContent guokrNewsContent) {

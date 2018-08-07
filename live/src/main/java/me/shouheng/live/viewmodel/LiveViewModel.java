@@ -4,15 +4,15 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 import me.shouheng.commons.model.Resource;
 import me.shouheng.live.model.data.AppStart;
 import me.shouheng.live.model.data.Recommend;
 import me.shouheng.live.model.data.Room;
 import me.shouheng.live.model.repository.LiveRetrofit;
-import rx.Observer;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 /**
  * @author shouh
@@ -25,9 +25,14 @@ public class LiveViewModel extends ViewModel {
         LiveRetrofit.getLiveService().getRecommend()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<Recommend>() {
+                .subscribe(new Observer<Recommend>() {
                     @Override
-                    public void onCompleted() { }
+                    public void onSubscribe(Disposable d) { }
+
+                    @Override
+                    public void onNext(Recommend recommend) {
+                        result.setValue(Resource.success(recommend));
+                    }
 
                     @Override
                     public void onError(Throwable e) {
@@ -35,9 +40,7 @@ public class LiveViewModel extends ViewModel {
                     }
 
                     @Override
-                    public void onNext(Recommend recommend) {
-                        result.setValue(Resource.success(recommend));
-                    }
+                    public void onComplete() { }
                 });
         return result;
     }
@@ -47,14 +50,17 @@ public class LiveViewModel extends ViewModel {
         LiveRetrofit.getLiveService().getAppStartInfo()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<AppStart>() {
-                    @Override
-                    public void onCompleted() { }
-
+                .subscribe(new Observer<AppStart>() {
                     @Override
                     public void onError(Throwable e) {
                         result.setValue(Resource.error(e.getMessage(), null));
                     }
+
+                    @Override
+                    public void onComplete() { }
+
+                    @Override
+                    public void onSubscribe(Disposable d) { }
 
                     @Override
                     public void onNext(AppStart appStart) {
@@ -71,12 +77,15 @@ public class LiveViewModel extends ViewModel {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Room>() {
                     @Override
-                    public void onCompleted() { }
-
-                    @Override
                     public void onError(Throwable e) {
                         result.setValue(Resource.error(e.getMessage(), null));
                     }
+
+                    @Override
+                    public void onComplete() { }
+
+                    @Override
+                    public void onSubscribe(Disposable d) { }
 
                     @Override
                     public void onNext(Room room) {
