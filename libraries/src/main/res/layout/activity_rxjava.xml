@@ -1,13 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <RelativeLayout
+        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <include android:id="@+id/bar_layout" layout="@layout/layout_toolbar"/>
 
+        <android.support.v4.widget.NestedScrollView
+            android:layout_below="@id/bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn1"
+                    android:text="Test 1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn2"
+                    android:text="Test 2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <View android:layout_below="@id/bar_layout"
+            android:background="@drawable/bg_toolbar_shade"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+
+    </RelativeLayout>
 
 </layout>

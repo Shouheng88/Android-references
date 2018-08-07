@@ -5,7 +5,10 @@ import android.os.Bundle;
 import com.alibaba.android.arouter.facade.annotation.Route;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableOnSubscribe;
 import me.shouheng.commons.config.BaseConstants;
+import me.shouheng.commons.tools.LogUtils;
+import me.shouheng.commons.tools.ToastUtils;
 import me.shouheng.commons.view.activity.CommonActivity;
 import me.shouheng.libraries.R;
 import me.shouheng.libraries.databinding.ActivityRxjavaBinding;
@@ -24,6 +27,13 @@ public class RxJavaActivity extends CommonActivity<ActivityRxjavaBinding> {
 
     @Override
     protected void doCreateView(Bundle savedInstanceState) {
-        Observable.just(1).subscribe();
+        getBinding().btn1.setOnClickListener(v ->
+                Observable.create((ObservableOnSubscribe<String>) emitter -> {
+                    String str = getBinding().et.getText().toString();
+                    emitter.onNext(str);
+//                emitter.onError(new Exception("Exception"));
+//                emitter.onComplete();
+                }).subscribe(ToastUtils::makeToast));
+        getBinding().btn2.setOnClickListener(v -> Observable.just(1,2,3,4).subscribe(LogUtils::d));
     }
 }
