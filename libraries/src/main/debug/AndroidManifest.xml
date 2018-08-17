@@ -23,6 +23,8 @@
 
         <activity android:name=".rxjava.RxJavaActivity"/>
 
+        <activity android:name=".rxjava.RxBusActivity"/>
+
     </application>
 
 </manifest>

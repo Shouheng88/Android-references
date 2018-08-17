@@ -30,7 +30,7 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
 
     @Override
     protected void doCreateView(Bundle savedInstanceState) {
-        ARouter.getInstance().build("/app/intro").navigation();
+        ARouter.getInstance().build(BaseConstants.INTRO).navigation();
 
         getBinding().barLayout.toolbar.setTitle(R.string.menu_item_desc_0);
         getBinding().barLayout.toolbar.setTitleTextColor(Color.BLACK);

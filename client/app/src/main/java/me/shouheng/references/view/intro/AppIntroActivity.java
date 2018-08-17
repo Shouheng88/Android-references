@@ -5,7 +5,9 @@ import android.os.Bundle;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.github.paolorotolo.appintro.AppIntro;
 
-@Route(path = "/app/intro")
+import me.shouheng.commons.config.BaseConstants;
+
+@Route(path = BaseConstants.INTRO)
 public class AppIntroActivity extends AppIntro {
 
     @Override

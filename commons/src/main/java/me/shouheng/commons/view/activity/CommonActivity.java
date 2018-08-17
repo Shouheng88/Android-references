@@ -11,6 +11,11 @@ import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
+import me.shouheng.commons.rxbus.RxBus;
+import me.shouheng.commons.tools.LogUtils;
+
 /**
  * Created by WngShhng on 2018/5/18.*/
 public abstract class CommonActivity<T extends ViewDataBinding> extends BaseActivity {
@@ -64,5 +69,25 @@ public abstract class CommonActivity<T extends ViewDataBinding> extends BaseActi
      * Used to call {@link #onBackPressed()} to avoid override by sub class */
     public void superOnBackPressed() {
         super.onBackPressed();
+    }
+
+    protected void postEvent(Object object) {
+        RxBus.getRxBus().post(object);
+    }
+
+    protected <M> void addSubscription(Class<M> eventType, Consumer<M> action) {
+        Disposable disposable = RxBus.getRxBus().doSubscribe(eventType, action, LogUtils::d);
+        RxBus.getRxBus().addSubscription(this, disposable);
+    }
+
+    protected <M> void addSubscription(Class<M> eventType, Consumer<M> action, Consumer<Throwable> error) {
+        Disposable disposable = RxBus.getRxBus().doSubscribe(eventType, action, error);
+        RxBus.getRxBus().addSubscription(this, disposable);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        RxBus.getRxBus().unSubscribe(this);
     }
 }
