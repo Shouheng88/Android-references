@@ -99,6 +99,14 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
                 .withSelectedTextColor(PalmUtils.getColorCompact(R.color.accent))
                 .withSelectedIconColor(PalmUtils.getColorCompact(R.color.accent))
                 .withSelectable(false);
+        PrimaryDrawerItem drawerItem5 = new PrimaryDrawerItem()
+                .withName(R.string.menu_item_title_5)
+                .withDescription(R.string.menu_item_desc_5)
+                .withIcon(FontAwesome.Icon.faw_accusoft)
+                .withIdentifier(5)
+                .withSelectedTextColor(PalmUtils.getColorCompact(R.color.accent))
+                .withSelectedIconColor(PalmUtils.getColorCompact(R.color.accent))
+                .withSelectable(false);
 //        ExpandableBadgeDrawerItem drawerItem3 = new ExpandableBadgeDrawerItem()
 //                .withName(R.string.menu_item_title_3)
 //                .withDescription(R.string.menu_item_desc_3)
@@ -140,7 +148,7 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
         new DrawerBuilder()
                 .withActivity(this)
                 .withHasStableIds(true)
-                .addDrawerItems(drawerItem0, drawerItem1, drawerItem2, drawerItem3, drawerItem4)
+                .addDrawerItems(drawerItem0, drawerItem1, drawerItem2, drawerItem3, drawerItem4, drawerItem5)
                 .withOnDrawerItemClickListener((view, position, drawerItem) -> {
                     if (drawerItem == null) return false;
                     switch ((int) drawerItem.getIdentifier()) {
@@ -163,6 +171,11 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
                         case 4:
                             ARouter.getInstance()
                                     .build(BaseConstants.LIBRARY_MENU)
+                                    .navigation();
+                            break;
+                        case 5:
+                            ARouter.getInstance()
+                                    .build(BaseConstants.EYEPETIZER_MENU)
                                     .navigation();
                             break;
                     }
