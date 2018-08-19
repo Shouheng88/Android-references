@@ -55,4 +55,9 @@ public interface BaseConstants {
     String LIBRARY_RX_JAVA_BUS = "/library/rxjava_bus";
 
     String EYEPETIZER_MENU = "/eyepetizer/menu";
+    String EYEPETIZER_CONTAINER = "/eyepetizer/container";
+    String EYEPETIZER_CONTAINER_ACTION_VIDEO_EXTRA_URL = "__container_action_video_extra_url";
+    String EYEPETIZER_VIDEO = "/eyepetizer/video";
+    String EYEPETIZER_VIDEO_EXTRA_URL = "__extra_url";
+    String EYEPETIZER_VIDEO_EXTRA_FULLSCREEN = "__extra_fullscreen";
 }

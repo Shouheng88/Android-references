@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 
 import java.util.List;
 
@@ -66,7 +67,11 @@ public class HomeActivity extends CommonActivity<ActivityEyepetizerMenuBinding> 
     private void configList() {
         homeAdapter = new HomeAdapter(getContext());
         homeAdapter.setOnItemClickListener(((adapter1, view, position) -> {
-            // TODO
+            HomeBean.IssueList.ItemList itemList = homeAdapter.getData().get(position);
+            ARouter.getInstance()
+                    .build(BaseConstants.EYEPETIZER_CONTAINER)
+                    .withString(BaseConstants.EYEPETIZER_CONTAINER_ACTION_VIDEO_EXTRA_URL, itemList.getData().getPlayUrl())
+                    .navigation();
         }));
 
         getBinding().rv.setAdapter(homeAdapter);

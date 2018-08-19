@@ -9,9 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".ui.activity.HomeActivity"/>
-
+        <activity android:name=".ui.activity.HomeActivity" />
+        <activity android:name=".ui.activity.ContainerActivity"></activity>
     </application>
 
 </manifest>
