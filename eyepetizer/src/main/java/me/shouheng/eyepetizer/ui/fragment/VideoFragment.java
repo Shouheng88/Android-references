@@ -11,14 +11,14 @@ import me.shouheng.commons.config.BaseConstants;
 import me.shouheng.commons.tools.LogUtils;
 import me.shouheng.commons.view.fragment.CommonFragment;
 import me.shouheng.eyepetizer.R;
-import me.shouheng.eyepetizer.databinding.FragmentVideoBinding;
+import me.shouheng.eyepetizer.databinding.FragmentEyeVideoBinding;
 
 /**
  * @author shouh
  * @version $Id: VideoFragment, v 0.1 2018/6/9 14:19 shouh Exp$
  */
 @Route(path = BaseConstants.EYEPETIZER_VIDEO)
-public class VideoFragment extends CommonFragment<FragmentVideoBinding> {
+public class VideoFragment extends CommonFragment<FragmentEyeVideoBinding> {
 
     private String url;
 
@@ -28,7 +28,7 @@ public class VideoFragment extends CommonFragment<FragmentVideoBinding> {
 
     @Override
     protected int getLayoutResId() {
-        return R.layout.fragment_video;
+        return R.layout.fragment_eye_video;
     }
 
     @Override
