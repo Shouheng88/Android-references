@@ -44,10 +44,7 @@
     <string name="nav_bottom_desc_3">这里是Navigation布局页面中的个人信息页面的实例</string>
 
     <string name="what_for">项目简介</string>
-    <string name="what_for_detail">1.对于视频直播和果壳网的新闻的部分主要使用了MVVM+Dagger+Retrofit的架构设计；\n\n
-    2.此外，该项目中还包含了一些Material Design设计风格的常用的布局；</string>
-    <string name="what_is">包含内容</string>
-    <string name="about_author">关于作者</string>
+    <string name="what_for_detail">该项目用作Android高级开发的演示</string>
 
     <string name="bottom_sheet_default_content">Bottom Sheet的内部布局</string>
 
