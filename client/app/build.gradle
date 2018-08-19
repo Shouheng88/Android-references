@@ -110,5 +110,8 @@ dependencies {
     if (!isLibraryModuleApp.toBoolean()) {
         implementation project(':libraries')
     }
+    if (!isEyepetizerModuleApp.toBoolean()) {
+        implementation project(':eyepetizer')
+    }
     implementation project(':commons')
 }
