@@ -3,6 +3,7 @@ package me.shouheng.libraries.rxjava;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableOnSubscribe;
@@ -35,5 +36,10 @@ public class RxJavaActivity extends CommonActivity<ActivityRxjavaBinding> {
 //                emitter.onComplete();
                 }).subscribe(ToastUtils::makeToast));
         getBinding().btn2.setOnClickListener(v -> Observable.just(1,2,3,4).subscribe(LogUtils::d));
+        getBinding().btnRxBus.setOnClickListener(v ->
+                ARouter.getInstance()
+                        .build(BaseConstants.LIBRARY_RX_JAVA_BUS)
+                        .navigation());
+        addSubscription(RxMessage.class, rxMessage -> ToastUtils.makeToast(rxMessage.message));
     }
 }
