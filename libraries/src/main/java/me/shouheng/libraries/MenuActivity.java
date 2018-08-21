@@ -32,6 +32,10 @@ public class MenuActivity extends CommonActivity<ActivityMenuBinding> {
                 ARouter.getInstance()
                         .build(BaseConstants.LIBRARY_RX_JAVA)
                         .navigation());
+        getBinding().btnClip.setOnClickListener(v ->
+                ARouter.getInstance()
+                        .build(BaseConstants.LIBRARY_CLIP_PIC)
+                        .navigation());
     }
 
     private void configToolbar() {

@@ -86,6 +86,7 @@
     <!--region libraries-->
     <string name="library_menu_event_bus">Event Bus</string>
     <string name="library_menu_rxjava">RxJava</string>
+    <string name="library_menu_clip">Clip Picture</string>
     <string name="library_navigation_to_2">Navigation to activity 2</string>
     <string name="library_register_event_bus">Register event bus</string>
     <string name="library_register_sticky_event">Register sticky event</string>

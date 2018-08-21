@@ -25,6 +25,8 @@
 
         <activity android:name=".rxjava.RxBusActivity"/>
 
+        <activity android:name=".ClipPictureActivity"/>
+
     </application>
 
 </manifest>
