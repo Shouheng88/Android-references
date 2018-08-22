@@ -54,6 +54,7 @@ public interface BaseConstants {
     String LIBRARY_RX_JAVA = "/library/rxjava";
     String LIBRARY_RX_JAVA_BUS = "/library/rxjava_bus";
     String LIBRARY_CLIP_PIC = "/library/clip_picture";
+    String LIBRARY_TIMBER = "/library/timber";
 
     String EYEPETIZER_MENU = "/eyepetizer/menu";
     String EYEPETIZER_CONTAINER = "/eyepetizer/container";

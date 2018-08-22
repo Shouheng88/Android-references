@@ -100,4 +100,6 @@ dependencies {
     api 'com.umeng.sdk:common:1.5.3'
     api 'com.umeng.sdk:analytics:7.5.3'
     api files('libs/pldroid-player-1.5.0.jar')
+    // timer
+    api 'com.jakewharton.timber:timber:4.7.1'
 }

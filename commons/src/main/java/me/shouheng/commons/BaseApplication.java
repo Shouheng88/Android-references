@@ -9,6 +9,8 @@ import com.facebook.stetho.Stetho;
 import com.squareup.leakcanary.LeakCanary;
 
 import io.fabric.sdk.android.Fabric;
+import timber.log.Timber;
+import timber.log.Timber.DebugTree;
 
 /**
  * @author shouh
@@ -38,6 +40,10 @@ public abstract class BaseApplication extends Application {
             Stetho.initializeWithDefaults(this);
             ARouter.openLog();
             ARouter.openDebug();
+        }
+
+        if (BuildConfig.DEBUG) {
+            Timber.plant(new DebugTree());
         }
     }
 }

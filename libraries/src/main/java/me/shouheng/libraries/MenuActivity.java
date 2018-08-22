@@ -11,6 +11,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import me.shouheng.commons.config.BaseConstants;
 import me.shouheng.commons.view.activity.CommonActivity;
 import me.shouheng.libraries.databinding.ActivityMenuBinding;
+import timber.log.Timber;
 
 @Route(path = BaseConstants.LIBRARY_MENU)
 public class MenuActivity extends CommonActivity<ActivityMenuBinding> {
@@ -35,6 +36,10 @@ public class MenuActivity extends CommonActivity<ActivityMenuBinding> {
         getBinding().btnClip.setOnClickListener(v ->
                 ARouter.getInstance()
                         .build(BaseConstants.LIBRARY_CLIP_PIC)
+                        .navigation());
+        getBinding().btnTimber.setOnClickListener(v ->
+                ARouter.getInstance()
+                        .build(BaseConstants.LIBRARY_TIMBER)
                         .navigation());
     }
 
