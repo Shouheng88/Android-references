@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  * @author shouh
  * @version $Id: BindView, v 0.1 2018/8/22 22:22 shouh Exp$
  */
-@Target(ElementType.METHOD)
+@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.CLASS)
 public @interface BindView {
 

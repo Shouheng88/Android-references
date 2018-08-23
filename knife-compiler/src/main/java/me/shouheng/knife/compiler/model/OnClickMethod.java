@@ -42,4 +42,8 @@ public class OnClickMethod {
     public Name getMethodName() {
         return methodName;
     }
+
+    public int[] getIds() {
+        return ids;
+    }
 }
