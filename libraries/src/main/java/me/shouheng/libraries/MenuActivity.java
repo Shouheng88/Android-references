@@ -41,6 +41,10 @@ public class MenuActivity extends CommonActivity<ActivityMenuBinding> {
                 ARouter.getInstance()
                         .build(BaseConstants.LIBRARY_TIMBER)
                         .navigation());
+        getBinding().btnMyKnife.setOnClickListener(v ->
+                ARouter.getInstance()
+                        .build(BaseConstants.LIBRARY_MY_KNIFE)
+                        .navigation());
     }
 
     private void configToolbar() {

@@ -56,6 +56,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     // router
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+    // knife
+    implementation project(':knife-api')
+    implementation project(':knife-annotation')
+    annotationProcessor project(':knife-compiler')
     // event bus
     implementation 'org.greenrobot:eventbus:3.1.1'
     // projects

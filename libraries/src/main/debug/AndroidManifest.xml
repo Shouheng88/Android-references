@@ -27,6 +27,8 @@
 
         <activity android:name=".ClipPictureActivity"/>
 
+        <activity android:name=".MyKnifeActivity"/>
+
     </application>
 
 </manifest>
