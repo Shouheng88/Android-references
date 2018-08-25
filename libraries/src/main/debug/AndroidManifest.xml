@@ -29,6 +29,8 @@
 
         <activity android:name=".MyKnifeActivity"/>
 
+        <activity android:name=".FingerprintIdentifyActivity"/>
+
     </application>
 
 </manifest>
