@@ -30,6 +30,8 @@ import me.shouheng.knife.compiler.model.OnClickMethod;
  * @version $Id: BindViewProcessor, v 0.1 2018/8/23 22:22 shouh Exp$
  */
 @AutoService(Processor.class)
+//@SupportedAnnotationTypes(value = {})
+////@SupportedSourceVersion(value = SourceVersion.RELEASE_8)
 public class BindViewProcessor extends AbstractProcessor {
 
     private Filer filer;
