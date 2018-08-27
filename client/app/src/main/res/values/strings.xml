@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">安卓开发参考</string>
+
+    <string name="settings_short_name">short name</string>
+    <string name="settings_long_name">long name</string>
+    <string name="settings_disable_msg">disable message</string>
 </resources>

@@ -1,0 +1,27 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut android:shortcutId="intro"
+        android:enabled="true"
+        android:icon="@drawable/ic_account_circle_black_24dp"
+        android:shortcutShortLabel="@string/settings_short_name"
+        android:shortcutLongLabel="@string/settings_long_name"
+        android:shortcutDisabledMessage="@string/settings_disable_msg">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="me.shouheng.references"
+            android:targetClass="me.shouheng.references.view.intro.AppIntroActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+    <shortcut android:shortcutId="main"
+        android:enabled="true"
+        android:icon="@drawable/ic_account_circle_black_24dp"
+        android:shortcutShortLabel="@string/settings_short_name"
+        android:shortcutLongLabel="@string/settings_long_name"
+        android:shortcutDisabledMessage="@string/settings_disable_msg">
+        <!--the package name should be the same as the app package name-->
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="me.shouheng.references"
+            android:targetClass="me.shouheng.references.view.main.MainActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+</shortcuts>
