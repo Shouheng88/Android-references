@@ -50,7 +50,9 @@ public class NewsListFragment extends CommonFragment<FragmentNewsListBinding> {
 
         configViews();
 
-        fetchNews();
+        registerObservers();
+
+        guokrViewModel.fetchGuokrNews(offset, limit);
     }
 
     @Override
@@ -76,7 +78,7 @@ public class NewsListFragment extends CommonFragment<FragmentNewsListBinding> {
         adapter.setEnableLoadMore(true);
         adapter.setOnLoadMoreListener(() -> {
             offset += limit;
-            fetchNews();
+            guokrViewModel.fetchGuokrNews(offset, limit);
         }, getBinding().rv);
 
         getBinding().rv.setAdapter(adapter);
@@ -85,17 +87,15 @@ public class NewsListFragment extends CommonFragment<FragmentNewsListBinding> {
         getBinding().rv.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
-    private void fetchNews() {
-        guokrViewModel.getGuokrNews(offset, limit).observe(this, guokrNewsResource -> {
-            if (guokrNewsResource == null) {
-                return;
-            }
-            switch (guokrNewsResource.status) {
+    private void registerObservers() {
+        guokrViewModel.getGuokrNewsLiveData().observe(this, resources -> {
+            if (resources == null) return;
+            switch (resources.status) {
                 case FAILED:
-                    ToastUtils.makeToast(guokrNewsResource.message);
+                    ToastUtils.makeToast(resources.message);
                     break;
                 case SUCCESS:
-                    adapter.addData(guokrNewsResource.data.getResult());
+                    adapter.addData(resources.data.getResult());
                     adapter.notifyDataSetChanged();
                     break;
             }

@@ -19,15 +19,32 @@ import me.shouheng.guokr.model.repository.GuokrRetrofit;
  */
 public class GuokrViewModel extends ViewModel {
 
-    public LiveData<Resource<GuokrNews>> getGuokrNews(int offset, int limit) {
-        MutableLiveData<Resource<GuokrNews>> result = new MutableLiveData<>();
+    private MutableLiveData<Resource<GuokrNews>> guokrNewsLiveData;
+
+    private MutableLiveData<Resource<GuokrNewsContent>> guokrNewsContentLiveData;
+
+    public LiveData<Resource<GuokrNews>> getGuokrNewsLiveData() {
+        if (guokrNewsLiveData == null) {
+            guokrNewsLiveData = new MutableLiveData<>();
+        }
+        return guokrNewsLiveData;
+    }
+
+    public LiveData<Resource<GuokrNewsContent>> getGuokrNewsContentLiveData() {
+        if (guokrNewsContentLiveData == null) {
+            guokrNewsContentLiveData = new MutableLiveData<>();
+        }
+        return guokrNewsContentLiveData;
+    }
+
+    public void fetchGuokrNews(int offset, int limit) {
         GuokrRetrofit.getGuokrService().getNews(offset, limit)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<GuokrNews>() {
                     @Override
                     public void onError(Throwable e) {
-                        result.setValue(Resource.error(e.getMessage(), null));
+                        guokrNewsLiveData.setValue(Resource.error(e.getMessage(), null));
                     }
 
                     @Override
@@ -38,21 +55,19 @@ public class GuokrViewModel extends ViewModel {
 
                     @Override
                     public void onNext(GuokrNews guokrNews) {
-                        result.setValue(Resource.success(guokrNews));
+                        guokrNewsLiveData.setValue(Resource.success(guokrNews));
                     }
                 });
-        return result;
     }
 
-    public LiveData<Resource<GuokrNewsContent>> getGuokrNewsContent(int id) {
-        MutableLiveData<Resource<GuokrNewsContent>> result = new MutableLiveData<>();
+    public void fetchGuokrNewsContent(int id) {
         GuokrRetrofit.getGuokrService().getGuokrContent(id)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<GuokrNewsContent>() {
                     @Override
                     public void onError(Throwable e) {
-                        result.setValue(Resource.error(e.getMessage(), null));
+                        guokrNewsContentLiveData.setValue(Resource.error(e.getMessage(), null));
                     }
 
                     @Override
@@ -63,9 +78,8 @@ public class GuokrViewModel extends ViewModel {
 
                     @Override
                     public void onNext(GuokrNewsContent guokrNewsContent) {
-                        result.setValue(Resource.success(guokrNewsContent));
+                        guokrNewsContentLiveData.setValue(Resource.success(guokrNewsContent));
                     }
                 });
-        return result;
     }
 }

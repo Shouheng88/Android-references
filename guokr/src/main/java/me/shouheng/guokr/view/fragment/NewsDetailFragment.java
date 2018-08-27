@@ -49,7 +49,9 @@ public class NewsDetailFragment extends CommonFragment<FragmentNewsDetailBinding
 
         guokrViewModel = ViewModelProviders.of(this).get(GuokrViewModel.class);
 
-        fetchContent();
+        registerObservers();
+
+        guokrViewModel.fetchGuokrNewsContent(articleId);
     }
 
     private void handleArguments() {
@@ -88,18 +90,16 @@ public class NewsDetailFragment extends CommonFragment<FragmentNewsDetailBinding
         });
     }
 
-    private void fetchContent() {
-        guokrViewModel.getGuokrNewsContent(articleId).observe(this, guokrNewsContentResource -> {
-            if (guokrNewsContentResource == null) {
-                return;
-            }
-            switch (guokrNewsContentResource.status) {
+    private void registerObservers() {
+        guokrViewModel.getGuokrNewsContentLiveData().observe(this, resources -> {
+            if (resources == null) return;
+            switch (resources.status) {
                 case SUCCESS:
-                    assert guokrNewsContentResource.data != null;
-                    updateContent(guokrNewsContentResource.data);
+                    assert resources.data != null;
+                    updateContent(resources.data);
                     break;
                 case FAILED:
-                    ToastUtils.makeToast(guokrNewsContentResource.message);
+                    ToastUtils.makeToast(resources.message);
                     break;
             }
         });
