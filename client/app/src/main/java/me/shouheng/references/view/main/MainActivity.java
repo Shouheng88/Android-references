@@ -1,6 +1,16 @@
 package me.shouheng.references.view.main;
 
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ShortcutInfo;
+import android.content.pm.ShortcutInfo.Builder;
+import android.content.pm.ShortcutManager;
 import android.graphics.Color;
+import android.graphics.drawable.Icon;
+import android.net.Uri;
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.launcher.ARouter;
@@ -14,6 +24,8 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
+
+import java.util.Arrays;
 
 import me.shouheng.commons.config.BaseConstants;
 import me.shouheng.commons.tools.PalmUtils;
@@ -36,6 +48,10 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
         getBinding().barLayout.toolbar.setTitleTextColor(Color.BLACK);
 
         setupDrawer(savedInstanceState);
+
+        createShortcut(this);
+
+        createPinnedShortcut(this);
     }
 
     private void setupDrawer(Bundle savedInstanceState) {
@@ -185,5 +201,52 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
                 .withSavedInstance(savedInstanceState)
                 .withShowDrawerOnFirstLaunch(true)
                 .build();
+    }
+
+    private void createShortcut(Context context) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N_MR1) {
+            ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
+            ShortcutInfo shortcut = new ShortcutInfo.Builder(context, "id1")
+                    .setShortLabel("Website")
+                    .setLongLabel("Open the website")
+                    .setIcon(Icon.createWithResource(context, R.drawable.ic_account_circle_black_24dp))
+                    .setIntent(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.mysite.example.com/")))
+                    .build();
+
+            shortcutManager.setDynamicShortcuts(Arrays.asList(shortcut));
+        }
+    }
+
+    private void createPinnedShortcut(Context context) {
+        if (VERSION.SDK_INT >= VERSION_CODES.N_MR1) {
+            ShortcutManager mShortcutManager = context.getSystemService(ShortcutManager.class);
+
+            if (VERSION.SDK_INT >= VERSION_CODES.O) {
+                if (mShortcutManager.isRequestPinShortcutSupported()) {
+                    // Assumes there's already a shortcut with the ID "my-shortcut".
+                    // The shortcut must be enabled.
+                    ShortcutInfo pinShortcutInfo = new Builder(context, "my-shortcut")
+                            .setShortLabel("Pined shortcut")
+                            .setLongLabel("Pined shortcut Pined shortcut")
+                            .setIntent(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.mysite.example.com/")))
+                            .setIcon(Icon.createWithResource(context, R.drawable.ic_account_circle_black_24dp))
+                            .build();
+
+                    // Create the PendingIntent object only if your app needs to be notified
+                    // that the user allowed the shortcut to be pinned. Note that, if the
+                    // pinning operation fails, your app isn't notified. We assume here that the
+                    // app has implemented a method called createShortcutResultIntent() that
+                    // returns a broadcast intent.
+                    Intent pinnedShortcutCallbackIntent = mShortcutManager.createShortcutResultIntent(pinShortcutInfo);
+
+                    // Configure the intent so that your app's broadcast receiver gets
+                    // the callback successfully.For details, see PendingIntent.getBroadcast().
+                    PendingIntent successCallback = PendingIntent.getBroadcast(context, /* request code */ 0,
+                            pinnedShortcutCallbackIntent, /* flags */ 0);
+
+                    mShortcutManager.requestPinShortcut(pinShortcutInfo, successCallback.getIntentSender());
+                }
+            }
+        }
     }
 }
