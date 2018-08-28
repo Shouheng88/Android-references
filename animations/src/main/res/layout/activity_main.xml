@@ -15,6 +15,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_toast"
+            android:text="Toast with icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_ripple"
+            android:text="Ripple Test"
+            android:textSize="32sp"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_ripple2"
+            android:text="Ripple Test 2"
+            android:textSize="32sp"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 
 </layout>

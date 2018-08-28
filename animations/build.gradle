@@ -58,8 +58,10 @@ dependencies {
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     // CircularReveal
     implementation ('com.github.ozodrukh:CircularReveal:2.0.1@aar') {
-        transitive = true;
+        transitive = true
     }
+    // ripple
+    implementation 'com.balysv:material-ripple:1.0.2'
     // projects
     implementation project(':commons')
 }
