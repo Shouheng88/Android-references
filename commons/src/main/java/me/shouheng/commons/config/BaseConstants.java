@@ -64,4 +64,7 @@ public interface BaseConstants {
     String EYEPETIZER_VIDEO = "/eyepetizer/video";
     String EYEPETIZER_VIDEO_EXTRA_URL = "__extra_url";
     String EYEPETIZER_VIDEO_EXTRA_FULLSCREEN = "__extra_fullscreen";
+
+    String ANIMATIONS_MENU = "/animations/menu";
+    String ANIMATIONS_CIRCLE_REVEAL = "/animations/circle_reveal";
 }

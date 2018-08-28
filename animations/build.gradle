@@ -56,6 +56,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     // router
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+    // CircularReveal
+    implementation ('com.github.ozodrukh:CircularReveal:2.0.1@aar') {
+        transitive = true;
+    }
     // projects
     implementation project(':commons')
 }
