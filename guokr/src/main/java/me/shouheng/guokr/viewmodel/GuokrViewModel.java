@@ -19,6 +19,10 @@ import me.shouheng.guokr.model.repository.GuokrRetrofit;
  */
 public class GuokrViewModel extends ViewModel {
 
+    private int offset = 0;
+
+    private final int limit = 20;
+
     private MutableLiveData<Resource<GuokrNews>> guokrNewsLiveData;
 
     private MutableLiveData<Resource<GuokrNewsContent>> guokrNewsContentLiveData;
@@ -37,7 +41,17 @@ public class GuokrViewModel extends ViewModel {
         return guokrNewsContentLiveData;
     }
 
-    public void fetchGuokrNews(int offset, int limit) {
+    public void fetchFirstPage() {
+        fetchGuokrNews(offset, limit);
+    }
+
+    public void fetchNextPage() {
+        offset += limit;
+        fetchGuokrNews(offset, limit);
+    }
+
+    private void fetchGuokrNews(int offset, int limit) {
+        offset += limit;
         GuokrRetrofit.getGuokrService().getNews(offset, limit)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

@@ -28,10 +28,6 @@ public class NewsListFragment extends CommonFragment<FragmentNewsListBinding> {
 
     private GuokrViewModel guokrViewModel;
 
-    private int offset = 0;
-
-    private final int limit = 20;
-
     private GuokrNewsAdapter adapter;
 
     @Override
@@ -52,7 +48,7 @@ public class NewsListFragment extends CommonFragment<FragmentNewsListBinding> {
 
         registerObservers();
 
-        guokrViewModel.fetchGuokrNews(offset, limit);
+        guokrViewModel.fetchFirstPage();
     }
 
     @Override
@@ -76,10 +72,7 @@ public class NewsListFragment extends CommonFragment<FragmentNewsListBinding> {
             if (activity != null) ((FragmentInteraction) activity).onArticleClicked(result);
         }));
         adapter.setEnableLoadMore(true);
-        adapter.setOnLoadMoreListener(() -> {
-            offset += limit;
-            guokrViewModel.fetchGuokrNews(offset, limit);
-        }, getBinding().rv);
+        adapter.setOnLoadMoreListener(() -> guokrViewModel.fetchNextPage(), getBinding().rv);
 
         getBinding().rv.setAdapter(adapter);
         getBinding().rv.addItemDecoration(new DividerItemDecoration(getContext(),
