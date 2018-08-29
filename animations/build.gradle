@@ -60,6 +60,8 @@ dependencies {
     implementation ('com.github.ozodrukh:CircularReveal:2.0.1@aar') {
         transitive = true
     }
+    // target view
+    implementation 'com.getkeepsafe.taptargetview:taptargetview:1.12.0'
     // ripple
     implementation 'com.balysv:material-ripple:1.0.2'
     // projects
