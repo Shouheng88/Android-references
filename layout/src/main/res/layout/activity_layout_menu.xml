@@ -50,6 +50,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/bnt_support_28"
+                    android:text="Support 28 库"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
             </LinearLayout>
 
         </android.support.v4.widget.NestedScrollView>

@@ -18,15 +18,12 @@
         </activity>
 
         <activity android:name=".view.navigation.NavigationActivity" />
-
         <activity android:name=".view.tabbed.TabbedActivity" />
-
         <activity android:name=".view.scrolling.ScrollingActivity" />
-
         <activity android:name=".view.collapse.CollapseBarStructure" />
-
         <activity android:name=".view.bottomsheet.BottomSheetActivity"/>
-
+        <activity android:name=".view.support28.Support28Activity"/>
+        <activity android:name=".view.support28.BottomAppBarActivity"/>
     </application>
 
 </manifest>

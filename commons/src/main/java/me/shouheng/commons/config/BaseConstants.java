@@ -47,6 +47,8 @@ public interface BaseConstants {
     String LAYOUT_TABBED = "/layout/tabbed";
     String LAYOUT_MENU = "/layout/menu";
     String LAYOUT_PAGER_FRAGMENT = "/layout/pager";
+    String LAYOUT_SUPPORT_28 = "/layout/support_28";
+    String LAYOUT_BOTTOM_APP_BAR = "/layout/bottom_app_bar";
 
     String LIBRARY_MENU = "/library/menu";
     String LIBRARY_EVENT_BUS_ACTIVITY1 = "/library/event_bus/activity1";
