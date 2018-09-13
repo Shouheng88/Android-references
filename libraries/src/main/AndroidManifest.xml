@@ -13,25 +13,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".MenuActivity" />
-
         <activity android:name=".eventbus.EventBusActivity1" />
-
         <activity android:name=".eventbus.EventBusActivity2" />
-
         <activity android:name=".rxjava.RxJavaActivity" />
-
         <activity android:name=".rxjava.RxBusActivity" />
-
         <activity android:name=".ClipPictureActivity" />
-
         <activity android:name=".TimberActivity" />
-
         <activity android:name=".MyKnifeActivity"/>
-
         <activity android:name=".FingerprintIdentifyActivity"/>
-
+        <activity android:name=".workmanager.WorkManagerActivity"/>
     </application>
 
 </manifest>

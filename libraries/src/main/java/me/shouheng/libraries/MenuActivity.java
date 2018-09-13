@@ -49,6 +49,10 @@ public class MenuActivity extends CommonActivity<ActivityMenuBinding> {
                 ARouter.getInstance()
                         .build(BaseConstants.LIBRARY_FINGERPRIINT_IDENTIFY)
                         .navigation());
+        getBinding().btnWorkManager.setOnClickListener(v ->
+                ARouter.getInstance()
+                        .build(BaseConstants.LIBRARY_WORK_MANAGER)
+                        .navigation());
     }
 
     private void configToolbar() {
