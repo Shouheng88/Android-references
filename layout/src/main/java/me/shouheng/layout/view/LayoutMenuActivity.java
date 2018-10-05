@@ -49,6 +49,10 @@ public class LayoutMenuActivity extends CommonActivity<ActivityLayoutMenuBinding
                 ARouter.getInstance()
                         .build(BaseConstants.LAYOUT_DRAWER)
                         .navigation());
+        getBinding().btnViewSystem.setOnClickListener(v ->
+                ARouter.getInstance()
+                        .build(BaseConstants.LAYOUT_VIEW_SYSTEM)
+                        .navigation());
     }
 
     private void configToolbar() {
