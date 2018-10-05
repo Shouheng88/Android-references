@@ -1,15 +1,11 @@
 package me.shouheng.layout.view.views;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
-import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.Scroller;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 
