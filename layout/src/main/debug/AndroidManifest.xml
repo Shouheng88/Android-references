@@ -27,6 +27,11 @@
 
         <activity android:name=".view.bottomsheet.BottomSheetActivity"/>
 
+        <activity
+            android:name=".view.DrawerActivity"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/AppTheme"/>
+
     </application>
 
 </manifest>

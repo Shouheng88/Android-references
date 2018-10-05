@@ -14,7 +14,11 @@
         <activity android:name=".view.scrolling.ScrollingActivity" />
         <activity android:name=".view.collapse.CollapseBarStructure" />
         <activity android:name=".view.bottomsheet.BottomSheetActivity" />
-        <activity android:name=".view.LayoutMenuActivity"/>
+        <activity android:name=".view.LayoutMenuActivity" />
+        <activity
+            android:name=".view.DrawerActivity"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>
