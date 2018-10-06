@@ -50,6 +50,8 @@ public interface BaseConstants {
     String LAYOUT_DRAWER = "/layout/drawer";
     String LAYOUT_VIEW_SYSTEM = "/layout/view_system";
     String LAYOUT_VIEW_ANIMATE = "/layout/view_animate";
+    String LAYOUT_SUPPORT_28 = "/layout/support_28";
+    String LAYOUT_BOTTOM_APP_BAR = "/layout/bottom_app_bar";
 
     String LIBRARY_MENU = "/library/menu";
     String LIBRARY_EVENT_BUS_ACTIVITY1 = "/library/event_bus/activity1";
@@ -60,6 +62,7 @@ public interface BaseConstants {
     String LIBRARY_TIMBER = "/library/timber";
     String LIBRARY_MY_KNIFE = "/library/my_knife";
     String LIBRARY_FINGERPRIINT_IDENTIFY = "/library/fingerprint_identify";
+    String LIBRARY_WORK_MANAGER = "/library/work_manager";
 
     String EYEPETIZER_MENU = "/eyepetizer/menu";
     String EYEPETIZER_CONTAINER = "/eyepetizer/container";

@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:enabled="true"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_widgets_black_24dp"
+        android:title="@string/nav_bottom_item_1" />
+
+    <item android:enabled="true"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_favorite_black_24dp"
+        android:title="@string/nav_bottom_item_3" />
 
     <group
         android:checkableBehavior="single"

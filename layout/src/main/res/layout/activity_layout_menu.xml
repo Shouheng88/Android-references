@@ -57,6 +57,12 @@
                     android:layout_height="wrap_content" />
 
                 <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/bnt_support_28"
+                    android:text="Support 28 库"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btn_view_system"
                     android:text="View System"
                     android:layout_width="match_parent"

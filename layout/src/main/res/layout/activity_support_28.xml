@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Material button"
+            android:textSize="18sp"
+            app:icon="@drawable/ic_autorenew_black_24dp"/>
+
+        <android.support.design.chip.ChipGroup
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.chip.Chip
+                android:text="This is a Chip 1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <android.support.design.chip.Chip
+                android:text="Chip 2"
+                app:textEndPadding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <android.support.design.chip.Chip
+                android:text="Chip 3"
+                app:rippleColor="@android:color/holo_red_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <android.support.design.chip.Chip
+                android:text="Chip 4"
+                app:closeIconVisible="true"
+                app:checkedIcon="@drawable/ic_check_circle_black_24dp"
+                app:closeIcon="@drawable/ic_close_black_24dp"
+                app:chipIcon="@drawable/ic_autorenew_black_24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <android.support.design.chip.Chip
+                android:text="Chip 5"
+                app:chipIconTint="@android:color/holo_red_dark"
+                app:chipIcon="@drawable/ic_autorenew_black_24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </android.support.design.chip.ChipGroup>
+
+        <android.support.design.card.MaterialCardView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:textSize="30sp"
+                android:text="This is the android.support.design.card.MaterialCardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </android.support.design.card.MaterialCardView>
+
+        <android.support.design.circularreveal.CircularRevealFrameLayout
+            android:id="@+id/crfl"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_gravity="center"
+                android:src="@android:color/holo_green_dark"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+
+        </android.support.design.circularreveal.CircularRevealFrameLayout>
+
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/btn_bottom_bar"
+            android:text="Bottom App Bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/btn_sheet_dialog"
+            android:text="Bottom App Bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</layout>

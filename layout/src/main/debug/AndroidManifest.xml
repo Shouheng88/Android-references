@@ -26,6 +26,8 @@
             android:theme="@style/AppTheme"/>
         <activity android:name=".view.views.ViewSystemActivity"/>
         <activity android:name=".view.views.ViewAnimateActivity"/>
+        <activity android:name=".view.support28.Support28Activity"/>
+        <activity android:name=".view.support28.BottomAppBarActivity"/>
     </application>
 
 </manifest>

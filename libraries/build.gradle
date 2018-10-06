@@ -13,6 +13,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
@@ -64,6 +65,8 @@ dependencies {
     implementation 'org.greenrobot:eventbus:3.1.1'
     // fingerprint
     implementation 'com.wei.android.lib:fingerprintidentify:1.2.1'
+    // work manager
+    implementation "android.arch.work:work-runtime:1.0.0-alpha08"
     // projects
     implementation project(':commons')
 }
