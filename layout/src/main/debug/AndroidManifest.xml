@@ -25,6 +25,7 @@
             android:label="@string/title_activity_drawer"
             android:theme="@style/AppTheme"/>
         <activity android:name=".view.views.ViewSystemActivity"/>
+        <activity android:name=".view.views.ViewAnimateActivity"/>
     </application>
 
 </manifest>
