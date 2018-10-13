@@ -38,6 +38,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <FrameLayout
+            android:background="@android:color/holo_green_light"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <me.shouheng.layout.view.views.CustomView
+                android:id="@+id/vg"
+                android:background="@android:color/holo_red_light"
+                android:layout_gravity="center"
+                android:layout_width="200dp"
+                android:layout_height="100dp"/>
+
+        </FrameLayout>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_velocity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_velocity"
+            android:text="Show velocity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 
 </layout>

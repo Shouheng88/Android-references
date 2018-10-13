@@ -3,13 +3,17 @@ package me.shouheng.layout.view.views;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.view.VelocityTracker;
 import android.view.View;
 import android.widget.FrameLayout;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 
 import me.shouheng.commons.config.BaseConstants;
+import me.shouheng.commons.tools.LogUtils;
+import me.shouheng.commons.tools.ToastUtils;
 import me.shouheng.commons.view.activity.CommonActivity;
 import me.shouheng.layout.R;
 import me.shouheng.layout.databinding.ActivityViewSystemBinding;
@@ -22,6 +26,10 @@ import me.shouheng.layout.databinding.ActivityViewSystemBinding;
 public class ViewSystemActivity extends CommonActivity<ActivityViewSystemBinding> {
 
     private int lastX, lastY;
+
+    private GestureDetector mGestureDetector;
+    private VelocityTracker velocityTracker;
+    private long duration, downTime;
 
     @Override
     protected int getLayoutResId() {
@@ -48,6 +56,55 @@ public class ViewSystemActivity extends CommonActivity<ActivityViewSystemBinding
         });
         getBinding().btnScroller.setOnClickListener(v -> scrollerMove());
         new Handler().postDelayed(() -> dispCoordinate(null), 1000);
+
+        // GestureDetector
+        mGestureDetector = new GestureDetector(getContext(), new MyOnGestureListener());
+        velocityTracker = VelocityTracker.obtain();
+
+        getBinding().vg.setOnTouchListener((v, event) -> {
+            mGestureDetector.onTouchEvent(event);
+            velocityTracker.addMovement(event);
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    downTime = System.currentTimeMillis();
+                    break;
+                case MotionEvent.ACTION_UP:
+                    duration = System.currentTimeMillis() - downTime;
+                    break;
+            }
+            return true;
+        });
+        getBinding().btnVelocity.setOnClickListener(v -> {
+            velocityTracker.computeCurrentVelocity((int) duration);
+            getBinding().tvVelocity.setText("X:" + velocityTracker.getXVelocity() + "\n"
+                    + "Y:" + velocityTracker.getYVelocity());
+        });
+    }
+
+    private class MyOnGestureListener extends GestureDetector.SimpleOnGestureListener {
+
+        @Override
+        public boolean onSingleTapUp(MotionEvent e) {
+            ToastUtils.makeToast("Click detected");
+            return false;
+        }
+
+        @Override
+        public void onLongPress(MotionEvent e) {
+            LogUtils.d("Long press detected");
+        }
+
+        @Override
+        public boolean onDoubleTap(MotionEvent e) {
+            LogUtils.d("Double tab detected");
+            return true;
+        }
+
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+            LogUtils.d("Fling detected");
+            return true;
+        }
     }
 
     private void dispCoordinate(MotionEvent event) {
@@ -158,5 +215,17 @@ public class ViewSystemActivity extends CommonActivity<ActivityViewSystemBinding
 
     private void scrollerMove() {
         getBinding().v.smoothScrollTo(-400, -100);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        velocityTracker.clear();
+        velocityTracker.recycle();
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        return super.dispatchTouchEvent(ev);
     }
 }
