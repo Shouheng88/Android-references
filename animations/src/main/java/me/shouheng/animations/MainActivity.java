@@ -34,6 +34,7 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
         getBinding().btnReveal.setOnClickListener(v -> ARouter.getInstance().build(BaseConstants.ANIMATIONS_CIRCLE_REVEAL).navigation());
 
         getBinding().btnToast.setOnClickListener(v -> showToastWithIcon());
+        getBinding().tvDrawable.setOnClickListener(v -> ARouter.getInstance().build(BaseConstants.ANIMATIONS_DRAWABLE).navigation());
 
         configMaterialRipple();
 

@@ -20,6 +20,8 @@
 
         <activity android:name=".reveal.CircleRevealActivity"/>
 
+        <activity android:name=".DrawableActivity"/>
+
     </application>
 
 </manifest>

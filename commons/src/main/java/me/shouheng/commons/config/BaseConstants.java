@@ -70,4 +70,5 @@ public interface BaseConstants {
 
     String ANIMATIONS_MENU = "/animations/menu";
     String ANIMATIONS_CIRCLE_REVEAL = "/animations/circle_reveal";
+    String ANIMATIONS_DRAWABLE = "/animations/drawable";
 }
