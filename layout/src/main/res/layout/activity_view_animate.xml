@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v4.widget.NestedScrollView
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:background="@android:color/holo_green_light"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <View
+                    android:id="@+id/v"
+                    android:layout_gravity="center"
+                    android:background="@android:color/holo_red_light"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"/>
+
+            </FrameLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_aniamte"
+                android:text="Animate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_shake"
+                android:text="Shake"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/iv_record"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</layout>

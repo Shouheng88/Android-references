@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/record0" android:duration="500"/>
+    <item android:drawable="@drawable/record1" android:duration="500"/>
+    <item android:drawable="@drawable/record2" android:duration="450"/>
+    <item android:drawable="@drawable/record3" android:duration="400"/>
+    <item android:drawable="@drawable/record4" android:duration="350"/>
+    <item android:drawable="@drawable/record5" android:duration="400"/>
+    <item android:drawable="@drawable/record6" android:duration="400"/>
+</animation-list>

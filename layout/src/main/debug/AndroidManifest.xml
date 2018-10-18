@@ -9,19 +9,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".ModuleLayoutApp">
-
         <activity android:name=".view.LayoutMenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".view.navigation.NavigationActivity" />
         <activity android:name=".view.tabbed.TabbedActivity" />
         <activity android:name=".view.scrolling.ScrollingActivity" />
         <activity android:name=".view.collapse.CollapseBarStructure" />
         <activity android:name=".view.bottomsheet.BottomSheetActivity"/>
+        <activity
+            android:name=".view.DrawerActivity"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".view.views.ViewSystemActivity"/>
+        <activity android:name=".view.views.ViewAnimateActivity"/>
         <activity android:name=".view.support28.Support28Activity"/>
         <activity android:name=".view.support28.BottomAppBarActivity"/>
     </application>

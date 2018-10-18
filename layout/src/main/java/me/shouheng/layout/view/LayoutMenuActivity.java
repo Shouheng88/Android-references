@@ -45,6 +45,18 @@ public class LayoutMenuActivity extends CommonActivity<ActivityLayoutMenuBinding
                 ARouter.getInstance()
                         .build(BaseConstants.LAYOUT_SCROLLING)
                         .navigation());
+        getBinding().btnDrawer.setOnClickListener(v ->
+                ARouter.getInstance()
+                        .build(BaseConstants.LAYOUT_DRAWER)
+                        .navigation());
+        getBinding().btnViewSystem.setOnClickListener(v ->
+                ARouter.getInstance()
+                        .build(BaseConstants.LAYOUT_VIEW_SYSTEM)
+                        .navigation());
+        getBinding().btnViewAnimate.setOnClickListener(v ->
+                ARouter.getInstance()
+                        .build(BaseConstants.LAYOUT_VIEW_ANIMATE)
+                        .navigation());
         getBinding().bntSupport28.setOnClickListener(v ->
                 ARouter.getInstance()
                         .build(BaseConstants.LAYOUT_SUPPORT_28)
