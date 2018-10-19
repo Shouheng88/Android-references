@@ -13,6 +13,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
+import me.shouheng.commons.rxbus.RxBus;
+import me.shouheng.commons.tools.LogUtils;
 import me.shouheng.commons.view.activity.CommonActivity;
 
 /**
@@ -65,5 +69,25 @@ public abstract class CommonFragment<T extends ViewDataBinding> extends Fragment
         if (activity instanceof CommonActivity) {
             ((CommonActivity) activity).superOnBackPressed();
         }
+    }
+
+    protected void postEvent(Object object) {
+        RxBus.getRxBus().post(object);
+    }
+
+    protected <M> void addSubscription(Class<M> eventType, Consumer<M> action) {
+        Disposable disposable = RxBus.getRxBus().doSubscribe(eventType, action, LogUtils::d);
+        RxBus.getRxBus().addSubscription(this, disposable);
+    }
+
+    protected <M> void addSubscription(Class<M> eventType, Consumer<M> action, Consumer<Throwable> error) {
+        Disposable disposable = RxBus.getRxBus().doSubscribe(eventType, action, error);
+        RxBus.getRxBus().addSubscription(this, disposable);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        RxBus.getRxBus().unSubscribe(this);
     }
 }

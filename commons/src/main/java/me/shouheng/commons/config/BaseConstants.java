@@ -63,6 +63,8 @@ public interface BaseConstants {
     String LIBRARY_MY_KNIFE = "/library/my_knife";
     String LIBRARY_FINGERPRIINT_IDENTIFY = "/library/fingerprint_identify";
     String LIBRARY_WORK_MANAGER = "/library/work_manager";
+    String LIBRARY_FRAGMENT_DEMO = "/library/fragment_demo";
+    String LIBRARY_FRAGMENT_DEMO_HAS_CHILD = "arg_fragment_demo_has_child";
 
     String EYEPETIZER_MENU = "/eyepetizer/menu";
     String EYEPETIZER_CONTAINER = "/eyepetizer/container";
