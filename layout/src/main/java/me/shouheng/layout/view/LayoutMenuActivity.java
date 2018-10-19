@@ -61,6 +61,10 @@ public class LayoutMenuActivity extends CommonActivity<ActivityLayoutMenuBinding
                 ARouter.getInstance()
                         .build(BaseConstants.LAYOUT_SUPPORT_28)
                         .navigation());
+        getBinding().btnSwipe.setOnClickListener(v ->
+                ARouter.getInstance()
+                        .build(BaseConstants.LIBRARY_SWIPE_BACK)
+                        .navigation());
     }
 
     private void configToolbar() {

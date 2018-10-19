@@ -74,6 +74,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn_swipe"
+                    android:text="Swipe Back"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
             </LinearLayout>
 
         </android.support.v4.widget.NestedScrollView>
