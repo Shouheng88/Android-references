@@ -8,9 +8,12 @@ import android.view.MenuItem;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 
+import java.util.Date;
+
 import me.shouheng.commons.config.BaseConstants;
 import me.shouheng.commons.view.activity.CommonActivity;
 import me.shouheng.libraries.databinding.ActivityMenuBinding;
+import me.shouheng.libraries.serial.SerializeActivity;
 import timber.log.Timber;
 
 @Route(path = BaseConstants.LIBRARY_MENU)
@@ -52,6 +55,13 @@ public class MenuActivity extends CommonActivity<ActivityMenuBinding> {
         getBinding().btnWorkManager.setOnClickListener(v ->
                 ARouter.getInstance()
                         .build(BaseConstants.LIBRARY_WORK_MANAGER)
+                        .navigation());
+        SerializeActivity.Monster monster = new SerializeActivity.Monster("Monster01", 1,
+                new SerializeActivity.Weapon("Weapon01"), new Date(), new SerializeActivity.Grade(1));
+        getBinding().btnSerial.setOnClickListener(v ->
+                ARouter.getInstance()
+                        .build(BaseConstants.LIBRARY_SERIAL)
+                        .withParcelable(BaseConstants.LIBRARY_SERIAL_ARG_MONSTER, monster)
                         .navigation());
     }
 

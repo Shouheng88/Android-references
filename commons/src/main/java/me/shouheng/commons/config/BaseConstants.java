@@ -66,6 +66,8 @@ public interface BaseConstants {
     String LIBRARY_FRAGMENT_DEMO = "/library/fragment_demo";
     String LIBRARY_FRAGMENT_DEMO_HAS_CHILD = "arg_fragment_demo_has_child";
     String LIBRARY_SWIPE_BACK = "/library/swipe_back";
+    String LIBRARY_SERIAL = "/library/serial";
+    String LIBRARY_SERIAL_ARG_MONSTER = "library_serial_arg_monster";
 
     String EYEPETIZER_MENU = "/eyepetizer/menu";
     String EYEPETIZER_CONTAINER = "/eyepetizer/container";
@@ -77,4 +79,10 @@ public interface BaseConstants {
     String ANIMATIONS_MENU = "/animations/menu";
     String ANIMATIONS_CIRCLE_REVEAL = "/animations/circle_reveal";
     String ANIMATIONS_DRAWABLE = "/animations/drawable";
+
+    String ADVANCED_MENU = "/advanced/menu";
+    String ADVANCED_REMOTE = "/advanced/remote";
+    String ADVANCED_REMOTE_ARG_CONTENT = "advanced_remote_arg_content";
+    String ADVANCED_REMOTE2 = "/advanced/remote2";
+    String ADVANCED_REMOTE2_ARG_CONTENT = "advanced_remote_arg_content";
 }
