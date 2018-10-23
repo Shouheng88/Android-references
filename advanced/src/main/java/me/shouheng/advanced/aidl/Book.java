@@ -1,4 +1,4 @@
-package me.shouheng.advanced.binder;
+package me.shouheng.advanced.aidl;
 
 import android.os.Parcel;
 import android.os.Parcelable;

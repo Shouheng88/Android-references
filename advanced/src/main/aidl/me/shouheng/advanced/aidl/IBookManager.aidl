@@ -1,6 +1,6 @@
-package me.shouheng.advanced.binder;
+package me.shouheng.advanced.aidl;
 
-import me.shouheng.advanced.binder.Book;
+import me.shouheng.advanced.aidl.Book;
 
 interface IBookManager {
     Book getBook(long id);

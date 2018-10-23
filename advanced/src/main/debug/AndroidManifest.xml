@@ -23,6 +23,9 @@
         <activity android:name=".remote.Remote2Activity"
             android:process="remote.sample"/>
 
+        <service android:name=".aidl.BookManagerService"
+            android:process=":remote"/>
+
     </application>
 
 </manifest>

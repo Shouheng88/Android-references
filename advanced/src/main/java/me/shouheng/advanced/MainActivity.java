@@ -1,12 +1,22 @@
 package me.shouheng.advanced;
 
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.os.RemoteException;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 
+import me.shouheng.advanced.aidl.Book;
+import me.shouheng.advanced.aidl.BookManagerService;
+import me.shouheng.advanced.aidl.IBookManager;
 import me.shouheng.advanced.databinding.ActivityMainBinding;
 import me.shouheng.commons.config.BaseConstants;
+import me.shouheng.commons.tools.LogUtils;
 import me.shouheng.commons.view.activity.CommonActivity;
 
 /**
@@ -15,6 +25,22 @@ import me.shouheng.commons.view.activity.CommonActivity;
  */
 @Route(path = BaseConstants.ADVANCED_MENU)
 public class MainActivity extends CommonActivity<ActivityMainBinding> {
+
+    private ServiceConnection connection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            IBookManager bookManager = IBookManager.Stub.asInterface(service);
+            try {
+                Book book = bookManager.getBook(100);
+                LogUtils.d(book);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) { }
+    };
 
     @Override
     protected int getLayoutResId() {
@@ -31,5 +57,13 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
                 ARouter.getInstance().build(BaseConstants.ADVANCED_REMOTE2)
                         .withString(BaseConstants.ADVANCED_REMOTE2_ARG_CONTENT, "Simple advanced content 2")
                         .navigation());
+        Intent intent = new Intent(this, BookManagerService.class);
+        bindService(intent, connection, Context.BIND_AUTO_CREATE);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindService(connection);
     }
 }
