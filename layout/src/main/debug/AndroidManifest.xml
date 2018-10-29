@@ -9,7 +9,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".ModuleLayoutApp">
-        <activity android:name=".view.LayoutMenuActivity">
+        <activity android:name=".view.LayoutMenuActivity"
+            android:theme="@style/AppTheme.Branded">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
