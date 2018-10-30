@@ -6,4 +6,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.Branded" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/branded_background</item>
+    </style>
+
 </resources>
