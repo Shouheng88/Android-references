@@ -11,9 +11,9 @@ import android.os.RemoteException;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 
-import me.shouheng.advanced.aidl.Book;
-import me.shouheng.advanced.aidl.BookManagerService;
-import me.shouheng.advanced.aidl.IBookManager;
+import me.shouheng.advanced.aidl.INoteManager;
+import me.shouheng.advanced.aidl.Note;
+import me.shouheng.advanced.aidl.NoteService;
 import me.shouheng.advanced.databinding.ActivityMainBinding;
 import me.shouheng.commons.config.BaseConstants;
 import me.shouheng.commons.tools.LogUtils;
@@ -29,10 +29,10 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
     private ServiceConnection connection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            IBookManager bookManager = IBookManager.Stub.asInterface(service);
+            INoteManager noteManager = INoteManager.Stub.asInterface(service);
             try {
-                Book book = bookManager.getBook(100);
-                LogUtils.d(book);
+                Note note = noteManager.getNote(100);
+                LogUtils.d(note);
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
@@ -57,7 +57,7 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
                 ARouter.getInstance().build(BaseConstants.ADVANCED_REMOTE2)
                         .withString(BaseConstants.ADVANCED_REMOTE2_ARG_CONTENT, "Simple advanced content 2")
                         .navigation());
-        Intent intent = new Intent(this, BookManagerService.class);
+        Intent intent = new Intent(this, NoteService.class);
         bindService(intent, connection, Context.BIND_AUTO_CREATE);
     }
 

@@ -55,7 +55,7 @@ public class RxBus {
     }
 
     public void addSubscription(Object o, Disposable disposable) {
-        String key = o.getClass().getName();
+        String key = String.valueOf(o.hashCode());
         if (disposableMap.get(key) != null) {
             disposableMap.get(key).add(disposable);
         } else {
@@ -66,7 +66,7 @@ public class RxBus {
     }
 
     public void unSubscribe(Object o) {
-        String key = o.getClass().getName();
+        String key = String.valueOf(o.hashCode());
         if (!disposableMap.containsKey(key)){
             return;
         }

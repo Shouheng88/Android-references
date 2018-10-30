@@ -51,7 +51,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:27.1.1'
     // router
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     // knife
@@ -63,7 +62,7 @@ dependencies {
     // fingerprint
     implementation 'com.wei.android.lib:fingerprintidentify:1.2.1'
     // work manager
-    implementation "android.arch.work:work-runtime:1.0.0-alpha08"
+    implementation "android.arch.work:work-runtime:1.0.0-alpha10"
     // projects
     implementation project(':commons')
 }
