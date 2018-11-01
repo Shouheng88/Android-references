@@ -49,7 +49,7 @@ public class WorkManagerActivity extends CommonActivity<ActivityWorkManagerBindi
     @Override
     protected void doCreateView(Bundle savedInstanceState) {
         workManager = WorkManager.getInstance();
-        workStatuses = workManager.getStatusesByTag(TAG_OUTPUT);
+        workStatuses = (LiveData<List<WorkStatus>>) workManager.getStatusesByTag(TAG_OUTPUT);
 
         getBinding().btnStartSingle.setOnClickListener(v -> {
             WorkContinuation continuation = workManager.beginUniqueWork(SINGLE_TASK_NAME,

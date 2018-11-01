@@ -30,6 +30,7 @@
         <activity android:name=".view.support28.Support28Activity"/>
         <activity android:name=".view.support28.BottomAppBarActivity"/>
         <activity android:name=".view.swipe.SwipeBackDemoActivity"/>
+        <activity android:name=".view.adapter.BeforeAdapter"/>
     </application>
 
 </manifest>

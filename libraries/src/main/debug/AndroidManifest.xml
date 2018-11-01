@@ -24,6 +24,7 @@
         <activity android:name=".FingerprintIdentifyActivity"/>
         <activity android:name=".workmanager.WorkManagerActivity"/>
         <activity android:name=".serial.SerializeActivity"/>
+        <activity android:name=".HandlerActivity"/>
     </application>
 
 </manifest>

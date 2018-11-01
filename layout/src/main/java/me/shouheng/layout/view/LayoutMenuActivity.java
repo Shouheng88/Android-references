@@ -16,6 +16,8 @@ import me.shouheng.layout.databinding.ActivityLayoutMenuBinding;
 @Route(path = BaseConstants.LAYOUT_MENU)
 public class LayoutMenuActivity extends CommonActivity<ActivityLayoutMenuBinding> {
 
+    private boolean useAdapter = true;
+
     @Override
     protected int getLayoutResId() {
         return R.layout.activity_layout_menu;
@@ -64,6 +66,11 @@ public class LayoutMenuActivity extends CommonActivity<ActivityLayoutMenuBinding
         getBinding().btnSwipe.setOnClickListener(v ->
                 ARouter.getInstance()
                         .build(BaseConstants.LIBRARY_SWIPE_BACK)
+                        .navigation());
+        getBinding().btnAdapter.setOnClickListener(v ->
+                ARouter.getInstance()
+                        .build(BaseConstants.LAYOUT_ADAPTER)
+                        .withBoolean(BaseConstants.LAYOUT_ADAPTER_ARG_USE_ADAPTER, useAdapter = !useAdapter)
                         .navigation());
     }
 

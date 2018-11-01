@@ -1,8 +1,10 @@
 package me.shouheng.libraries.workmanager;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 
 import androidx.work.Worker;
+import androidx.work.WorkerParameters;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import me.shouheng.commons.tools.LogUtils;
@@ -11,6 +13,10 @@ import me.shouheng.commons.tools.LogUtils;
  * Created by WngShhng on 2018/9/13.
  */
 public class SingleTask extends Worker {
+
+    public SingleTask(@NonNull Context context, @NonNull WorkerParameters workerParams) {
+        super(context, workerParams);
+    }
 
     @NonNull
     @Override

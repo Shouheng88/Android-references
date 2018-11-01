@@ -52,6 +52,8 @@ public interface BaseConstants {
     String LAYOUT_VIEW_ANIMATE = "/layout/view_animate";
     String LAYOUT_SUPPORT_28 = "/layout/support_28";
     String LAYOUT_BOTTOM_APP_BAR = "/layout/bottom_app_bar";
+    String LAYOUT_ADAPTER = "/layout/adapter";
+    String LAYOUT_ADAPTER_ARG_USE_ADAPTER = "layout_adapter_arg_use_adapter";
 
     String LIBRARY_MENU = "/library/menu";
     String LIBRARY_EVENT_BUS_ACTIVITY1 = "/library/event_bus/activity1";
@@ -68,6 +70,7 @@ public interface BaseConstants {
     String LIBRARY_SWIPE_BACK = "/library/swipe_back";
     String LIBRARY_SERIAL = "/library/serial";
     String LIBRARY_SERIAL_ARG_MONSTER = "library_serial_arg_monster";
+    String LIBRARY_HANDLER = "/library/handler";
 
     String EYEPETIZER_MENU = "/eyepetizer/menu";
     String EYEPETIZER_CONTAINER = "/eyepetizer/container";

@@ -63,6 +63,10 @@ public class MenuActivity extends CommonActivity<ActivityMenuBinding> {
                         .build(BaseConstants.LIBRARY_SERIAL)
                         .withParcelable(BaseConstants.LIBRARY_SERIAL_ARG_MONSTER, monster)
                         .navigation());
+        getBinding().btnHandler.setOnClickListener(v ->
+                ARouter.getInstance()
+                        .build(BaseConstants.LIBRARY_HANDLER)
+                        .navigation());
     }
 
     private void configToolbar() {

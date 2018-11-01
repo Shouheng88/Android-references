@@ -1,8 +1,10 @@
 package me.shouheng.libraries.workmanager;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 
 import androidx.work.Worker;
+import androidx.work.WorkerParameters;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import me.shouheng.commons.tools.LogUtils;
@@ -15,6 +17,10 @@ public class PeriodicTask extends Worker {
     private static int repeatCountStatic = 0;
 
     private int repeatCount = 0;
+
+    public PeriodicTask(@NonNull Context context, @NonNull WorkerParameters workerParams) {
+        super(context, workerParams);
+    }
 
     @NonNull
     @Override
