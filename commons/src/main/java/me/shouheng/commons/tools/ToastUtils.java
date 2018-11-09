@@ -1,6 +1,6 @@
 package me.shouheng.commons.tools;
 
-import android.support.annotation.StringRes;
+import androidx.annotation.StringRes;
 import android.widget.Toast;
 
 import me.shouheng.commons.BaseApplication;

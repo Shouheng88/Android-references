@@ -1,6 +1,6 @@
 package me.shouheng.libraries.workmanager;
 
-import android.arch.lifecycle.LiveData;
+import androidx.lifecycle.LiveData;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;

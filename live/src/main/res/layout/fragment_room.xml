@@ -26,7 +26,7 @@
 
             </FrameLayout>
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_back"
                 android:layout_margin="10dp"
                 android:src="@drawable/ic_arrow_back_black_24dp"
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_more"
                 android:layout_alignParentEnd="true"
                 android:tint="@android:color/white"
@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_share"
                 android:layout_toStartOf="@id/iv_more"
                 android:tint="@android:color/white"
@@ -64,7 +64,7 @@
                     android:maxLines="1"
                     android:singleLine="true"/>
 
-                <android.support.v7.widget.AppCompatImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iv_full_screen"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"

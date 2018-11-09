@@ -2,7 +2,7 @@ package me.shouheng.layout.view.scrolling;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
+import com.google.android.material.snackbar.Snackbar;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 

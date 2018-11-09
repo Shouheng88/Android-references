@@ -1,8 +1,8 @@
 package me.shouheng.libraries;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -14,7 +14,6 @@ import me.shouheng.commons.config.BaseConstants;
 import me.shouheng.commons.view.activity.CommonActivity;
 import me.shouheng.libraries.databinding.ActivityMenuBinding;
 import me.shouheng.libraries.serial.SerializeActivity;
-import timber.log.Timber;
 
 @Route(path = BaseConstants.LIBRARY_MENU)
 public class MenuActivity extends CommonActivity<ActivityMenuBinding> {

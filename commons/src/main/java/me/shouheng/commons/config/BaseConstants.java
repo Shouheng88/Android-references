@@ -54,6 +54,7 @@ public interface BaseConstants {
     String LAYOUT_BOTTOM_APP_BAR = "/layout/bottom_app_bar";
     String LAYOUT_ADAPTER = "/layout/adapter";
     String LAYOUT_ADAPTER_ARG_USE_ADAPTER = "layout_adapter_arg_use_adapter";
+    String LAYOUT_SWIPE_BACK = "/layout/swipe_back";
 
     String LIBRARY_MENU = "/library/menu";
     String LIBRARY_EVENT_BUS_ACTIVITY1 = "/library/event_bus/activity1";
@@ -67,7 +68,6 @@ public interface BaseConstants {
     String LIBRARY_WORK_MANAGER = "/library/work_manager";
     String LIBRARY_FRAGMENT_DEMO = "/library/fragment_demo";
     String LIBRARY_FRAGMENT_DEMO_HAS_CHILD = "arg_fragment_demo_has_child";
-    String LIBRARY_SWIPE_BACK = "/library/swipe_back";
     String LIBRARY_SERIAL = "/library/serial";
     String LIBRARY_SERIAL_ARG_MONSTER = "library_serial_arg_monster";
     String LIBRARY_HANDLER = "/library/handler";

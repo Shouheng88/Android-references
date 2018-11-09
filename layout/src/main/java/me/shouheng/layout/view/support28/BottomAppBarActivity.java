@@ -1,8 +1,8 @@
 package me.shouheng.layout.view.support28;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -13,7 +13,6 @@ import java.util.List;
 
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import me.shouheng.commons.config.BaseConstants;
 import me.shouheng.commons.view.activity.CommonActivity;
 import me.shouheng.layout.R;

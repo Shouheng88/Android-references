@@ -15,7 +15,7 @@
             android:layout_weight="1"
             android:id="@+id/fragment_container" />
 
-        <android.support.design.widget.BottomNavigationView
+        <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

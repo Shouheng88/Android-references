@@ -28,7 +28,7 @@
                 android:layout_width="16dp"
                 android:layout_height="16dp" />
 
-            <android.support.v7.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_author"
                 tools:text="Sub title"
                 android:layout_marginStart="8dp"
@@ -38,7 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <android.support.v7.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_date"
                 tools:text="3天前"
                 android:layout_marginStart="8dp"
@@ -57,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <android.support.v7.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_title"
                 tools:text="This is the fucking long title test, wow you may wonder why???? BALABALABALA"
                 android:textSize="16sp"
@@ -67,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <android.support.v7.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_tags"
                 tools:text="Sub title"
                 android:layout_marginTop="4dp"

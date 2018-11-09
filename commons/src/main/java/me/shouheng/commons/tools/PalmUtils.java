@@ -3,10 +3,10 @@ package me.shouheng.commons.tools;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.annotation.ColorRes;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.StringRes;
-import android.support.v4.app.Fragment;
+import androidx.annotation.ColorRes;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.StringRes;
+import androidx.fragment.app.Fragment;
 
 import me.shouheng.commons.BaseApplication;
 

@@ -3,7 +3,6 @@ package me.shouheng.libraries.handler;
 import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.Nullable;
 
 import me.shouheng.commons.tools.LogUtils;
 
@@ -24,7 +23,7 @@ public class FileRecognizeTask extends IntentService {
 
 
     @Override
-    protected void onHandleIntent(@androidx.annotation.Nullable @Nullable Intent intent) {
+    protected void onHandleIntent(@androidx.annotation.Nullable Intent intent) {
         // do something
         LogUtils.d("=========================================");
     }

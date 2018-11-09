@@ -1,7 +1,6 @@
 package me.shouheng.layout.view.support28;
 
 import android.os.Bundle;
-import android.support.design.widget.BottomSheetDialog;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;

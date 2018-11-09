@@ -1,7 +1,7 @@
 package me.shouheng.commons;
 
 import android.app.Application;
-import android.support.multidex.MultiDex;
+import androidx.multidex.MultiDex;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.crashlytics.android.Crashlytics;

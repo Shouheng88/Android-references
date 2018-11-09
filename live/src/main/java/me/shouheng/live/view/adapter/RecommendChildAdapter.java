@@ -2,7 +2,7 @@ package me.shouheng.live.view.adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.support.v7.graphics.Palette;
+import androidx.palette.graphics.Palette;
 import android.util.SparseIntArray;
 
 import com.bumptech.glide.Glide;

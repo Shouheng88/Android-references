@@ -10,7 +10,7 @@
 
         <include android:id="@+id/bar_layout" layout="@layout/layout_toolbar"/>
 
-        <android.support.v4.widget.NestedScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_below="@id/bar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -20,30 +20,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <android.support.v7.widget.AppCompatEditText
+                <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/et_message"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-                <android.support.v7.widget.AppCompatButton
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_publish"
                     android:text="@string/text_publish"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-                <android.support.v7.widget.AppCompatButton
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_publish_and_finish"
                     android:text="@string/text_publish_and_finish"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-                <android.support.v7.widget.AppCompatButton
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_publish_sticky"
                     android:text="@string/text_publish_sticky_event"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_message"
                     android:textStyle="bold"
                     android:layout_gravity="center"
@@ -53,7 +53,7 @@
 
             </LinearLayout>
 
-        </android.support.v4.widget.NestedScrollView>
+        </androidx.core.widget.NestedScrollView>
 
         <View android:layout_below="@id/bar_layout"
             android:background="@drawable/bg_toolbar_shade"

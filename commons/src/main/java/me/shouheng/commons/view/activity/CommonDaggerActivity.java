@@ -1,6 +1,6 @@
 package me.shouheng.commons.view.activity;
 
-import android.databinding.ViewDataBinding;
+import androidx.databinding.ViewDataBinding;
 import android.os.Bundle;
 
 import dagger.android.AndroidInjection;

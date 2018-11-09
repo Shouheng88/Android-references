@@ -7,7 +7,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [ moduleName : project.getName() ]
@@ -40,25 +40,25 @@ android {
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     // support
-    api "com.android.support:support-annotations:$supportLibVersion"
-    api "com.android.support:appcompat-v7:$supportLibVersion"
-    api "com.android.support:support-v4:$supportLibVersion"
-    api "com.android.support:recyclerview-v7:$supportLibVersion"
-    api "com.android.support:palette-v7:$supportLibVersion"
-    api "com.android.support:cardview-v7:$supportLibVersion"
-    api "com.android.support:design:$supportLibVersion"
+    api 'androidx.annotation:annotation:1.0.0'
+    api 'androidx.appcompat:appcompat:1.0.2'
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+    api 'androidx.recyclerview:recyclerview:1.0.0'
+    api 'androidx.palette:palette:1.0.0'
+    api 'androidx.cardview:cardview:1.0.0'
+    api 'com.google.android.material:material:1.1.0-alpha01'
     // architecture
-    api "android.arch.lifecycle:runtime:$archVersion"
-    api "android.arch.lifecycle:extensions:$archVersion"
-    annotationProcessor "android.arch.lifecycle:compiler:$archVersion"
+    api 'androidx.lifecycle:lifecycle-runtime:2.0.0'
+    api 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.0.0'
     // leakcanary
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.1'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1'
     // multidex
-    api 'com.android.support:multidex:1.0.2'
+    api 'androidx.multidex:multidex:2.0.0'
     // time
     api 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
     api 'joda-time:joda-time:2.9.9'
@@ -71,8 +71,8 @@ dependencies {
     api 'com.yanzhenjie:recyclerview-swipe:1.1.4'
     api 'com.timehop.stickyheadersrecyclerview:library:0.4.3@aar'
     // glide
-    api 'com.github.bumptech.glide:glide:4.7.1'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    api 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
     // debug tools
     implementation 'com.facebook.stetho:stetho:1.5.0'
     // fabric

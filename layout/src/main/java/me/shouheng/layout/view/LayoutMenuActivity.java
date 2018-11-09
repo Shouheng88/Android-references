@@ -1,8 +1,8 @@
 package me.shouheng.layout.view;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -65,7 +65,7 @@ public class LayoutMenuActivity extends CommonActivity<ActivityLayoutMenuBinding
                         .navigation());
         getBinding().btnSwipe.setOnClickListener(v ->
                 ARouter.getInstance()
-                        .build(BaseConstants.LIBRARY_SWIPE_BACK)
+                        .build(BaseConstants.LAYOUT_SWIPE_BACK)
                         .navigation());
         getBinding().btnAdapter.setOnClickListener(v ->
                 ARouter.getInstance()

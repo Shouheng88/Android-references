@@ -13,7 +13,7 @@ android {
         versionName "1.0"
         // enable multi dex
         multiDexEnabled true
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [ moduleName : project.getName() ]
@@ -114,8 +114,8 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     // app intro
     implementation 'com.github.paolorotolo:appintro:1.3.0'
     // material drawer
@@ -142,6 +142,12 @@ dependencies {
     }
     if (!isEyepetizerModuleApp.toBoolean()) {
         implementation project(':eyepetizer')
+    }
+    if (!isAdvancedModuleApp.toBoolean()) {
+        implementation project(':advanced')
+    }
+    if (!isAnimationsModuleApp.toBoolean()) {
+        implementation project(':animations')
     }
     implementation project(':commons')
 }

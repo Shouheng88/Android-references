@@ -1,7 +1,7 @@
 package me.shouheng.commons.view.widget;
 
 import android.graphics.Rect;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 import me.shouheng.commons.tools.ViewUtils;

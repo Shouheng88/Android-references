@@ -6,7 +6,7 @@
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.v7.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_send_event"
             android:text="Send Event"
             android:layout_width="match_parent"
