@@ -31,8 +31,8 @@ public class BottomAppBarActivity extends CommonActivity<ActivityBottomAppBarBin
 
     @Override
     protected void doCreateView(Bundle savedInstanceState) {
-        getBinding().bottomAppBar.replaceMenu(R.menu.bottom_navigation);
-
+//        getBinding().bottomAppBar.replaceMenu(R.menu.bottom_navigation);
+//
         List<String> items = new LinkedList<>();
         Disposable disposable = Observable.range(40, 50).subscribe(integer -> items.add(String.valueOf(integer)));
         Adapter adapter = new Adapter(items);

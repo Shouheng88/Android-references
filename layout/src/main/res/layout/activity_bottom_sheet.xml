@@ -48,7 +48,7 @@
             android:layout_alignParentBottom="true"
             app:behavior_hideable="true"
             app:behavior_peekHeight="200dp"
-            app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+            app:layout_behavior="@string/bottom_sheet_behavior">
 
             <RelativeLayout
                 android:background="@android:color/holo_green_light"

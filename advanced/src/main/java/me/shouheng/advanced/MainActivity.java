@@ -14,7 +14,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import me.shouheng.advanced.aidl.INoteManager;
 import me.shouheng.advanced.aidl.Note;
 import me.shouheng.advanced.aidl.NoteService;
-import me.shouheng.advanced.databinding.ActivityMainBinding;
+import me.shouheng.advanced.databinding.ActivityAdvancedBinding;
 import me.shouheng.commons.config.BaseConstants;
 import me.shouheng.commons.tools.LogUtils;
 import me.shouheng.commons.view.activity.CommonActivity;
@@ -24,7 +24,7 @@ import me.shouheng.commons.view.activity.CommonActivity;
  * @version $Id: MainActivity, v 0.1 2018/10/22 21:36 shouh Exp$
  */
 @Route(path = BaseConstants.ADVANCED_MENU)
-public class MainActivity extends CommonActivity<ActivityMainBinding> {
+public class MainActivity extends CommonActivity<ActivityAdvancedBinding> {
 
     private ServiceConnection connection = new ServiceConnection() {
         @Override
@@ -44,7 +44,7 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
 
     @Override
     protected int getLayoutResId() {
-        return R.layout.activity_main;
+        return R.layout.activity_advanced;
     }
 
     @Override

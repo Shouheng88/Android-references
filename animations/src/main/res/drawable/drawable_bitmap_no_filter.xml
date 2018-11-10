@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<bitmap android:src="@drawable/leak_canary_icon_foreground"
+<bitmap android:src="@drawable/ic_launcher"
     android:tileMode="mirror"
     xmlns:android="http://schemas.android.com/apk/res/android">
 

@@ -8,9 +8,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-
-
-
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".remote.RemoteActivity"
+            android:process=":remote"/>
+        <activity android:name=".remote.Remote2Activity"
+            android:process="remote.sample"/>
+        <service android:name=".aidl.NoteService"
+            android:process=":remote"/>
     </application>
 
 </manifest>

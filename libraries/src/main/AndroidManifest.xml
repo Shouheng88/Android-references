@@ -23,6 +23,9 @@
         <activity android:name=".MyKnifeActivity"/>
         <activity android:name=".FingerprintIdentifyActivity"/>
         <activity android:name=".workmanager.WorkManagerActivity"/>
+        <activity android:name=".serial.SerializeActivity"/>
+        <activity android:name=".handler.HandlerActivity"/>
+        <service android:name=".handler.FileRecognizeTask"/>
     </application>
 
 </manifest>

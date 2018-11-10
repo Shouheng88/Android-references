@@ -1,13 +1,14 @@
 package me.shouheng.libraries.workmanager;
 
-import androidx.lifecycle.LiveData;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.google.common.util.concurrent.ListenableFuture;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import androidx.lifecycle.LiveData;
 import androidx.work.Constraints;
 import androidx.work.ExistingWorkPolicy;
 import androidx.work.OneTimeWorkRequest;
@@ -16,6 +17,7 @@ import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkContinuation;
 import androidx.work.WorkManager;
 import androidx.work.WorkStatus;
+import androidx.work.impl.utils.futures.SettableFuture;
 import me.shouheng.commons.config.BaseConstants;
 import me.shouheng.commons.view.activity.CommonActivity;
 import me.shouheng.libraries.R;
@@ -28,7 +30,7 @@ import me.shouheng.libraries.databinding.ActivityWorkManagerBinding;
 public class WorkManagerActivity extends CommonActivity<ActivityWorkManagerBinding> {
 
     private WorkManager workManager;
-    private LiveData<List<WorkStatus>> workStatuses;
+    private ListenableFuture<List<WorkStatus>> workStatuses;
     private String TAG_OUTPUT = "tag_output";
     private String SINGLE_TASK_NAME = "SINGLE_TASK";
 
@@ -49,7 +51,7 @@ public class WorkManagerActivity extends CommonActivity<ActivityWorkManagerBindi
     @Override
     protected void doCreateView(Bundle savedInstanceState) {
         workManager = WorkManager.getInstance();
-        workStatuses = (LiveData<List<WorkStatus>>) workManager.getStatusesByTag(TAG_OUTPUT);
+        workStatuses = workManager.getStatusesByTag(TAG_OUTPUT);
 
         getBinding().btnStartSingle.setOnClickListener(v -> {
             WorkContinuation continuation = workManager.beginUniqueWork(SINGLE_TASK_NAME,

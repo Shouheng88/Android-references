@@ -18,15 +18,16 @@
             android:layout_gravity="bottom"
             app:backgroundTint="@color/colorAccent"
             app:fabAlignmentMode="center"
+            app:elevation="0dp"
             app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_add_black_24dp"
+            app:layout_anchor="@id/bottom_app_bar"
             app:layout_anchorGravity="center"
-            app:fabSize="normal"
-            app:layout_anchor="@id/bottom_app_bar"/>
+            app:fabSize="normal"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

@@ -1,33 +1,35 @@
-//package me.shouheng.libraries;
-//
-//import android.os.Bundle;
-//
-//import com.alibaba.android.arouter.facade.annotation.Route;
+package me.shouheng.libraries;
+
+import android.os.Bundle;
+
+import com.alibaba.android.arouter.facade.annotation.Route;
 //import com.wei.android.lib.fingerprintidentify.FingerprintIdentify;
 //import com.wei.android.lib.fingerprintidentify.base.BaseFingerprint;
-//
-//import me.shouheng.commons.config.BaseConstants;
-//import me.shouheng.commons.view.activity.CommonActivity;
-//import me.shouheng.libraries.databinding.ActivityFingerprintIdentifyBinding;
-//
-///**
-// * @author shouh
-// * @version $Id: FingerprintIdentifyActivity, v 0.1 2018/8/25 14:45 shouh Exp$
-// */
-//@Route(path = BaseConstants.LIBRARY_FINGERPRIINT_IDENTIFY)
-//public class FingerprintIdentifyActivity extends CommonActivity<ActivityFingerprintIdentifyBinding> {
-//
+
+import me.shouheng.commons.config.BaseConstants;
+import me.shouheng.commons.view.activity.CommonActivity;
+import me.shouheng.libraries.databinding.ActivityFingerprintIdentifyBinding;
+
+/**
+ * TODO need to handle this problem by downloading the library and automatically migrate to AndroidX
+ *
+ * @author shouh
+ * @version $Id: FingerprintIdentifyActivity, v 0.1 2018/8/25 14:45 shouh Exp$
+ */
+@Route(path = BaseConstants.LIBRARY_FINGERPRIINT_IDENTIFY)
+public class FingerprintIdentifyActivity extends CommonActivity<ActivityFingerprintIdentifyBinding> {
+
 //    private FingerprintIdentify mFingerprintIdentify;
-//
-//    private static final int MAX_AVAILABLE_TIMES = 5;
-//
-//    @Override
-//    protected int getLayoutResId() {
-//        return R.layout.activity_fingerprint_identify;
-//    }
-//
-//    @Override
-//    protected void doCreateView(Bundle savedInstanceState) {
+
+    private static final int MAX_AVAILABLE_TIMES = 5;
+
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.activity_fingerprint_identify;
+    }
+
+    @Override
+    protected void doCreateView(Bundle savedInstanceState) {
 //        long time = System.currentTimeMillis();
 //        mFingerprintIdentify = new FingerprintIdentify(getApplicationContext(), exception ->
 //                append("\nException：" + exception.getLocalizedMessage()));
@@ -43,8 +45,8 @@
 //        append("\nCLICK IDENTIFY BUTTON TO START!");
 //
 //        getBinding().btnIdentify.setOnClickListener(v -> startIdentify());
-//    }
-//
+    }
+
 //    private void startIdentify() {
 //        append("\nIDENTIFY START!");
 //        mFingerprintIdentify.startIdentify(MAX_AVAILABLE_TIMES, new BaseFingerprint.FingerprintIdentifyListener() {
@@ -69,8 +71,8 @@
 //            }
 //        });
 //    }
-//
+
 //    private void append(String msg) {
 //        getBinding().tvResult.append(msg);
 //    }
-//}
+}

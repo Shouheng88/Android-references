@@ -14,33 +14,39 @@
             android:layout_height="wrap_content"
             android:text="Material button"
             android:textSize="18sp"
+            style="@style/Widget.MaterialComponents.Button"
             app:icon="@drawable/ic_autorenew_black_24dp"/>
 
         <com.google.android.material.chip.ChipGroup
             android:layout_marginTop="20dp"
+            style="@style/Widget.MaterialComponents.ChipGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.chip.Chip
                 android:text="This is a Chip 1"
+                style="@style/TextAppearance.MaterialComponents.Chip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <com.google.android.material.chip.Chip
                 android:text="Chip 2"
                 app:textEndPadding="8dp"
+                style="@style/TextAppearance.MaterialComponents.Chip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <com.google.android.material.chip.Chip
                 android:text="Chip 3"
                 app:rippleColor="@android:color/holo_red_dark"
+                style="@style/TextAppearance.MaterialComponents.Chip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <com.google.android.material.chip.Chip
                 android:text="Chip 4"
                 app:closeIconVisible="true"
+                style="@style/TextAppearance.MaterialComponents.Chip"
                 app:checkedIcon="@drawable/ic_check_circle_black_24dp"
                 app:closeIcon="@drawable/ic_close_black_24dp"
                 app:chipIcon="@drawable/ic_autorenew_black_24dp"
@@ -50,6 +56,7 @@
             <com.google.android.material.chip.Chip
                 android:text="Chip 5"
                 app:chipIconTint="@android:color/holo_red_dark"
+                style="@style/TextAppearance.MaterialComponents.Chip"
                 app:chipIcon="@drawable/ic_autorenew_black_24dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -57,6 +64,7 @@
         </com.google.android.material.chip.ChipGroup>
 
         <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.MaterialComponents.CardView"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -87,12 +95,14 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_bottom_bar"
             android:text="Bottom App Bar"
+            style="@style/Widget.MaterialComponents.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_sheet_dialog"
             android:text="Bottom App Bar"
+            style="@style/Widget.MaterialComponents.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

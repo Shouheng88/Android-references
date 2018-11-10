@@ -43,12 +43,14 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     // support
-    api 'androidx.annotation:annotation:1.0.0'
-    api 'androidx.appcompat:appcompat:1.0.2'
-    api 'androidx.legacy:legacy-support-v4:1.0.0'
-    api 'androidx.recyclerview:recyclerview:1.0.0'
-    api 'androidx.palette:palette:1.0.0'
-    api 'androidx.cardview:cardview:1.0.0'
+    api "androidx.recyclerview:recyclerview:${androidX}"
+    api "androidx.palette:palette:${androidX}"
+    api "androidx.cardview:cardview:${androidX}"
+    api "androidx.appcompat:appcompat:1.0.2"
+    api "androidx.recyclerview:recyclerview:${androidX}"
+    api "androidx.annotation:annotation:${androidX}"
+    api "androidx.legacy:legacy-support-v4:${androidX}"
+    api "androidx.constraintlayout:constraintlayout:${constraintLayout}"
     api 'com.google.android.material:material:1.1.0-alpha01'
     // architecture
     api 'androidx.lifecycle:lifecycle-runtime:2.0.0'
@@ -67,7 +69,7 @@ dependencies {
     // image compress
     api 'top.zibin:Luban:1.1.3'
     // recycler
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.43-alpha1'
     api 'com.yanzhenjie:recyclerview-swipe:1.1.4'
     api 'com.timehop.stickyheadersrecyclerview:library:0.4.3@aar'
     // glide

@@ -15,18 +15,18 @@ import com.balysv.materialripple.MaterialRippleLayout;
 import com.getkeepsafe.taptargetview.TapTarget;
 import com.getkeepsafe.taptargetview.TapTargetSequence;
 
-import me.shouheng.animations.databinding.ActivityMainBinding;
+import me.shouheng.animations.databinding.ActivityAnimBinding;
 import me.shouheng.commons.config.BaseConstants;
 import me.shouheng.commons.tools.PalmUtils;
 import me.shouheng.commons.tools.ToastUtils;
 import me.shouheng.commons.view.activity.CommonActivity;
 
 @Route(path = BaseConstants.ANIMATIONS_MENU)
-public class MainActivity extends CommonActivity<ActivityMainBinding> {
+public class MainActivity extends CommonActivity<ActivityAnimBinding> {
 
     @Override
     protected int getLayoutResId() {
-        return R.layout.activity_main;
+        return R.layout.activity_anim;
     }
 
     @Override

@@ -1,9 +1,16 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/light_theme_background</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorPrimaryVariant">@android:color/holo_red_light</item>
+        <item name="colorSecondaryVariant">@android:color/holo_orange_light</item>
+        <item name="colorSurface">@android:color/holo_blue_light</item>
+        <item name="colorOnPrimary">@android:color/holo_blue_light</item>
+        <item name="colorOnSecondary">@android:color/holo_purple</item>
     </style>
 
     <style name="AppTheme.Branded" parent="AppTheme">

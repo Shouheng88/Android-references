@@ -235,12 +235,12 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
                             break;
                         case 5:
                             ARouter.getInstance()
-                                    .build(BaseConstants.ANIMATIONS_MENU)
+                                    .build(BaseConstants.EYEPETIZER_MENU)
                                     .navigation();
                             break;
                         case 6:
                             ARouter.getInstance()
-                                    .build(BaseConstants.EYEPETIZER_MENU)
+                                    .build(BaseConstants.ANIMATIONS_MENU)
                                     .navigation();
                             break;
                         case 7:

@@ -280,7 +280,7 @@ public class SerializeActivity extends CommonActivity<ActivitySerializeBinding> 
         }
     }
 
-    // TODO 这种处理方式的效率问题？
+    // TODO There are many available methods for simplifying the usage of Parcelable, most are implemented by auto-generating codes
     public static abstract class BaseParcelable<T> implements Parcelable {
 
         protected BaseParcelable() { }
