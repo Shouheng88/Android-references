@@ -55,6 +55,7 @@ public interface BaseConstants {
     String LAYOUT_ADAPTER = "/layout/adapter";
     String LAYOUT_ADAPTER_ARG_USE_ADAPTER = "layout_adapter_arg_use_adapter";
     String LAYOUT_SWIPE_BACK = "/layout/swipe_back";
+    String LAYOUT_EDIT_LAYOUT = "/layout/edit_layout";
 
     String LIBRARY_MENU = "/library/menu";
     String LIBRARY_EVENT_BUS_ACTIVITY1 = "/library/event_bus/activity1";

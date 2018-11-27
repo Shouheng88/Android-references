@@ -83,4 +83,18 @@ public class ViewUtils {
             v.setAlpha(alpha);
         }
     }
+
+    public static int getNavigationBarHeight(Context context) {
+        int navigationBarHeight = 0;
+        try {
+            Resources rs = context.getResources();
+            int id = rs.getIdentifier("navigation_bar_height", "dimen", "android");
+            if (id > 0) {
+                navigationBarHeight = rs.getDimensionPixelSize(id);
+            }
+        } catch (Exception e) {
+            // default 0
+        }
+        return navigationBarHeight;
+    }
 }
