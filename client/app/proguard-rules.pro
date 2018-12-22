@@ -112,7 +112,7 @@
 # okhttp 混淆配置
 -dontwarn okio.**
 # Gson 混淆配置
--keep class cn.glority.receipt.model.**{*;} # 自定义数据模型的bean目录
+# TODO 自定义数据模型的bean目录，如果使用了 Retrofit，必须增加该配置
 
 # SwipeRecyclerView
 -keepclasseswithmembers class android.support.v7.widget.RecyclerView$ViewHolder {
@@ -165,9 +165,6 @@
 # DataBinding
 -dontwarn android.databinding.**
 -keep class android.databinding.** { *; }
--keep class cn.glority.receipt.databinding.** {
-    <fields>;
-    <methods>;
-}
+# TODO 保持 databinding 目录
 # MultiDex
 -keep class com.sensorsdata.analytics.android.** { *; }
