@@ -21,6 +21,7 @@
             android:process="remote.sample"/>
         <service android:name=".aidl.NoteService"
             android:process=":remote"/>
+        <activity android:name=".Activity2"/>
     </application>
 
 </manifest>

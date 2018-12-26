@@ -19,6 +19,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_result"
+            android:text="Start For Result CALLBACK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_result2"
+            android:text="Start For Result NORMAL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 
 </layout>
