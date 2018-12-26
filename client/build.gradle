@@ -10,6 +10,7 @@ buildscript {
         classpath 'com.meituan.android.walle:plugin:1.1.6'
         classpath 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.13'
         classpath "net.rdrei.android.buildtimetracker:gradle-plugin:0.11.1"
+        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.8.4'
     }
 }
 

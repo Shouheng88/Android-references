@@ -6,6 +6,7 @@ if (isAdvancedModuleApp.toBoolean()) {
 } else {
     apply plugin: 'com.android.library'
 }
+apply plugin: 'com.getkeepsafe.dexcount'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -47,6 +48,22 @@ android {
                 manifest.srcFile "src/main/AndroidManifest.xml"
             }
         }
+    }
+    // dex count. see https://github.com/KeepSafe/dexcount-gradle-plugin
+    dexcount {
+        format = "list"
+        includeClasses = false
+        includeClassCount = false
+        includeFieldCount = true
+        includeTotalMethodCount = false
+        orderByMethodCount = false
+        verbose = false
+        maxTreeDepth = Integer.MAX_VALUE
+        teamCityIntegration = false
+        teamCitySlug = null
+        runOnEachPackage = true
+//        maxMethodCount = 64000
+        enabled = true
     }
 }
 
