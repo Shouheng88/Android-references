@@ -1,4 +1,5 @@
 println isAdvancedModuleApp.toBoolean()
+apply plugin: "build-time-tracker"
 
 if (isAdvancedModuleApp.toBoolean()) {
     apply plugin: 'com.android.application'
