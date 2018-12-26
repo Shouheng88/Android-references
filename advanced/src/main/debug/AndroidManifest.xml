@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" >
             <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -22,6 +23,7 @@
         <service android:name=".aidl.NoteService"
             android:process=":remote"/>
         <activity android:name=".Activity2"/>
+        <service android:name=".keepalive.LongLiveService"/>
     </application>
 
 </manifest>
