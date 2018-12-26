@@ -26,8 +26,8 @@ public class MyApplication extends BaseApplication {
 
         ARouter.init(this);
 
-        String channel = WalleChannelReader.getChannel(this);
-        UMConfigure.init(this, Configs.APP_KEY, channel, UMConfigure.DEVICE_TYPE_PHONE, "");
-        UMConfigure.setLogEnabled(true);
+//        String channel = WalleChannelReader.getChannel(this);
+//        UMConfigure.init(this, Configs.APP_KEY, channel, UMConfigure.DEVICE_TYPE_PHONE, "");
+//        UMConfigure.setLogEnabled(true);
     }
 }

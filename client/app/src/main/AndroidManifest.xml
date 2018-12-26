@@ -21,21 +21,24 @@
 
         <activity android:name=".view.main.MainActivity">
             <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <meta-data android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
         </activity>
+
         <activity android:name=".view.intro.AppIntroActivity" />
 
-        <!-- region fabric -->
+        <!-- uemng -->
+        <meta-data android:value="5b62ef2df43e4841b70003cb" android:name="UMENG_APPKEY"/>
+        <meta-data android:value="${UMENG_CHANNEL_VALUE}" android:name="UMENG_CHANNEL"/>
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="aa14224ea2102fef301d211dac552635f37b1f9e" />
-        <!-- endregion -->
 
-        <!-- region file provider -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="me.shouheng.references.provider"
@@ -45,7 +48,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
-        <!-- endregion -->
+
     </application>
 
 </manifest>

@@ -100,8 +100,13 @@ dependencies {
     // walle
     api 'com.meituan.android.walle:library:1.1.6'
     // umeng
-    api 'com.umeng.sdk:common:1.5.3'
-    api 'com.umeng.sdk:analytics:7.5.3'
+    api  'com.umeng.umsdk:common:1.5.4'
+    api  'com.umeng.umsdk:analytics:7.5.4'
+    // PushSDK必须依赖utdid库，所以需要加入对应依赖
+    api 'com.umeng.umsdk:utdid:1.1.5.3'
+    // PushSDK
+    api 'com.umeng.umsdk:push:5.0.2'
+    // player
     api files('libs/pldroid-player-1.5.0.jar')
     // timer
     api 'com.jakewharton.timber:timber:4.7.1'

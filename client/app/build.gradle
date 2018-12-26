@@ -20,6 +20,7 @@ android {
                 arguments = [ moduleName : project.getName() ]
             }
         }
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "umeng"]
     }
     signingConfigs {
         release {
@@ -43,6 +44,9 @@ android {
                 outputFileName = defaultConfig.applicationId + "-" + variant.baseName + "-" + defaultConfig.versionName + "-" + defaultConfig.versionCode + ".apk"
             }
         }
+    }
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
     }
     // config release types
     flavorDimensions "default"
@@ -123,7 +127,7 @@ android {
         teamCityIntegration = false
         teamCitySlug = null
         runOnEachPackage = true
-        maxMethodCount = 64000
+//        maxMethodCount = 64000
         enabled = true
     }
 }
