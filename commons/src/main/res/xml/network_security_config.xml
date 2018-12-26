@@ -4,5 +4,6 @@
         <domain includeSubdomains="true">kaiyanapp.com</domain>
         <domain includeSubdomains="true">guokr.com</domain>
         <domain includeSubdomains="true">quanmin.tv</domain>
+        <domain includeSubdomains="true">amdcopen.m.taobao.com</domain>
     </domain-config>
 </network-security-config>
