@@ -14,6 +14,9 @@ import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
@@ -58,6 +61,12 @@ public class MainActivity extends CommonActivity<ActivityMainBinding> {
             boolean succeed = joinQQGroup("J7Yn-X7oWh-kHljVnxc87WhoyaXns5BY");
             LogUtils.d(succeed);
         });
+
+        Glide.with(getContext())
+                .load("https://3-im.guokr.com/0lSlGxgGIQkSQVA_Ja0U3Gxo0tPNIxuBCIXElrbkhpEXBAAAagMAAFBO.png")
+                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.AUTOMATIC))
+                .apply(RequestOptions.skipMemoryCacheOf(false))
+                .into(getBinding().iv);
     }
 
     /****************
