@@ -43,6 +43,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_messenger"
+            android:text="使用 Messenger 发送消息"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 
 </layout>

@@ -22,6 +22,8 @@
             android:process="remote.sample"/>
         <service android:name=".aidl.NoteService"
             android:process=":remote"/>
+        <service android:name=".messenger.MessengerService"
+            android:process=":remote"/>
         <activity android:name=".Activity2"/>
         <service android:name=".keepalive.LongLiveService"/>
     </application>
