@@ -4,13 +4,16 @@ import android.os.Bundle;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import me.shouheng.commons.config.BaseConstants;
+import me.shouheng.commons.tools.ToastUtils;
 import me.shouheng.commons.view.activity.CommonActivity;
 import me.shouheng.libraries.databinding.ActivityMenuBinding;
 import me.shouheng.libraries.serial.SerializeActivity;
@@ -66,6 +69,17 @@ public class MenuActivity extends CommonActivity<ActivityMenuBinding> {
                 ARouter.getInstance()
                         .build(BaseConstants.LIBRARY_HANDLER)
                         .navigation());
+        getBinding().btnTimeZone.setOnClickListener(v -> {
+            Calendar cal = Calendar.getInstance();
+            int offset = cal.get(Calendar.ZONE_OFFSET);
+            ToastUtils.makeToast(String.valueOf(offset / 3600000));
+        });
+    }
+
+    public void imageCompress(View view) {
+        ARouter.getInstance()
+                .build(BaseConstants.LIBRARY_COMPRESS)
+                .navigation();
     }
 
     private void configToolbar() {

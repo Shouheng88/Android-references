@@ -18,7 +18,7 @@
         <activity android:name=".eventbus.EventBusActivity2" />
         <activity android:name=".rxjava.RxJavaActivity" />
         <activity android:name=".rxjava.RxBusActivity" />
-        <activity android:name=".ClipPictureActivity" />
+        <activity android:name=".image.ClipPictureActivity" />
         <activity android:name=".TimberActivity" />
         <activity android:name=".MyKnifeActivity"/>
         <activity android:name=".FingerprintIdentifyActivity"/>

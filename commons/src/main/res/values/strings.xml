@@ -88,11 +88,18 @@
     <string name="cancel">Cancel</string>
 
     <!--region libraries-->
-    <string name="library_menu_event_bus">Event Bus</string>
+    <string name="library_menu_event_bus">EventBus</string>
     <string name="library_menu_rxjava">RxJava</string>
-    <string name="library_menu_clip">Clip Picture</string>
+    <string name="library_menu_clip">图片裁剪</string>
     <string name="library_menu_timber">Timber</string>
-    <string name="library_menu_my_knife">My Knife</string>
+    <string name="library_menu_my_knife">MyKnife</string>
+    <string name="libraries_finger">指纹识别</string>
+    <string name="libraries_workmanager">WorkManager</string>
+    <string name="libraries_serialize">序列化</string>
+    <string name="libraries_handler">Handler</string>
+    <string name="libraries_timezone">时区</string>
+    <string name="libraries_compress">图片压缩</string>
+
     <string name="library_navigation_to_2">Navigation to activity 2</string>
     <string name="library_register_event_bus">Register event bus</string>
     <string name="library_register_sticky_event">Register sticky event</string>
@@ -102,6 +109,11 @@
     <string name="text_publish_and_finish">Publish &amp; finish</string>
     <string name="text_publish_sticky_event">Publish sticky event</string>
     <string name="event_bus_stop_delivery">Stop delivery</string>
+
+    <string name="libraries_compress_compress">邻近采样压缩</string>
+    <string name="libraries_compress_scale">双线性采样</string>
+    <string name="libraries_compress_compress_original">原始图片尺寸：宽度 %d, 高度 %d</string>
+    <string name="libraries_compress_compress_result">压缩图片尺寸：宽度 %d, 高度 %d</string>
     <!--endregion-->
 
 </resources>

@@ -72,6 +72,7 @@ public interface BaseConstants {
     String LIBRARY_SERIAL = "/library/serial";
     String LIBRARY_SERIAL_ARG_MONSTER = "library_serial_arg_monster";
     String LIBRARY_HANDLER = "/library/handler";
+    String LIBRARY_COMPRESS = "/library/compress";
 
     String EYEPETIZER_MENU = "/eyepetizer/menu";
     String EYEPETIZER_CONTAINER = "/eyepetizer/container";

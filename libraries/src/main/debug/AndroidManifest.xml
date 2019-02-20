@@ -12,6 +12,7 @@
         <activity android:name=".MenuActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -19,13 +20,14 @@
         <activity android:name=".eventbus.EventBusActivity2"/>
         <activity android:name=".rxjava.RxJavaActivity"/>
         <activity android:name=".rxjava.RxBusActivity"/>
-        <activity android:name=".ClipPictureActivity"/>
+        <activity android:name=".image.ClipPictureActivity"/>
         <activity android:name=".MyKnifeActivity"/>
         <activity android:name=".FingerprintIdentifyActivity"/>
         <activity android:name=".workmanager.WorkManagerActivity"/>
         <activity android:name=".serial.SerializeActivity"/>
         <activity android:name=".handler.HandlerActivity"/>
         <service android:name=".handler.FileRecognizeTask"/>
+        <activity android:name=".image.ImageCompressActivity"/>
     </application>
 
 </manifest>

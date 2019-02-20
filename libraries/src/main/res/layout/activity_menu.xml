@@ -52,25 +52,38 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_fingerprint"
-                    android:text="Fingerprint Identify"
+                    android:text="@string/libraries_finger"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_work_manager"
-                    android:text="Work Manager"
+                    android:text="@string/libraries_workmanager"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_serial"
-                    android:text="Serialize/Parcelable"
+                    android:text="@string/libraries_serialize"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_handler"
-                    android:text="Handler"
+                    android:text="@string/libraries_handler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_time_zone"
+                    android:text="@string/libraries_timezone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_compress"
+                    android:text="@string/libraries_compress"
+                    android:onClick="imageCompress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
