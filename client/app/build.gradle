@@ -21,6 +21,10 @@ android {
             }
         }
         manifestPlaceholders = [UMENG_CHANNEL_VALUE: "umeng"]
+        ndk {
+            // 只保留 armeabi 和 armeabi-v7a 架构的 so 库，推送中有 so 库，容易导致 UnsatisfiedLinkError
+            abiFilters 'armeabi', 'armeabi-v7a'
+        }
     }
     signingConfigs {
         release {

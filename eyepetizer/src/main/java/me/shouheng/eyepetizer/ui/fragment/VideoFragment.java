@@ -46,6 +46,7 @@ public class VideoFragment extends CommonFragment<FragmentEyeVideoBinding> {
     }
 
     private void configVideo() {
+        LogUtils.d(url);
         getBinding().vtv.setVideoPath(url);
         getBinding().vtv.setDisplayOrientation(fullscreen ? PLVideoView.ASPECT_RATIO_PAVED_PARENT : PLVideoView.ASPECT_RATIO_16_9);
         getBinding().vtv.setOnPreparedListener(plMediaPlayer -> start());
